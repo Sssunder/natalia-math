@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Наталья Дружинина — Преподаватель высшей категории | Сложные темы ОГЭ простыми словами</title>
+    <title>Наталья Дружинина — Мини-группы 9 класс и подготовка к ОГЭ | Преподаватель высшей категории</title>
     
     <!-- Instant Flash-Free Theme Hydration -->
     <script>
@@ -224,12 +224,13 @@
         }
 
         /* Form Inputs */
-        input, select {
+        input, select, textarea {
             background-color: var(--bg-input) !important;
             color: var(--text-heading) !important;
             border: 1px solid var(--border-color) !important;
         }
-        input::placeholder {
+        input::placeholder,
+        textarea::placeholder {
             color: var(--text-muted) !important;
             opacity: 0.7;
         }
@@ -388,6 +389,16 @@
             background-color: #F5EFE6 !important;
             border-color: rgba(180, 83, 9, 0.3) !important;
         }
+        [data-theme="light"] #reviewSubmitNotice {
+            background-color: #ECFDF5 !important;
+            border-color: #6EE7B7 !important;
+        }
+        [data-theme="light"] #reviewSubmitNotice .notice-title {
+            color: #065F46 !important;
+        }
+        [data-theme="light"] #reviewSubmitNotice .notice-sub {
+            color: #047857 !important;
+        }
 
         /* Theme Switcher Dock */
         .theme-dock {
@@ -430,7 +441,7 @@
 
     <!-- Top Announcement Bar -->
     <div id="topAnnouncement" class="py-1.5 px-3 text-[11px] sm:text-xs font-semibold text-center tracking-wide flex flex-wrap items-center justify-center gap-x-2 gap-y-0.5 border-b gold-border">
-        <span id="announcementText" class="truncate max-w-[270px] sm:max-w-none">🏛 Понятная математика • Экспертная подготовка к ОГЭ</span>
+        <span id="announcementText" class="truncate max-w-[270px] sm:max-w-none">🏛 Мини-группы 9 класс • Экспертная подготовка к ОГЭ</span>
         <a href="#booking" class="text-gold font-bold underline hover:opacity-80 flex-shrink-0">Записаться &rarr;</a>
     </div>
 
@@ -450,7 +461,7 @@
                             Наталья Дружинина
                         </span>
                         <span class="text-[10px] sm:text-[11px] uppercase tracking-wider sm:tracking-widest text-gold font-medium hidden xl:block whitespace-nowrap">
-                            Высшая категория • Экспертная подготовка к ОГЭ
+                            Высшая категория • Мини-группы ОГЭ (9 класс)
                         </span>
                     </div>
                 </div>
@@ -574,7 +585,7 @@
                         </h1>
 
                         <p class="text-xs sm:text-base text-slate-300 leading-relaxed font-normal">
-                            Индивидуальные занятия с преподавателем высшей категории. Спокойно и по полочкам разбираем геометрию и алгебру для уверенной сдачи ОГЭ на 4 и 5 без паники и стресса.
+                            Занятия только в мини-группах для 9 класса с преподавателем высшей категории. Спокойно и по полочкам разбираем алгебру и геометрию для уверенной сдачи ОГЭ на 4 и 5 без паники и стресса.
                         </p>
 
                         <!-- Trust Stats Ribbon (Clean 2-Color Architecture) -->
@@ -588,8 +599,8 @@
                                 <div class="text-[10px] sm:text-[11px] text-slate-300 leading-tight mt-1">Лет авторского стажа</div>
                             </div>
                             <div class="p-2.5 sm:p-4 rounded-xl sm:rounded-2xl bg-navy-700 gold-border shadow-sm text-center sm:text-left">
-                                <div class="font-display text-xl sm:text-3xl font-bold text-gold">8–9</div>
-                                <div class="text-[10px] sm:text-[11px] text-slate-300 leading-tight mt-1">Классы (ОГЭ 2026/27)</div>
+                                <div class="font-display text-xl sm:text-3xl font-bold text-gold">9 кл</div>
+                                <div class="text-[10px] sm:text-[11px] text-slate-300 leading-tight mt-1">Только мини-группы ОГЭ</div>
                             </div>
                         </div>
 
@@ -767,24 +778,24 @@
                         </div>
                     </div>
 
-                    <!-- Quiz Question 3 (100% OGE Focus) -->
+                    <!-- Quiz Question 3 (100% OGE 9th Grade Mini-Groups Focus) -->
                     <div id="quizStep3" class="space-y-4 pt-2 hidden">
                         <div class="font-serif font-bold text-lg text-parchment-50 text-center">
-                            3. Какой класс и горизонт подготовки к ОГЭ?
+                            3. Какая главная цель подготовки к ОГЭ в 9 классе?
                         </div>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                            <button onclick="answerNataliaQuiz(3, 'nine')" class="quiz-option-btn p-4 rounded-2xl bg-navy-900 gold-border text-left hover:border-gold hover:shadow-md transition-all text-xs font-bold text-parchment-50 flex items-start gap-3">
+                            <button onclick="answerNataliaQuiz(3, 'goal_4')" class="quiz-option-btn p-4 rounded-2xl bg-navy-900 gold-border text-left hover:border-gold hover:shadow-md transition-all text-xs font-bold text-parchment-50 flex items-start gap-3">
                                 <span class="text-xl">🎓</span>
                                 <div>
-                                    <div class="font-bold text-parchment-50 text-sm">9 класс — сдача ОГЭ в этом году</div>
-                                    <div class="text-[11px] text-slate-300 font-normal mt-0.5">Нужно систематизировать темы, закрыть геометрию и выйти на 4 или 5</div>
+                                    <div class="font-bold text-parchment-50 text-sm">Уверенная «4» и спокойная сдача</div>
+                                    <div class="text-[11px] text-slate-300 font-normal mt-0.5">Закрыть базу алгебры и геометрии в мини-группе (15–21 балл на ОГЭ)</div>
                                 </div>
                             </button>
-                            <button onclick="answerNataliaQuiz(3, 'eight')" class="quiz-option-btn p-4 rounded-2xl bg-navy-900 gold-border text-left hover:border-gold hover:shadow-md transition-all text-xs font-bold text-parchment-50 flex items-start gap-3">
+                            <button onclick="answerNataliaQuiz(3, 'goal_5')" class="quiz-option-btn p-4 rounded-2xl bg-navy-900 gold-border text-left hover:border-gold hover:shadow-md transition-all text-xs font-bold text-parchment-50 flex items-start gap-3">
                                 <span class="text-xl">📐</span>
                                 <div>
-                                    <div class="font-bold text-parchment-50 text-sm">8 класс — подготовка заранее</div>
-                                    <div class="text-[11px] text-slate-300 font-normal mt-0.5">Хотим заранее пройти сложную геометрию и алгебру без стресса перед 9 классом</div>
+                                    <div class="font-bold text-parchment-50 text-sm">Твёрдая «5» + 2-я часть (№20–25)</div>
+                                    <div class="text-[11px] text-slate-300 font-normal mt-0.5">Отработать сложную геометрию и оформление по критериям ФИПИ (22–31 балл)</div>
                                 </div>
                             </button>
                         </div>
@@ -882,13 +893,100 @@
             </section>
             <section id="formats" class="space-y-6">
                 <div class="text-center max-w-xl mx-auto space-y-2">
-                    <span class="text-xs font-bold uppercase tracking-widest text-gold">Форматы сотрудничества</span>
-                    <h2 class="font-serif text-3xl font-bold text-parchment-50">Программы индивидуальной подготовки</h2>
-                    <p class="text-xs text-slate-400">Каждое занятие строится по индивидуальной образовательной траектории</p>
+                    <span class="text-xs font-bold uppercase tracking-widest text-gold">Форматы обучения • Только 9 класс</span>
+                    <h2 class="font-serif text-3xl font-bold text-parchment-50">Подготовка к ОГЭ в мини-группах</h2>
+                    <p class="text-xs text-slate-400">Занятия проходят только в мини-группах 9 класса — системный разбор тем и внимание каждому ученику</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="formatsCards">
                     <!-- Populated by JS -->
+                </div>
+            </section>
+
+            <!-- INTERACTIVE REVIEWS SECTION (ОТЗЫВЫ УЧЕНИКОВ И РОДИТЕЛЕЙ + ФОРМА ОТПРАВКИ) -->
+            <section id="reviews" class="rounded-3xl bg-navy-800 gold-border p-6 sm:p-10 gold-glow space-y-6">
+                <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
+                    <div class="space-y-1">
+                        <span class="text-xs font-bold uppercase tracking-widest text-gold">Обратная связь</span>
+                        <h2 class="font-serif text-2xl sm:text-3xl font-bold text-parchment-50">Отзывы учеников и родителей</h2>
+                        <p class="text-xs sm:text-sm text-slate-300">Поделитесь впечатлениями о мини-группах ОГЭ — отзыв сразу появится на странице, а копию можно переслать Наталье Игоревне</p>
+                    </div>
+                    <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-2xl bg-navy-900 gold-border text-xs font-bold text-parchment-50 shadow-sm self-start sm:self-auto flex-shrink-0">
+                        <span>⭐</span>
+                        <span>Отзывы о занятиях • <span id="reviewsCountBadge" class="text-gold">0</span></span>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+                    <!-- Left: Published Reviews List -->
+                    <div class="lg:col-span-7 space-y-4" id="reviewsListContainer">
+                        <!-- Populated dynamically from localStorage via JS -->
+                    </div>
+
+                    <!-- Right: Leave a Review Form -->
+                    <form id="reviewForm" onsubmit="submitStudentReview(event)" class="lg:col-span-5 rounded-3xl bg-navy-900 gold-border p-5 sm:p-6 shadow-md space-y-4">
+                        <div class="flex items-center justify-between border-b border-gold/20 pb-3">
+                            <div>
+                                <h3 class="font-serif font-bold text-lg text-parchment-50">Оставить отзыв</h3>
+                                <p class="text-[11px] text-slate-400">Для учеников 9 класса и родителей</p>
+                            </div>
+                            <span class="text-xl">💬</span>
+                        </div>
+
+                        <div class="space-y-1">
+                            <label class="block text-xs font-bold text-slate-300">Оценка *</label>
+                            <div class="flex items-center gap-1.5" id="reviewStarPicker">
+                                <button type="button" onclick="setReviewRating(1)" class="review-star-btn text-2xl leading-none transition-transform hover:scale-110" data-star="1">★</button>
+                                <button type="button" onclick="setReviewRating(2)" class="review-star-btn text-2xl leading-none transition-transform hover:scale-110" data-star="2">★</button>
+                                <button type="button" onclick="setReviewRating(3)" class="review-star-btn text-2xl leading-none transition-transform hover:scale-110" data-star="3">★</button>
+                                <button type="button" onclick="setReviewRating(4)" class="review-star-btn text-2xl leading-none transition-transform hover:scale-110" data-star="4">★</button>
+                                <button type="button" onclick="setReviewRating(5)" class="review-star-btn text-2xl leading-none transition-transform hover:scale-110" data-star="5">★</button>
+                                <span id="reviewRatingText" class="text-xs font-bold text-gold ml-2">5 из 5</span>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <div class="space-y-1">
+                                <label class="block text-xs font-bold text-slate-300">Ваше имя *</label>
+                                <input type="text" id="revAuthor" required maxlength="60" placeholder="Например: Максим или мама Елена" class="w-full px-3.5 py-2.5 rounded-xl gold-border text-xs focus:outline-none">
+                            </div>
+                            <div class="space-y-1">
+                                <label class="block text-xs font-bold text-slate-300">Статус</label>
+                                <select id="revRole" class="w-full px-3 py-2.5 rounded-xl gold-border text-xs font-bold focus:outline-none">
+                                    <option value="9 класс • Мини-группа ОГЭ" selected>9 класс • Мини-группа ОГЭ</option>
+                                    <option value="Родитель ученика 9 класса">Родитель 9-классника</option>
+                                    <option value="Выпускник 9 класса (сдал ОГЭ)">Выпускник (сдал ОГЭ)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="space-y-1">
+                            <label class="block text-xs font-bold text-slate-300">Текст отзыва *</label>
+                            <textarea id="revText" required rows="3" maxlength="500" placeholder="Расскажите, что стало понятнее в алгебре и геометрии, как проходят занятия в мини-группе и какой результат на пробниках..." class="w-full px-3.5 py-2.5 rounded-xl gold-border text-xs focus:outline-none resize-y"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-primary w-full py-3.5 rounded-xl font-extrabold text-xs uppercase tracking-wider shadow-lg transition-all flex items-center justify-center gap-2">
+                            <span>Опубликовать отзыв</span>
+                            <i data-lucide="send" class="w-3.5 h-3.5"></i>
+                        </button>
+
+                        <!-- Confirmation & Messenger Handoff Box after submitting -->
+                        <div id="reviewSubmitNotice" class="hidden p-3.5 rounded-2xl bg-emerald-950/40 border border-emerald-500/40 space-y-2.5 text-xs">
+                            <div class="notice-title font-bold text-emerald-300 flex items-center gap-1.5">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 flex-shrink-0"></i>
+                                <span>Спасибо! Отзыв добавлен на страницу.</span>
+                            </div>
+                            <p class="notice-sub text-[11px] text-emerald-200/90 leading-snug">Чтобы Наталья Игоревна увидела ваш отзыв и закрепила его на сайте, отправьте копию в мессенджер:</p>
+                            <div class="flex flex-wrap gap-2">
+                                <a id="revSendTgBtn" href="https://t.me/+79195740214" target="_blank" class="px-3 py-1.5 rounded-xl bg-[#2AABEE] text-white font-bold text-[11px] flex items-center gap-1.5 shadow-sm">
+                                    <i data-lucide="send" class="w-3 h-3"></i> Отправить в Telegram
+                                </a>
+                                <a id="revSendMaxBtn" href="https://max.ru/u/+79195740214" target="_blank" class="px-3 py-1.5 rounded-xl bg-[#0077FF] text-white font-bold text-[11px] flex items-center gap-1.5 shadow-sm">
+                                    В МАКС
+                                </a>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </section>
 
@@ -922,8 +1020,8 @@
                 <div class="p-4 rounded-xl gold-border flex items-start gap-3 text-xs">
                     <i data-lucide="shield-check" class="w-5 h-5 text-gold flex-shrink-0 mt-0.5"></i>
                     <div>
-                        <span class="font-bold text-parchment-50">Индивидуальное согласование:</span>
-                        <span class="text-slate-300">Каждая заявка согласуется преподавателем лично в течение 2 часов. Никаких ночных записей или роботов.</span>
+                        <span class="font-bold text-parchment-50">Личное согласование:</span>
+                        <span class="text-slate-300">Каждая заявка в мини-группу 9 класса согласуется Натальей Игоревной лично в течение 2 часов. Никаких ночных записей или роботов.</span>
                     </div>
                 </div>
 
@@ -960,10 +1058,11 @@
                     
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                         <div class="space-y-1">
-                            <label class="block text-xs font-bold text-slate-300">Класс ученика *</label>
+                            <label class="block text-xs font-bold text-slate-300">9 класс • цель на ОГЭ *</label>
                             <select id="custGrade" class="w-full px-3 py-2.5 rounded-xl gold-border text-xs font-bold focus:outline-none">
-                                <option value="9" selected>9 класс (Сдача ОГЭ 2026)</option>
-                                <option value="8">8 класс (Фундамент и подготовка к ОГЭ)</option>
+                                <option value="9 класс • Мини-группа (ОГЭ на 4–5)" selected>9 класс • Мини-группа (ОГЭ на 4–5)</option>
+                                <option value="9 класс • Мини-группа (геометрия и №20–25)">9 класс • Мини-группа (геометрия и 2-я часть)</option>
+                                <option value="9 класс • Мини-группа (закрыть базу)">9 класс • Мини-группа (закрыть базу от порога)</option>
                             </select>
                         </div>
                         <div class="space-y-1">
@@ -979,7 +1078,7 @@
                     <!-- Messenger Preference (Strict 2-Color Design) -->
                     <div class="space-y-1.5">
                         <label class="block text-xs font-bold text-slate-300">Где удобнее получить подтверждение?</label>
-                        <div class="grid grid-cols-3 gap-2.5">
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
                             <label class="flex items-center justify-center gap-2 p-3 rounded-xl gold-border cursor-pointer transition-all text-xs font-bold hover:border-gold">
                                 <input type="radio" name="custMessenger" value="МАКС" checked class="accent-current text-gold">
                                 <span>МАКС</span>
@@ -1029,17 +1128,17 @@
     <div id="teacherView" class="hidden max-w-4xl mx-auto px-4 py-6 space-y-6">
         
         <!-- Top Teacher Bar -->
-        <div class="flex items-center justify-between bg-navy-900 rounded-3xl p-5 shadow-xl gold-border">
-            <div class="flex items-center gap-3.5">
-                <div class="w-12 h-12 rounded-2xl bg-gold/15 text-gold flex items-center justify-center text-2xl font-bold gold-border">
+        <div class="flex flex-wrap items-center justify-between gap-3 bg-navy-900 rounded-3xl p-5 shadow-xl gold-border">
+            <div class="flex items-center gap-3.5 min-w-0">
+                <div class="w-12 h-12 rounded-2xl bg-gold/15 text-gold flex items-center justify-center text-2xl font-bold gold-border flex-shrink-0">
                     🏛
                 </div>
-                <div>
+                <div class="min-w-0">
                     <h2 class="font-serif font-bold text-xl text-parchment-50">Тетрадка преподавателя — Наталья Игоревна</h2>
-                    <p class="text-xs text-slate-400">Почасовой график, защита от ночных записей и база учеников</p>
+                    <p class="text-xs text-slate-400">Почасовой график мини-групп 9 класса, защита от ночных записей и отзывы</p>
                 </div>
             </div>
-            <div class="flex items-center gap-2">
+            <div class="flex flex-wrap items-center gap-2">
                 <button onclick="openManualAddModal()" class="px-4 py-2 rounded-xl bg-gold hover:bg-gold-dark text-navy-900 font-bold text-xs uppercase tracking-wider flex items-center gap-1.5 shadow-sm transition-all">
                     <i data-lucide="plus" class="w-3.5 h-3.5"></i>
                     <span>+ Записать ученика</span>
@@ -1076,12 +1175,12 @@
 
         <!-- HOURLY TIMELINE (ПОЧАСОВОЙ ГРАФИК 10:00 — 21:00) -->
         <div class="bg-navy-900 rounded-3xl p-6 shadow-xl gold-border space-y-4">
-            <div class="flex items-center justify-between pb-3 border-b border-gold/20">
+            <div class="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-gold/20">
                 <div>
                     <h3 class="font-serif font-bold text-xl text-parchment-50">Почасовой график на день</h3>
                     <p class="text-xs text-gold" id="teacherTimelineDateLabel">16 ноября 2026</p>
                 </div>
-                <div class="flex items-center gap-2 text-xs">
+                <div class="flex flex-wrap items-center gap-2 text-xs">
                     <span class="px-2.5 py-1 rounded-lg bg-emerald-950/60 text-emerald-400 border border-emerald-500/40 font-bold">Свободно</span>
                     <span class="px-2.5 py-1 rounded-lg bg-navy-800 text-gold border border-gold/40 font-bold">Урок</span>
                     <span class="px-2.5 py-1 rounded-lg bg-navy-950 text-slate-500 border border-slate-700 font-bold">Заблокировано</span>
@@ -1095,7 +1194,7 @@
 
         <!-- ALL STUDENTS DATABASE & RECENT BOOKINGS -->
         <div class="bg-navy-900 rounded-3xl p-6 shadow-xl gold-border space-y-4">
-            <div class="flex items-center justify-between pb-3 border-b border-gold/20">
+            <div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-gold/20">
                 <h3 class="font-serif font-bold text-xl text-parchment-50">Все ученики и заявки (<span id="teacherTotalCount">0</span>)</h3>
                 <button onclick="exportTeacherCalendarAll()" class="px-3 py-1.5 rounded-xl bg-gold/20 hover:bg-gold/30 text-gold font-bold text-xs flex items-center gap-1.5 transition-colors">
                     <i data-lucide="calendar" class="w-3.5 h-3.5"></i>
@@ -1104,6 +1203,20 @@
             </div>
 
             <div id="teacherAllBookingsList" class="space-y-2.5">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+
+        <!-- TEACHER REVIEWS MODERATION -->
+        <div class="bg-navy-900 rounded-3xl p-6 shadow-xl gold-border space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-gold/20">
+                <div>
+                    <h3 class="font-serif font-bold text-xl text-parchment-50">Отзывы учеников и родителей (<span id="teacherReviewsCount">0</span>)</h3>
+                    <p class="text-[11px] text-slate-400">Модерация и удаление записей в локальной базе браузера</p>
+                </div>
+            </div>
+
+            <div id="teacherReviewsList" class="space-y-2.5">
                 <!-- Populated by JS -->
             </div>
         </div>
@@ -1148,11 +1261,11 @@
                     <input type="tel" id="manualCustPhone" placeholder="+7..." class="w-full px-3 py-2 bg-navy-800 gold-border rounded-xl text-slate-100">
                 </div>
                 <div>
-                    <label class="font-bold text-slate-300 block mb-1">Программа</label>
+                    <label class="font-bold text-slate-300 block mb-1">Программа (9 класс)</label>
                     <select id="manualCustFormat" class="w-full px-3 py-2 bg-navy-800 gold-border rounded-xl text-slate-100 font-bold">
-                        <option value="Подготовка к ОГЭ (2 500 ₽)">Подготовка к ОГЭ (2 500 ₽)</option>
-                        <option value="ОГЭ: Геометрия без пробелов (2 500 ₽)">ОГЭ: Геометрия без пробелов (2 500 ₽)</option>
-                        <option value="Вводная ОГЭ-диагностика (2 000 ₽)">Вводная ОГЭ-диагностика (2 000 ₽)</option>
+                        <option value="Мини-группа ОГЭ: полный курс (2 500 ₽)">Мини-группа ОГЭ: полный курс (2 500 ₽)</option>
+                        <option value="Мини-группа ОГЭ: геометрия и 2-я часть (2 500 ₽)">Мини-группа ОГЭ: геометрия и 2-я часть (2 500 ₽)</option>
+                        <option value="Вводная ОГЭ-диагностика в мини-группу (2 000 ₽)">Вводная ОГЭ-диагностика в мини-группу (2 000 ₽)</option>
                     </select>
                 </div>
                 <div class="grid grid-cols-2 gap-2">
@@ -1408,24 +1521,24 @@
         // ================= THEME SWITCHER ENGINE =================
         const THEME_DATA = {
             academic: {
-                subtitle: 'Математика без зубрежки. Уверенная сдача ОГЭ',
+                subtitle: 'Математика без зубрежки. Мини-группы 9 класса и сдача ОГЭ',
                 motto: '«Математика — строгая наука, где каждый шаг вытекает из аксиом, а не из случайности»',
-                announcement: '🏛 Понятная математика • Сложные темы ОГЭ простыми словами'
+                announcement: '🏛 Мини-группы 9 класс • Сложные темы ОГЭ простыми словами'
             },
             minimal: {
-                subtitle: 'Инженерная строгость математики и понятная геометрия',
+                subtitle: 'Инженерная строгость математики в мини-группах 9 класса',
                 motto: '«Сложная задача перестаёт быть сложной, если разложить её на систему простых шагов»',
-                announcement: '📐 Школа математической логики • Экспертная подготовка к ОГЭ'
+                announcement: '📐 Мини-группы ОГЭ (9 класс) • Экспертная математика'
             },
             light: {
-                subtitle: 'Уютный академический кабинет. Понятная алгебра и геометрия',
+                subtitle: 'Уютный академический кабинет. Мини-группы 9 класса для сдачи ОГЭ',
                 motto: '«Глубокое понимание рождается из доказательства, а не механического заучивания»',
-                announcement: '📜 Индивидуальные занятия с экспертом • Подготовка к ОГЭ 2026/2027'
+                announcement: '📜 Мини-группы 9 класс с экспертом • Подготовка к ОГЭ'
             },
             emerald: {
-                subtitle: 'Гармония доказательств и уверенная сдача ОГЭ на 4 и 5',
+                subtitle: 'Мини-группы 9 класса и уверенная сдача ОГЭ на 4 и 5',
                 motto: '«Красота геометрического чертежа — в ясности каждой линии и обоснованности шагов»',
-                announcement: '✨ Авторская методика Натальи Дружининой • Сложные задачи ОГЭ простыми словами'
+                announcement: '✨ Мини-группы 9 класс Натальи Дружининой • Сложные задачи ОГЭ простыми словами'
             }
         };
 
@@ -1614,7 +1727,7 @@
             } else {
                 iconEl.innerText = '🛡️';
                 titleEl.innerText = 'Спокойный Аналитик 🌿';
-                descEl.innerText = 'Вы способны отлично решать задачи, когда нет давления и страха перед доской. В уютной индивидуальной атмосфере тревога уйдёт, вернётся уверенность и твёрдая оценка в четверти!';
+                descEl.innerText = 'Вы способны отлично решать задачи, когда нет давления и страха перед доской. В спокойной мини-группе 9 класса тревога уйдёт, вернётся уверенность и твёрдая оценка на ОГЭ!';
             }
 
             resultBox.classList.remove('hidden');
@@ -1670,8 +1783,8 @@
         const TUTOR_PROGRAMS = [
             {
                 id: 'oge_prep',
-                title: 'Полный курс ОГЭ на 4 и 5 (9 класс)',
-                desc: 'Комплексный разбор всей 1-й и сложнейшей 2-й части (№20–25). Алгебра, уравнения, текстовые задачи и геометрия. Уверенная сдача на максимальный балл.',
+                title: 'Мини-группа ОГЭ: полный курс (9 класс)',
+                desc: 'Занятия только в мини-группах 9 класса: полный разбор 1-й и сложнейшей 2-й части (№20–25). Алгебра, уравнения, текстовые задачи и геометрия на 4 и 5.',
                 price: 2500,
                 duration: 60,
                 icon: '🎓',
@@ -1679,8 +1792,8 @@
             },
             {
                 id: 'oge_geometry',
-                title: 'ОГЭ: Геометрия без пробелов (8–9 классы)',
-                desc: 'Ликвидация пробелов в геометрии, гарантия выполнения правила ФИПИ (минимум 2 балла за геометрию), наглядные чертежи и доказательства без зубрежки.',
+                title: 'Мини-группа ОГЭ: геометрия и 2-я часть',
+                desc: 'Закрываем пробелы в геометрии в небольшой команде 9-классников: гарантия порога ФИПИ (от 2 баллов за геометрию) и разбор задач №20–25.',
                 price: 2500,
                 duration: 60,
                 icon: '📐',
@@ -1688,8 +1801,8 @@
             },
             {
                 id: 'diagnostic',
-                title: 'Вводная ОГЭ-диагностика',
-                desc: '60-минутный детальный срез знаний по спецификации ФИПИ. Определение стартового балла (0–31), выявление слабых мест и персональный план подготовки к экзамену.',
+                title: 'Вводная ОГЭ-диагностика в мини-группу',
+                desc: '60-минутный срез знаний по спецификации ФИПИ для 9 класса. Определение стартового балла (0–31), выявление слабых мест и подбор группы.',
                 price: 2000,
                 duration: 60,
                 icon: '🧭',
@@ -1726,7 +1839,7 @@
                     duration: 60,
                     name: 'Константин (9 кл)',
                     phone: '+7 (919) 444-22-11',
-                    format: 'Подготовка к ОГЭ (2 500 ₽)',
+                    format: 'Мини-группа ОГЭ: полный курс (2 500 ₽)',
                     price: 2500,
                     messenger: 'МАКС',
                     isBlocked: false
@@ -1739,7 +1852,7 @@
                     duration: 60,
                     name: 'Елена (мама Софии)',
                     phone: '+7 (908) 555-11-99',
-                    format: 'Академическая диагностика (2 000 ₽)',
+                    format: 'Вводная ОГЭ-диагностика в мини-группу (2 000 ₽)',
                     price: 2000,
                     messenger: 'Telegram',
                     isBlocked: false
@@ -1765,10 +1878,17 @@
             localStorage.setItem('natalia_schedule_v3', JSON.stringify(items));
         }
 
+        function toLocalIso(date) {
+            const y = date.getFullYear();
+            const m = String(date.getMonth() + 1).padStart(2, '0');
+            const day = String(date.getDate()).padStart(2, '0');
+            return `${y}-${m}-${day}`;
+        }
+
         function getIso(offset = 0) {
             const d = new Date();
             d.setDate(d.getDate() + offset);
-            return d.toISOString().split('T')[0];
+            return toLocalIso(d);
         }
 
         function formatRuDate(isoStr) {
@@ -1793,6 +1913,8 @@
             teacherSelectedDateIso = getIso(0);
 
             renderFormatCards();
+            setReviewRating(5);
+            renderReviews();
             renderDaysScroll();
             recomputeSlots();
             populateManualDateDropdowns();
@@ -1802,6 +1924,159 @@
                 grantTeacherMode();
             }
         });
+
+        // ================= STUDENT REVIEWS ENGINE (LOCAL STORAGE + TG/MAX HANDOFF) =================
+        let currentReviewRating = 5;
+
+        function escapeHtml(str) {
+            return String(str || '').replace(/[&<>"']/g, s => ({
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#39;'
+            }[s]));
+        }
+
+        function setReviewRating(stars) {
+            currentReviewRating = stars;
+            document.querySelectorAll('#reviewStarPicker .review-star-btn').forEach(btn => {
+                const s = parseInt(btn.getAttribute('data-star'), 10);
+                if (s <= stars) {
+                    btn.classList.add('text-amber-400');
+                    btn.classList.remove('text-slate-500');
+                } else {
+                    btn.classList.remove('text-amber-400');
+                    btn.classList.add('text-slate-500');
+                }
+            });
+            const labelEl = document.getElementById('reviewRatingText');
+            if (labelEl) labelEl.innerText = `${stars} из 5`;
+        }
+
+        function getReviews() {
+            try {
+                return JSON.parse(localStorage.getItem('natalia_reviews_v1') || '[]');
+            } catch (e) {
+                return [];
+            }
+        }
+
+        function saveReviews(list) {
+            localStorage.setItem('natalia_reviews_v1', JSON.stringify(list));
+        }
+
+        function submitStudentReview(e) {
+            e.preventDefault();
+            const author = document.getElementById('revAuthor').value.trim();
+            const role = document.getElementById('revRole').value;
+            const text = document.getElementById('revText').value.trim();
+            if (!author || !text) return;
+
+            const newReview = {
+                id: Date.now(),
+                author,
+                role,
+                rating: currentReviewRating,
+                text,
+                date: new Date().toLocaleDateString('ru-RU')
+            };
+
+            const list = getReviews();
+            list.unshift(newReview);
+            saveReviews(list);
+            renderReviews();
+            if (isTeacherMode) renderTeacherReviews();
+
+            const starsStr = '★'.repeat(currentReviewRating);
+            const tgMsg = encodeURIComponent(`Здравствуйте, Наталья Игоревна! Отзыв с сайта от ${author} (${role}) — ${starsStr} (${currentReviewRating}/5):\n«${text}»`);
+            const tgBtn = document.getElementById('revSendTgBtn');
+            if (tgBtn) tgBtn.href = `https://t.me/+79195740214?text=${tgMsg}`;
+
+            document.getElementById('reviewForm').reset();
+            setReviewRating(5);
+            document.getElementById('reviewSubmitNotice').classList.remove('hidden');
+            playAcademicChime(659.25, 0.25);
+            if (window.lucide) lucide.createIcons();
+        }
+
+        function deleteReview(id) {
+            if (!confirm('Удалить этот отзыв?')) return;
+            const filtered = getReviews().filter(r => r.id !== id);
+            saveReviews(filtered);
+            renderReviews();
+            renderTeacherReviews();
+        }
+
+        function renderReviews() {
+            const container = document.getElementById('reviewsListContainer');
+            const badge = document.getElementById('reviewsCountBadge');
+            if (!container) return;
+
+            const list = getReviews();
+            if (badge) badge.innerText = list.length;
+
+            if (list.length === 0) {
+                container.innerHTML = `
+                    <div class="p-6 sm:p-8 rounded-3xl bg-navy-900 gold-border text-center space-y-3 shadow-sm">
+                        <div class="w-14 h-14 rounded-2xl bg-gold/15 text-gold mx-auto flex items-center justify-center text-2xl gold-border">🏛</div>
+                        <h3 class="font-serif font-bold text-xl text-parchment-50">Отзывы учеников и родителей уже собираются</h3>
+                        <p class="text-xs sm:text-sm text-slate-300 max-w-md mx-auto leading-relaxed">
+                            Если вы занимаетесь с Натальей Игоревной в мини-группе 9 класса или уже сдали ОГЭ — оставьте отзыв в форме справа. Он сразу появится здесь.
+                        </p>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = list.map(r => {
+                const starsHtml = '★'.repeat(r.rating) + '☆'.repeat(5 - r.rating);
+                return `
+                    <article class="p-5 rounded-3xl bg-navy-900 gold-border shadow-sm space-y-2.5">
+                        <div class="flex flex-wrap items-center justify-between gap-2">
+                            <div class="flex items-center gap-2.5">
+                                <div class="w-9 h-9 rounded-full bg-gold/15 text-gold gold-border font-display font-bold text-sm flex items-center justify-center flex-shrink-0">
+                                    ${escapeHtml(r.author.charAt(0).toUpperCase())}
+                                </div>
+                                <div>
+                                    <div class="font-serif font-bold text-base text-parchment-50 leading-tight">${escapeHtml(r.author)}</div>
+                                    <div class="text-[11px] font-semibold text-gold">${escapeHtml(r.role)}</div>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-amber-400 text-sm tracking-tight leading-none">${starsHtml}</div>
+                                <div class="text-[10px] text-slate-400 mt-1">${escapeHtml(r.date)}</div>
+                            </div>
+                        </div>
+                        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">«${escapeHtml(r.text)}»</p>
+                    </article>
+                `;
+            }).join('');
+        }
+
+        function renderTeacherReviews() {
+            const container = document.getElementById('teacherReviewsList');
+            const badge = document.getElementById('teacherReviewsCount');
+            if (!container) return;
+
+            const list = getReviews();
+            if (badge) badge.innerText = list.length;
+
+            if (list.length === 0) {
+                container.innerHTML = '<div class="p-4 text-center text-xs text-slate-400">Пока нет сохранённых отзывов в этом браузере</div>';
+                return;
+            }
+
+            container.innerHTML = list.map(r => `
+                <div class="p-3.5 rounded-2xl bg-navy-800 gold-border flex flex-wrap items-start justify-between gap-3 text-xs">
+                    <div class="space-y-1 min-w-0">
+                        <div class="font-bold text-parchment-50">${escapeHtml(r.author)} <span class="text-gold">(${escapeHtml(r.role)})</span> • ${'★'.repeat(r.rating)}</div>
+                        <div class="text-slate-300">«${escapeHtml(r.text)}»</div>
+                    </div>
+                    <button onclick="deleteReview(${r.id})" class="px-2.5 py-1 rounded-lg bg-rose-950/60 border border-rose-500/40 text-rose-300 font-bold hover:bg-rose-900/60 flex-shrink-0">Удалить</button>
+                </div>
+            `).join('');
+        }
 
         // 2. FORMATS
         function renderFormatCards() {
@@ -1851,7 +2126,7 @@
             for (let i = 0; i < 14; i++) {
                 const date = new Date();
                 date.setDate(date.getDate() + i);
-                const iso = date.toISOString().split('T')[0];
+                const iso = toLocalIso(date);
                 const dayTitle = i === 0 ? 'Сегодня' : i === 1 ? 'Завтра' : daysOfWeek[date.getDay()];
                 const dayNum = `${date.getDate()} ${months[date.getMonth()]}`;
 
@@ -1882,6 +2157,7 @@
             const dayItems = schedule.filter(b => b.date === selectedDateIso);
 
             let firstValid = null;
+            let selectedIsBlocked = false;
 
             for (let min = WORK_START; min < WORK_END; min += STEP_MIN) {
                 const timeStr = minToTime(min);
@@ -1895,6 +2171,7 @@
                 slotBtn.type = 'button';
 
                 if (isConflict) {
+                    if (selectedTime === timeStr) selectedIsBlocked = true;
                     slotBtn.disabled = true;
                     slotBtn.className = 'py-3 px-2 rounded-xl gold-border opacity-40 text-xs font-semibold cursor-not-allowed line-through text-center';
                     slotBtn.innerHTML = `<div>${timeStr}</div><div class="text-[9px] uppercase tracking-wider font-bold">Занято</div>`;
@@ -1910,7 +2187,7 @@
                 grid.appendChild(slotBtn);
             }
 
-            if (firstValid && (!selectedTime || grid.querySelector('.line-through.btn-primary'))) {
+            if (firstValid && (!selectedTime || selectedIsBlocked)) {
                 selectSlot(firstValid, minToTime(parseInt(firstValid.split(':')[0]) * 60 + LESSON_DURATION));
             } else if (!firstValid) {
                 selectedTime = '';
@@ -1972,13 +2249,13 @@
             recomputeSlots();
 
             document.getElementById('modalSummaryBox').innerHTML = `
-                <div><span class="text-slate-400">Ученик/Родитель:</span> <strong>${name}</strong> (${grade} класс)</div>
+                <div><span class="text-slate-400">Ученик/Родитель:</span> <strong>${escapeHtml(name)}</strong> (${escapeHtml(grade)})</div>
                 <div><span class="text-slate-400">Дата и время:</span> <strong>${formatRuDate(selectedDateIso)} в ${selectedTime}</strong></div>
-                <div><span class="text-slate-400">Программа:</span> ${progObj.title} (${progObj.price} ₽)</div>
-                <div><span class="text-slate-400">Связь для подтверждения:</span> <strong>${messenger}</strong> (${phone})</div>
+                <div><span class="text-slate-400">Программа:</span> ${escapeHtml(progObj.title)} (${progObj.price} ₽)</div>
+                <div><span class="text-slate-400">Связь для подтверждения:</span> <strong>${escapeHtml(messenger)}</strong> (${escapeHtml(phone)})</div>
             `;
 
-            const msg = encodeURIComponent(`Здравствуйте, Наталья Игоревна! Меня зовут ${name}. Оставили заявку на подготовку к ОГЭ:\n- Дата: ${selectedDateIso} в ${selectedTime}\n- Программа: ${progObj.title}\n- Класс: ${grade}\n- Телефон: ${phone}\n- Мессенджер: ${messenger}`);
+            const msg = encodeURIComponent(`Здравствуйте, Наталья Игоревна! Меня зовут ${name}. Оставили заявку в мини-группу 9 класса по подготовке к ОГЭ:\n- Дата: ${selectedDateIso} в ${selectedTime}\n- Программа: ${progObj.title}\n- Цель: ${grade}\n- Телефон: ${phone}\n- Мессенджер: ${messenger}`);
             document.getElementById('tgDirectBtn').href = `https://t.me/+79195740214?text=${msg}`;
             document.getElementById('maxDirectBtn').href = `https://max.ru/u/+79195740214`;
 
@@ -2071,6 +2348,7 @@
             renderTeacherDaysBar();
             renderTeacherTimeline();
             renderTeacherAllBookings();
+            renderTeacherReviews();
             lucide.createIcons();
         }
 
@@ -2084,6 +2362,7 @@
                 cView.classList.add('hidden');
                 btn.innerText = 'Вернуться на сайт';
                 renderTeacherTimeline();
+                renderTeacherReviews();
             } else {
                 tView.classList.add('hidden');
                 cView.classList.remove('hidden');
@@ -2112,7 +2391,7 @@
             for (let i = 0; i < 14; i++) {
                 const date = new Date();
                 date.setDate(date.getDate() + i);
-                const iso = date.toISOString().split('T')[0];
+                const iso = toLocalIso(date);
                 const active = teacherSelectedDateIso === iso;
 
                 const btn = document.createElement('button');
@@ -2168,20 +2447,20 @@
                         income += (booking.price || 0);
                         row.className += ' bg-navy-800 gold-border shadow-md';
                         row.innerHTML = `
-                            <div class="flex items-start sm:items-center gap-3">
-                                <span class="font-display font-bold text-sm text-gold w-16">${timeStr}</span>
-                                <div class="space-y-0.5">
-                                    <div class="flex items-center gap-2">
-                                        <span class="font-serif font-bold text-base text-parchment-50">${booking.name}</span>
-                                        <span class="px-2.5 py-0.5 rounded-full bg-gold/15 text-gold border border-gold/30 text-[10px] font-bold">${booking.format}</span>
+                            <div class="flex items-start sm:items-center gap-3 min-w-0">
+                                <span class="font-display font-bold text-sm text-gold w-16 flex-shrink-0">${timeStr}</span>
+                                <div class="space-y-0.5 min-w-0">
+                                    <div class="flex flex-wrap items-center gap-2">
+                                        <span class="font-serif font-bold text-base text-parchment-50">${escapeHtml(booking.name)}</span>
+                                        <span class="px-2.5 py-0.5 rounded-full bg-gold/15 text-gold border border-gold/30 text-[10px] font-bold">${escapeHtml(booking.format)}</span>
                                     </div>
                                     <div class="text-xs text-slate-400">
-                                        Связь: <strong>${booking.messenger || 'МАКС'}</strong> • Телефон: <strong>${booking.phone}</strong>
+                                        Связь: <strong>${escapeHtml(booking.messenger || 'МАКС')}</strong> • Телефон: <strong>${escapeHtml(booking.phone)}</strong>
                                     </div>
                                 </div>
                             </div>
-                            <div class="flex items-center gap-2 self-start sm:self-auto">
-                                <a href="tel:${booking.phone}" class="px-3 py-1.5 rounded-xl bg-gold hover:bg-gold-dark text-navy-900 text-xs font-bold">Звонок</a>
+                            <div class="flex items-center gap-2 self-start sm:self-auto flex-shrink-0">
+                                <a href="tel:${escapeHtml(booking.phone)}" class="px-3 py-1.5 rounded-xl bg-gold hover:bg-gold-dark text-navy-900 text-xs font-bold">Звонок</a>
                                 <button onclick="deleteBooking(${booking.id})" class="p-1.5 rounded-xl text-rose-400 hover:bg-rose-950/50 text-sm font-bold" title="Отменить">&times;</button>
                             </div>
                         `;
@@ -2258,14 +2537,14 @@
             }
 
             container.innerHTML = schedule.map(b => `
-                <div class="p-4 rounded-xl bg-navy-800 gold-border flex items-start justify-between gap-3 text-xs">
-                    <div>
-                        <div class="font-serif font-bold text-parchment-50 text-base">${b.name} <span class="text-xs text-gold">(${b.grade ? b.grade + ' кл' : ''})</span></div>
-                        <div class="text-slate-300 mt-0.5"><strong>${b.date} в ${b.time}</strong> • ${b.format}</div>
-                        <div class="text-slate-400">Тел: ${b.phone} • Мессенджер: ${b.messenger || 'МАКС'}</div>
+                <div class="p-4 rounded-xl bg-navy-800 gold-border flex flex-wrap items-start justify-between gap-3 text-xs">
+                    <div class="min-w-0">
+                        <div class="font-serif font-bold text-parchment-50 text-base">${escapeHtml(b.name)} ${b.grade ? `<span class="text-xs text-gold">(${escapeHtml(b.grade)})</span>` : ''}</div>
+                        <div class="text-slate-300 mt-0.5"><strong>${escapeHtml(b.date)} в ${escapeHtml(b.time)}</strong> • ${escapeHtml(b.format)}</div>
+                        <div class="text-slate-400">Тел: ${escapeHtml(b.phone)} • Мессенджер: ${escapeHtml(b.messenger || 'МАКС')}</div>
                     </div>
-                    <div class="flex items-center gap-2">
-                        <a href="tel:${b.phone}" class="px-3 py-1.5 rounded-lg bg-gold hover:bg-gold-dark text-navy-900 font-bold">Звонок</a>
+                    <div class="flex items-center gap-2 flex-shrink-0">
+                        <a href="tel:${escapeHtml(b.phone)}" class="px-3 py-1.5 rounded-lg bg-gold hover:bg-gold-dark text-navy-900 font-bold">Звонок</a>
                         <button onclick="deleteBooking(${b.id})" class="p-1 rounded-lg text-rose-400 font-bold">&times;</button>
                     </div>
                 </div>
