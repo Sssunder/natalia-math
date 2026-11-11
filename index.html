@@ -61,163 +61,121 @@
     </script>
     <style>
         /* ==============================================================
-           MULTI-THEME ARCHITECTURE FOR NATALIA DRUZHININA
+           STRICT 2-COLOR DESIGN ARCHITECTURE (Base + Single Accent)
            ============================================================== */
         :root, [data-theme="academic"] {
-            --bg-page: #040910;
-            --bg-header: rgba(7, 14, 24, 0.96);
-            --bg-card: #0D1B2A;
-            --bg-card-hover: #13273E;
-            --bg-elevated: #15263D;
-            --bg-input: #070E18;
-            --text-heading: #FBF9F5;
+            --bg-page: #080D1A;
+            --bg-card: #0E1626;
+            --bg-elevated: #162238;
+            --bg-input: #090F1C;
+            --color-accent: #D4AF37;
+            --color-accent-hover: #E5C158;
+            --color-accent-text: #080D1A;
+            --text-heading: #FFFFFF;
             --text-body: #CBD5E1;
             --text-muted: #94A3B8;
-            --accent: #C5A880;
-            --accent-hover: #D4AF37;
-            --accent-btn: linear-gradient(135deg, #C5A880, #9E7E55);
-            --accent-btn-text: #070E18;
-            --border-color: rgba(197, 168, 128, 0.35);
-            --border-subtle: rgba(197, 168, 128, 0.18);
-            --glow: 0 0 40px -8px rgba(197, 168, 128, 0.18);
+            --border-color: rgba(212, 175, 55, 0.32);
+            --border-subtle: rgba(212, 175, 55, 0.16);
+            --glow: 0 0 35px -8px rgba(212, 175, 55, 0.2);
             --font-heading: "Cormorant Garamond", serif;
             --font-display: "Cinzel", serif;
-            --mesh-bg: radial-gradient(at 80% 10%, rgba(30, 53, 84, 0.7) 0px, transparent 60%),
-                       radial-gradient(at 10% 80%, rgba(13, 27, 42, 0.95) 0px, transparent 60%),
-                       #070E18;
-            --scrollbar-track: #070E18;
-            --scrollbar-thumb: #C5A880;
-            --banner-overlay: linear-gradient(to right, rgba(4, 9, 16, 0.92) 0%, rgba(4, 9, 16, 0.55) 60%, rgba(4, 9, 16, 0.2) 100%);
+            --scrollbar-track: #080D1A;
+            --scrollbar-thumb: #D4AF37;
         }
 
         [data-theme="minimal"] {
-            --bg-page: #09090b;
-            --bg-header: rgba(9, 9, 11, 0.96);
-            --bg-card: #141418;
-            --bg-card-hover: #1b1b22;
-            --bg-elevated: #202028;
-            --bg-input: #101015;
-            --text-heading: #ffffff;
-            --text-body: #d4d4d8;
-            --text-muted: #a1a1aa;
-            --accent: #38bdf8;
-            --accent-hover: #0ea5e9;
-            --accent-btn: linear-gradient(135deg, #0284c7, #2563eb);
-            --accent-btn-text: #ffffff;
-            --border-color: rgba(56, 189, 248, 0.28);
-            --border-subtle: rgba(56, 189, 248, 0.14);
-            --glow: 0 0 35px -8px rgba(56, 189, 248, 0.22);
+            --bg-page: #09090B;
+            --bg-card: #131316;
+            --bg-elevated: #1C1C22;
+            --bg-input: #101014;
+            --color-accent: #2563EB;
+            --color-accent-hover: #3B82F6;
+            --color-accent-text: #FFFFFF;
+            --text-heading: #FFFFFF;
+            --text-body: #D4D4D8;
+            --text-muted: #A1A1AA;
+            --border-color: rgba(37, 99, 235, 0.35);
+            --border-subtle: rgba(37, 99, 235, 0.18);
+            --glow: 0 0 35px -8px rgba(37, 99, 235, 0.25);
             --font-heading: "Plus Jakarta Sans", sans-serif;
             --font-display: "Plus Jakarta Sans", sans-serif;
-            --mesh-bg: linear-gradient(rgba(56, 189, 248, 0.035) 1px, transparent 1px),
-                       linear-gradient(90deg, rgba(56, 189, 248, 0.035) 1px, transparent 1px),
-                       radial-gradient(at 90% 10%, rgba(37, 99, 235, 0.2) 0px, transparent 60%),
-                       #09090b;
-            --scrollbar-track: #09090b;
-            --scrollbar-thumb: #38bdf8;
-            --banner-overlay: linear-gradient(to right, rgba(9, 9, 11, 0.95) 0%, rgba(9, 9, 11, 0.6) 60%, rgba(9, 9, 11, 0.2) 100%);
+            --scrollbar-track: #09090B;
+            --scrollbar-thumb: #2563EB;
         }
 
         [data-theme="light"] {
-            --bg-page: #fbf9f4;
-            --bg-header: rgba(251, 249, 244, 0.96);
-            --bg-card: #ffffff;
-            --bg-card-hover: #fcfbf9;
-            --bg-elevated: #f2ece0;
-            --bg-input: #ffffff;
-            --text-heading: #0f172a;
+            --bg-page: #FBF9F5;
+            --bg-card: #FFFFFF;
+            --bg-elevated: #F5EFE6;
+            --bg-input: #FFFFFF;
+            --color-accent: #B45309;
+            --color-accent-hover: #D97706;
+            --color-accent-text: #FFFFFF;
+            --text-heading: #0F172A;
             --text-body: #334155;
-            --text-muted: #64748b;
-            --accent: #b45309;
-            --accent-hover: #92400e;
-            --accent-btn: linear-gradient(135deg, #b45309, #d97706);
-            --accent-btn-text: #ffffff;
-            --border-color: rgba(180, 83, 9, 0.24);
-            --border-subtle: rgba(180, 83, 9, 0.12);
-            --glow: 0 10px 30px -4px rgba(180, 83, 9, 0.12);
+            --text-muted: #64748B;
+            --border-color: rgba(180, 83, 9, 0.26);
+            --border-subtle: rgba(180, 83, 9, 0.14);
+            --glow: 0 10px 30px -4px rgba(180, 83, 9, 0.1);
             --font-heading: "Cormorant Garamond", serif;
             --font-display: "Cinzel", serif;
-            --mesh-bg: radial-gradient(at 85% 15%, rgba(254, 243, 199, 0.7) 0px, transparent 60%),
-                       radial-gradient(at 15% 85%, rgba(245, 238, 226, 0.9) 0px, transparent 60%),
-                       #fbf9f4;
-            --scrollbar-track: #f2ece0;
-            --scrollbar-thumb: #b45309;
-            --banner-overlay: linear-gradient(to right, rgba(15, 23, 42, 0.92) 0%, rgba(15, 23, 42, 0.55) 60%, rgba(15, 23, 42, 0.2) 100%);
+            --scrollbar-track: #F5EFE6;
+            --scrollbar-thumb: #B45309;
         }
 
         [data-theme="emerald"] {
-            --bg-page: #03140f;
-            --bg-header: rgba(3, 20, 15, 0.96);
-            --bg-card: #07251c;
-            --bg-card-hover: #0b3427;
-            --bg-elevated: #0f4433;
-            --bg-input: #041b14;
-            --text-heading: #f0fdf4;
-            --text-body: #d1fae5;
-            --text-muted: #86efac;
-            --accent: #f59e0b;
-            --accent-hover: #d97706;
-            --accent-btn: linear-gradient(135deg, #f59e0b, #d97706);
-            --accent-btn-text: #03140f;
-            --border-color: rgba(245, 158, 11, 0.32);
-            --border-subtle: rgba(245, 158, 11, 0.16);
-            --glow: 0 0 45px -8px rgba(245, 158, 11, 0.22);
+            --bg-page: #04140E;
+            --bg-card: #082117;
+            --bg-elevated: #0E3325;
+            --bg-input: #051A12;
+            --color-accent: #F59E0B;
+            --color-accent-hover: #FBBF24;
+            --color-accent-text: #04140E;
+            --text-heading: #FFFFFF;
+            --text-body: #D1FAE5;
+            --text-muted: #86EFAC;
+            --border-color: rgba(245, 158, 11, 0.35);
+            --border-subtle: rgba(245, 158, 11, 0.18);
+            --glow: 0 0 40px -8px rgba(245, 158, 11, 0.25);
             --font-heading: "Cormorant Garamond", serif;
             --font-display: "Cinzel", serif;
-            --mesh-bg: radial-gradient(at 85% 15%, rgba(16, 185, 129, 0.22) 0px, transparent 60%),
-                       radial-gradient(at 15% 85%, rgba(245, 158, 11, 0.18) 0px, transparent 60%),
-                       #03140f;
-            --scrollbar-track: #03140f;
-            --scrollbar-thumb: #f59e0b;
-            --banner-overlay: linear-gradient(to right, rgba(3, 20, 15, 0.92) 0%, rgba(3, 20, 15, 0.55) 60%, rgba(3, 20, 15, 0.2) 100%);
+            --scrollbar-track: #04140E;
+            --scrollbar-thumb: #F59E0B;
         }
 
-        /* --- Global Scrollbar & Theme Bindings --- */
+        /* --- Scrollbar --- */
         ::-webkit-scrollbar { width: 6px; height: 6px; }
         ::-webkit-scrollbar-track { background: var(--scrollbar-track); }
         ::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); border-radius: 4px; }
 
+        /* --- Global Bindings --- */
         body {
             background-color: var(--bg-page) !important;
             color: var(--text-body) !important;
-            transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s ease;
+            transition: background-color 0.25s ease, color 0.25s ease;
         }
 
         header {
-            background-color: var(--bg-header) !important;
+            background-color: var(--bg-card) !important;
             border-color: var(--border-subtle) !important;
-            transition: background-color 0.3s ease, border-color 0.3s ease;
-        }
-
-        .academic-mesh {
-            background: var(--mesh-bg) !important;
-            transition: background 0.3s ease;
-        }
-
-        .banner-overlay-grad {
-            background: var(--banner-overlay) !important;
         }
 
         .gold-border {
-            border-color: var(--border-color) !important;
-            transition: border-color 0.3s ease;
+            border: 1px solid var(--border-color) !important;
         }
 
         .gold-glow {
             box-shadow: var(--glow) !important;
-            transition: box-shadow 0.3s ease;
         }
 
         /* Background class mappings */
         .bg-navy-950 { background-color: var(--bg-page) !important; }
-        .bg-navy-900 { background-color: var(--bg-header) !important; }
-        .bg-navy-800 { background-color: var(--bg-card) !important; }
+        .bg-navy-900, .bg-navy-800 { background-color: var(--bg-card) !important; }
         .bg-navy-700 { background-color: var(--bg-elevated) !important; }
 
         /* Text mappings */
-        .text-gold { color: var(--accent) !important; }
-        .text-parchment-50, .text-parchment-100 { color: var(--text-heading) !important; }
-        .text-slate-100 { color: var(--text-heading) !important; }
+        .text-gold { color: var(--color-accent) !important; }
+        .text-parchment-50, .text-parchment-100, .text-slate-100 { color: var(--text-heading) !important; }
         .text-slate-200, .text-slate-300 { color: var(--text-body) !important; }
         .text-slate-400 { color: var(--text-muted) !important; }
 
@@ -225,216 +183,88 @@
             border-color: var(--border-color) !important;
         }
 
-        /* Font mappings */
         .font-serif { font-family: var(--font-heading) !important; }
         .font-display { font-family: var(--font-display) !important; }
 
-        /* Primary CTA button gradient */
+        /* Unified 2-Color Buttons */
+        .btn-primary,
         .bg-gradient-to-r.from-gold.to-gold-dark,
         .bg-gold {
-            background: var(--accent-btn) !important;
-            color: var(--accent-btn-text) !important;
+            background: var(--color-accent) !important;
+            color: var(--color-accent-text) !important;
             border: none !important;
+            font-weight: 800 !important;
         }
-
+        .btn-primary:hover,
         .bg-gold:hover,
         .bg-gradient-to-r.from-gold.to-gold-dark:hover {
-            filter: brightness(1.1);
+            filter: brightness(1.12);
         }
 
-        /* Form inputs & controls */
+        /* Unified Secondary Buttons (Monochrome + Accent Border) */
+        .btn-secondary {
+            background: transparent !important;
+            color: var(--text-heading) !important;
+            border: 1px solid var(--border-color) !important;
+        }
+        .btn-secondary:hover {
+            border-color: var(--color-accent) !important;
+            color: var(--color-accent) !important;
+        }
+
+        /* Form Inputs */
         input, select {
             background-color: var(--bg-input) !important;
             color: var(--text-heading) !important;
-            border-color: var(--border-color) !important;
+            border: 1px solid var(--border-color) !important;
         }
-
         input::placeholder {
             color: var(--text-muted) !important;
             opacity: 0.7;
         }
 
-        #topAnnouncement {
-            background: var(--bg-header) !important;
-            border-color: var(--border-subtle) !important;
-            color: var(--text-heading) !important;
+        /* Photo Overlay Text (Always Ultra High Contrast) */
+        .photo-title {
+            color: #FFFFFF !important;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9) !important;
+        }
+        .photo-subtitle {
+            color: #FDE047 !important;
+            text-shadow: 0 1px 6px rgba(0, 0, 0, 0.9) !important;
         }
 
-        /* Theme switcher buttons styling */
+        /* Light Theme Card Polish */
+        [data-theme="light"] .bg-navy-800,
+        [data-theme="light"] .bg-navy-900,
+        [data-theme="light"] section,
+        [data-theme="light"] .gold-border {
+            box-shadow: 0 4px 18px -2px rgba(0, 0, 0, 0.04) !important;
+        }
+        [data-theme="light"] #pinModal > div,
+        [data-theme="light"] #manualAddModal > div,
+        [data-theme="light"] #confirmModal > div {
+            background-color: #FFFFFF !important;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.2) !important;
+        }
+        [data-theme="light"] #pinModal,
+        [data-theme="light"] #manualAddModal,
+        [data-theme="light"] #confirmModal {
+            background-color: rgba(15, 23, 42, 0.6) !important;
+        }
+
+        /* Theme Switcher Dock */
         .theme-switch-btn {
             color: var(--text-muted);
             border: 1px solid transparent;
         }
         .theme-switch-btn:hover {
             color: var(--text-heading);
-            background: rgba(255, 255, 255, 0.06);
+            background: rgba(255, 255, 255, 0.08);
         }
         .theme-switch-btn.active {
-            background: var(--accent-btn) !important;
-            color: var(--accent-btn-text) !important;
-            box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.35);
-        }
-
-        /* Photo text must always be bright with shadow regardless of theme */
-        .photo-title {
-            color: #ffffff !important;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9) !important;
-        }
-        .photo-subtitle {
-            color: #fde047 !important;
-            text-shadow: 0 1px 6px rgba(0, 0, 0, 0.9) !important;
-        }
-
-        /* ================= LIGHT MODE POLISH & HIGH CONTRAST ================= */
-        [data-theme="light"] {
-            --bg-page: #fbf9f4;
-            --bg-header: rgba(255, 255, 255, 0.98);
-            --bg-card: #ffffff;
-            --bg-card-hover: #fdfbf7;
-            --bg-elevated: #f5ede1;
-            --bg-input: #ffffff;
-            --text-heading: #0f172a;
-            --text-body: #334155;
-            --text-muted: #64748b;
-            --accent: #b45309;
-            --accent-hover: #92400e;
-            --accent-btn: linear-gradient(135deg, #b45309, #d97706);
-            --accent-btn-text: #ffffff;
-            --border-color: rgba(180, 83, 9, 0.22);
-            --glow: 0 10px 30px -4px rgba(180, 83, 9, 0.12);
-        }
-
-        /* Force light background on all navy card variants */
-        [data-theme="light"] .bg-navy-800,
-        [data-theme="light"] .bg-navy-900,
-        [data-theme="light"] [class*="bg-navy-800"],
-        [data-theme="light"] [class*="bg-navy-900"] {
-            background-color: #ffffff !important;
-            border-color: rgba(180, 83, 9, 0.22) !important;
-            box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.05) !important;
-        }
-
-        [data-theme="light"] .bg-navy-700,
-        [data-theme="light"] [class*="bg-navy-700"] {
-            background-color: #fbf5eb !important;
-            border-color: rgba(180, 83, 9, 0.25) !important;
-        }
-
-        /* Force high contrast text in Light Mode */
-        [data-theme="light"] .text-slate-100,
-        [data-theme="light"] .text-parchment-50,
-        [data-theme="light"] .text-parchment-100 {
-            color: #0f172a !important;
-        }
-
-        [data-theme="light"] .text-slate-300,
-        [data-theme="light"] .text-slate-200 {
-            color: #334155 !important;
-        }
-
-        [data-theme="light"] .text-slate-400 {
-            color: #475569 !important;
-        }
-
-        [data-theme="light"] .text-slate-500 {
-            color: #64748b !important;
-        }
-
-        [data-theme="light"] .text-gold {
-            color: #b45309 !important;
-        }
-
-        /* Buttons in Light Mode */
-        [data-theme="light"] .hero-max-btn,
-        [data-theme="light"] a[href*="max.ru"]:not(#maxDirectBtn) {
-            background: #0077FF !important;
-            color: #ffffff !important;
-            border: 1px solid #0066DD !important;
-            box-shadow: 0 4px 12px -2px rgba(0, 119, 255, 0.3) !important;
-        }
-
-        [data-theme="light"] .hero-tg-btn,
-        [data-theme="light"] a[href*="t.me"]:not(#tgDirectBtn) {
-            background: #ffffff !important;
-            color: #0284c7 !important;
-            border: 1px solid rgba(2, 132, 199, 0.35) !important;
-            box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.05) !important;
-        }
-
-        /* Days Scroll & Slots Grid in Light Mode */
-        [data-theme="light"] #daysScroll button {
-            background-color: #ffffff !important;
-            color: #334155 !important;
-            border: 1px solid rgba(180, 83, 9, 0.22) !important;
-        }
-        [data-theme="light"] #daysScroll button.bg-gold {
-            background: linear-gradient(135deg, #b45309, #d97706) !important;
-            color: #ffffff !important;
-            border-color: #b45309 !important;
-        }
-
-        [data-theme="light"] #slotsGrid button:not(:disabled) {
-            background-color: #ffffff !important;
-            color: #334155 !important;
-            border: 1px solid rgba(180, 83, 9, 0.22) !important;
-        }
-        [data-theme="light"] #slotsGrid button.bg-gradient-to-r,
-        [data-theme="light"] #slotsGrid button.bg-gold {
-            background: linear-gradient(135deg, #b45309, #d97706) !important;
-            color: #ffffff !important;
-            border-color: #b45309 !important;
-        }
-        [data-theme="light"] #slotsGrid button:disabled {
-            background-color: #f1f5f9 !important;
-            color: #94a3b8 !important;
-            border-color: #e2e8f0 !important;
-        }
-
-        /* Form inputs in Light Mode */
-        [data-theme="light"] input,
-        [data-theme="light"] select {
-            background-color: #ffffff !important;
-            color: #0f172a !important;
-            border: 1px solid rgba(180, 83, 9, 0.3) !important;
-        }
-
-        [data-theme="light"] label:has(input[name="custMessenger"]) {
-            background-color: #ffffff !important;
-            border: 1px solid rgba(180, 83, 9, 0.22) !important;
-        }
-
-        /* Notice & Guarantee boxes in Light Mode */
-        [data-theme="light"] #slotNotice {
-            background-color: #fef3c7 !important;
-            border: 1px solid #f59e0b !important;
-            color: #92400e !important;
-        }
-
-        [data-theme="light"] .academic-mesh {
-            background: radial-gradient(at 85% 15%, rgba(254, 243, 199, 0.6) 0px, transparent 60%),
-                        radial-gradient(at 15% 85%, rgba(245, 238, 226, 0.8) 0px, transparent 60%),
-                        #ffffff !important;
-        }
-
-        [data-theme="light"] #pinModal > div,
-        [data-theme="light"] #manualAddModal > div,
-        [data-theme="light"] #confirmModal > div {
-            background-color: #ffffff !important;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
-        }
-
-        [data-theme="light"] #pinModal,
-        [data-theme="light"] #manualAddModal,
-        [data-theme="light"] #confirmModal {
-            background-color: rgba(15, 23, 42, 0.65) !important;
-        }
-
-        [data-theme="minimal"] .bg-navy-800 {
-            box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.16), 0 8px 24px -4px rgba(0, 0, 0, 0.4) !important;
-        }
-
-        [data-theme="emerald"] .bg-navy-800 {
-            box-shadow: 0 0 0 1px rgba(245, 158, 11, 0.2), 0 8px 24px -4px rgba(0, 0, 0, 0.4) !important;
+            background: var(--color-accent) !important;
+            color: var(--color-accent-text) !important;
+            font-weight: 800;
         }
     </style>
 </head>
@@ -458,20 +288,20 @@
     </div>
 
     <!-- Top Announcement Bar -->
-    <div id="topAnnouncement" class="bg-gradient-to-r from-navy-900 via-gold-dark to-navy-900 border-b border-gold/30 text-parchment-100 py-2 px-4 text-xs font-semibold text-center tracking-wide flex items-center justify-center gap-2 shadow-sm">
-        <span id="announcementText">🏛 Академическая математика высшей категории • Набор учеников 2026/2027 на профильный ЕГЭ (80+ / 90+)</span>
-        <a href="#booking" class="text-gold font-bold underline hover:text-white ml-1">Записаться на аудит &rarr;</a>
+    <div id="topAnnouncement" class="py-2 px-4 text-xs font-semibold text-center tracking-wide flex items-center justify-center gap-2 border-b gold-border">
+        <span id="announcementText">🏛 Академическая математика • Подготовка к профильному ЕГЭ и ОГЭ 2026/2027</span>
+        <a href="#booking" class="text-gold font-bold underline hover:opacity-80 ml-1">Записаться на аудит &rarr;</a>
     </div>
 
     <!-- CLIENT VIEW CONTAINER -->
     <div id="clientView">
 
         <!-- Top Navigation -->
-        <header class="sticky top-0 z-40 bg-navy-900/95 backdrop-blur-md border-b border-gold/20">
+        <header class="sticky top-0 z-40 backdrop-blur-md border-b gold-border">
             <div class="max-w-5xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
                 <!-- Brand Monogram -->
                 <div class="flex items-center gap-3.5">
-                    <div class="w-12 h-12 rounded-xl gold-border bg-gradient-to-br from-navy-800 to-navy-900 flex items-center justify-center text-gold font-display font-bold text-xl shadow-inner">
+                    <div class="w-12 h-12 rounded-xl gold-border flex items-center justify-center text-gold font-display font-bold text-xl shadow-inner">
                         НД
                     </div>
                     <div>
@@ -488,7 +318,7 @@
                 <div class="flex items-center gap-2.5 sm:gap-3">
                     
                     <!-- Quick Theme Switcher Pill in Header (Desktop) -->
-                    <div class="hidden lg:flex items-center gap-1 px-2.5 py-1.5 rounded-xl gold-border bg-navy-800 text-xs font-semibold shadow-sm">
+                    <div class="hidden lg:flex items-center gap-1 px-2.5 py-1.5 rounded-xl gold-border text-xs font-semibold shadow-sm">
                         <span class="text-gold font-bold flex items-center gap-1 mr-1">
                             <i data-lucide="palette" class="w-3.5 h-3.5"></i>
                             <span>Стиль:</span>
@@ -499,20 +329,19 @@
                         <button onclick="setThemeVariant('emerald')" class="px-2 py-0.5 rounded-lg hover:text-gold transition-colors font-bold" title="Золотое Сечение">✨</button>
                     </div>
 
-                    <!-- MAX Messenger Button -->
-                    <a href="https://max.ru/" target="_blank" title="Написать в МАКС" class="px-3.5 py-2 rounded-xl bg-blue-900/40 hover:bg-blue-900/60 text-[#4CA5FF] border border-[#0077FF]/40 font-bold text-xs flex items-center gap-1.5 transition-all">
-                        <span class="w-2 h-2 rounded-full bg-[#0077FF] animate-pulse"></span>
-                        <span class="hidden sm:inline">МАКС</span>
-                        <span class="text-[10px] font-extrabold sm:hidden">MAX</span>
+                    <!-- Messenger Button (Unified 2-Color Theme) -->
+                    <a href="https://max.ru/" target="_blank" title="Написать в МАКС" class="btn-secondary px-3.5 py-2 rounded-xl font-bold text-xs flex items-center gap-1.5 transition-all">
+                        <span class="w-2 h-2 rounded-full bg-current animate-pulse"></span>
+                        <span>МАКС</span>
                     </a>
 
-                    <!-- Telegram Button -->
-                    <a href="https://t.me/" target="_blank" title="Написать в Telegram" class="px-3.5 py-2 rounded-xl bg-sky-950/40 hover:bg-sky-900/60 text-[#54C2FF] border border-[#2AABEE]/40 font-bold text-xs flex items-center gap-1.5 transition-all">
+                    <!-- Telegram Button (Unified 2-Color Theme) -->
+                    <a href="https://t.me/" target="_blank" title="Написать в Telegram" class="btn-secondary px-3.5 py-2 rounded-xl font-bold text-xs flex items-center gap-1.5 transition-all">
                         <i data-lucide="send" class="w-3.5 h-3.5"></i>
-                        <span class="hidden sm:inline">Telegram</span>
+                        <span>Telegram</span>
                     </a>
 
-                    <a href="#booking" class="px-4 sm:px-5 py-2.5 rounded-xl bg-gradient-to-r from-gold to-gold-dark hover:from-gold-dark hover:to-gold text-navy-900 font-bold text-xs uppercase tracking-wider shadow-md transition-all flex items-center gap-2">
+                    <a href="#booking" class="btn-primary px-4 sm:px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider shadow-md transition-all flex items-center gap-2">
                         <span>Диагностика</span>
                         <i data-lucide="compass" class="w-4 h-4"></i>
                     </a>
@@ -523,18 +352,19 @@
         <main class="max-w-5xl mx-auto px-4 sm:px-6 py-8 space-y-16">
 
             <!-- HERO SECTION WITH CINEMATIC BANNER -->
-            <section class="rounded-3xl academic-mesh gold-border p-6 sm:p-10 gold-glow relative overflow-hidden">
+            <section class="rounded-3xl bg-navy-800 gold-border p-6 sm:p-10 gold-glow relative overflow-hidden">
                 
-                <div class="relative w-full h-48 sm:h-64 rounded-2xl overflow-hidden mb-8 gold-border shadow-2xl">
-                    <img src="assets/hero_banner.jpg" alt="Академический кабинет математики и старинные инструменты" class="w-full h-full object-cover">
-                    <div class="absolute inset-0 banner-overlay-grad flex items-center p-6 sm:p-10">
+                <!-- Inspiring Modern Loft Workspace Banner -->
+                <div class="relative w-full h-52 sm:h-64 rounded-2xl overflow-hidden mb-8 gold-border shadow-2xl">
+                    <img src="assets/hero_banner.jpg" alt="Современное вдохновляющее рабочее пространство и чертежи" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/55 to-transparent flex items-center p-6 sm:p-10">
                         <div class="max-w-lg text-white space-y-2">
-                            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-gold/20 gold-border text-gold text-xs font-semibold tracking-wider">
-                                <i data-lucide="award" class="w-3.5 h-3.5"></i>
+                            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-black/40 border border-white/20 text-white text-xs font-semibold tracking-wider">
+                                <i data-lucide="award" class="w-3.5 h-3.5 text-gold"></i>
                                 <span>15+ лет практики • Высшая категория</span>
                             </div>
-                            <h2 id="heroSubtitle" class="font-serif text-2xl sm:text-3xl font-bold leading-tight text-parchment-50">
-                                Академический подход к подготовке в МГУ, ВШЭ, МФТИ и СПбГУ
+                            <h2 id="heroSubtitle" class="font-serif text-2xl sm:text-3xl font-bold leading-tight !text-white drop-shadow-md">
+                                Математика без зубрежки. Подготовка в сильные вузы
                             </h2>
                         </div>
                     </div>
@@ -545,40 +375,39 @@
                     <!-- Left: Credentials & Pitch -->
                     <div class="lg:col-span-7 space-y-6">
                         <h1 class="font-serif text-3xl sm:text-5xl font-bold text-parchment-50 leading-[1.15] tracking-tight">
-                            Фундаментальная математика для тех, кто целится в 
-                            <span class="text-gold italic font-serif">топ-вузы</span> страны
+                            Понятная математика. Высокие баллы <span class="text-gold italic font-serif">ЕГЭ и ОГЭ</span>
                         </h1>
 
                         <p class="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
-                            Подготовка к профильному ЕГЭ на <strong>80–95+ баллов</strong> и ОГЭ на высший балл. Пошаговое освоение сложнейшей 2-й части: параметры, стереометрия, планиметрия и теория чисел.
+                            Индивидуальные занятия с экспертом высшей категории. Раскладываем сложные задачи 2-й части ЕГЭ на простые логические шаги без хаоса и зубрежки.
                         </p>
 
-                        <!-- Trust Stats Ribbon -->
+                        <!-- Trust Stats Ribbon (Clean 2-Color Architecture) -->
                         <div class="grid grid-cols-3 gap-3 pt-2">
-                            <div class="p-4 rounded-2xl bg-navy-800 gold-border shadow-sm">
+                            <div class="p-4 rounded-2xl bg-navy-700 gold-border shadow-sm">
                                 <div class="font-display text-2xl sm:text-3xl font-bold text-gold">84.6</div>
-                                <div class="text-[11px] text-slate-300 leading-tight mt-1">Средний балл выпускников</div>
+                                <div class="text-[11px] text-slate-300 leading-tight mt-1">Средний балл ЕГЭ</div>
                             </div>
-                            <div class="p-4 rounded-2xl bg-navy-800 gold-border shadow-sm">
+                            <div class="p-4 rounded-2xl bg-navy-700 gold-border shadow-sm">
                                 <div class="font-display text-2xl sm:text-3xl font-bold text-gold">100%</div>
-                                <div class="text-[11px] text-slate-300 leading-tight mt-1">Сдача ОГЭ на 5 и 4</div>
+                                <div class="text-[11px] text-slate-300 leading-tight mt-1">Сдача ОГЭ на 4 и 5</div>
                             </div>
-                            <div class="p-4 rounded-2xl bg-navy-800 gold-border shadow-sm">
+                            <div class="p-4 rounded-2xl bg-navy-700 gold-border shadow-sm">
                                 <div class="font-display text-2xl sm:text-3xl font-bold text-gold">15+</div>
                                 <div class="text-[11px] text-slate-300 leading-tight mt-1">Лет авторского стажа</div>
                             </div>
                         </div>
 
-                        <!-- CTA Buttons -->
+                        <!-- CTA Buttons (Strict 2-Color Alignment) -->
                         <div class="flex flex-wrap items-center gap-3 pt-2">
-                            <a href="#booking" class="px-7 py-4 rounded-xl bg-gradient-to-r from-gold to-gold-dark hover:from-gold-dark hover:to-gold text-navy-900 font-extrabold text-sm uppercase tracking-wider shadow-lg transition-all flex items-center gap-2.5">
+                            <a href="#booking" class="btn-primary px-7 py-4 rounded-xl font-extrabold text-sm uppercase tracking-wider shadow-lg transition-all flex items-center gap-2.5">
                                 <span>Выбрать дату консультации</span>
                                 <i data-lucide="arrow-right" class="w-4 h-4"></i>
                             </a>
-                            <a href="https://max.ru/" target="_blank" class="hero-max-btn px-5 py-4 rounded-xl bg-blue-900/40 gold-border hover:bg-blue-900/70 text-[#4CA5FF] font-bold text-xs flex items-center gap-2 transition-colors">
+                            <a href="https://max.ru/" target="_blank" class="btn-secondary px-5 py-4 rounded-xl font-bold text-xs flex items-center gap-2 transition-colors">
                                 <span>Написать в МАКС</span>
                             </a>
-                            <a href="https://t.me/" target="_blank" class="hero-tg-btn px-5 py-4 rounded-xl bg-navy-800 gold-border hover:bg-navy-700 text-parchment-100 font-semibold text-xs flex items-center gap-2 transition-colors">
+                            <a href="https://t.me/" target="_blank" class="btn-secondary px-5 py-4 rounded-xl font-semibold text-xs flex items-center gap-2 transition-colors">
                                 <span>Telegram</span>
                             </a>
                         </div>
@@ -586,7 +415,7 @@
 
                     <!-- Right: High Authority Portrait -->
                     <div class="lg:col-span-5 flex flex-col items-center">
-                        <div class="relative w-72 sm:w-80 rounded-2xl overflow-hidden gold-border shadow-2xl bg-navy-800">
+                        <div class="relative w-72 sm:w-80 rounded-2xl overflow-hidden gold-border shadow-2xl">
                             <img src="assets/natalia_portrait.jpg" alt="Наталья Дружинина — преподаватель математики" class="w-full h-96 object-cover object-top filter brightness-95 contrast-105">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent flex items-end p-5">
                                 <div>
@@ -603,42 +432,42 @@
                 </div>
             </section>
 
-            <!-- METHODOLOGY -->
+            <!-- METHODOLOGY (3 PUNCHY CARDS, ZERO FLUFF) -->
             <section class="space-y-6">
                 <div class="text-center max-w-xl mx-auto space-y-2">
                     <span class="text-xs font-bold uppercase tracking-widest text-gold">Методический фундамент</span>
-                    <h2 class="font-serif text-3xl font-bold text-parchment-50">Почему результаты учеников стабильно выше средних</h2>
-                    <p class="text-xs text-slate-400">Вместо бездумного прорешивания сборников ФИПИ мы строим глубокий математический аппарат</p>
+                    <h2 class="font-serif text-3xl font-bold text-parchment-50">3 ключа к высокому баллу</h2>
+                    <p class="text-xs text-slate-400">Глубокое понимание логики вместо механического нарешивания тестов</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="p-6 rounded-2xl bg-navy-800 gold-border space-y-3 hover:border-gold transition-colors">
+                    <div class="p-6 rounded-2xl bg-navy-800 gold-border space-y-3 transition-colors">
                         <div class="w-12 h-12 rounded-xl bg-navy-700 gold-border flex items-center justify-center text-gold">
                             <i data-lucide="function-square" class="w-6 h-6"></i>
                         </div>
-                        <h3 class="font-serif font-bold text-xl text-parchment-50">Параметры и нестандартная часть</h3>
+                        <h3 class="font-serif font-bold text-xl text-parchment-50">Параметры (№18)</h3>
                         <p class="text-xs text-slate-300 leading-relaxed font-normal">
-                            Задача №18 (с параметром) даёт 4 первичных балла. Учимся графическому методу и аналитическому исследованию так, что задача становится логичной и понятной.
+                            Графический и аналитический метод исследования. Задача на 4 первичных балла превращается в четкий и понятный алгоритм.
                         </p>
                     </div>
 
-                    <div class="p-6 rounded-2xl bg-navy-800 gold-border space-y-3 hover:border-gold transition-colors">
+                    <div class="p-6 rounded-2xl bg-navy-800 gold-border space-y-3 transition-colors">
                         <div class="w-12 h-12 rounded-xl bg-navy-700 gold-border flex items-center justify-center text-gold">
                             <i data-lucide="box" class="w-6 h-6"></i>
                         </div>
-                        <h3 class="font-serif font-bold text-xl text-parchment-50">Стереометрия без иллюзий</h3>
+                        <h3 class="font-serif font-bold text-xl text-parchment-50">Стереометрия и чертёж</h3>
                         <p class="text-xs text-slate-300 leading-relaxed font-normal">
-                            Построение сечений многогранников, метод координат и векторный аппарат. Ребёнок перестаёт гадать и начинает видеть пространство чертежа.
+                            Построение сечений многогранников, метод координат и векторный аппарат. Ребёнок перестаёт гадать и видит пространство в объеме.
                         </p>
                     </div>
 
-                    <div class="p-6 rounded-2xl bg-navy-800 gold-border space-y-3 hover:border-gold transition-colors">
+                    <div class="p-6 rounded-2xl bg-navy-800 gold-border space-y-3 transition-colors">
                         <div class="w-12 h-12 rounded-xl bg-navy-700 gold-border flex items-center justify-center text-gold">
                             <i data-lucide="shield-check" class="w-6 h-6"></i>
                         </div>
-                        <h3 class="font-serif font-bold text-xl text-parchment-50">Критерии проверки экспертов</h3>
+                        <h3 class="font-serif font-bold text-xl text-parchment-50">Критерии ФИПИ</h3>
                         <p class="text-xs text-slate-300 leading-relaxed font-normal">
-                            Часто верное решение теряет баллы из-за неточной аргументации или отсутствия ОДЗ. Готовим чистовое оформление по строжайшим канонам ФИПИ.
+                            Чистовое оформление по строгим требованиям экспертов. Защита от потери баллов на аргументации и ОДЗ.
                         </p>
                     </div>
                 </div>
@@ -684,11 +513,11 @@
                 </div>
 
                 <!-- Guarantee Alert Box (Teacher confirmation) -->
-                <div class="p-4 rounded-xl bg-navy-900/90 gold-border flex items-start gap-3 text-xs text-slate-300">
+                <div class="p-4 rounded-xl gold-border flex items-start gap-3 text-xs">
                     <i data-lucide="shield-check" class="w-5 h-5 text-gold flex-shrink-0 mt-0.5"></i>
                     <div>
-                        <span class="font-bold text-parchment-50">Принцип индивидуального согласования:</span>
-                        Каждая заявка предварительно согласуется преподавателем лично в течение 2 часов. Никаких ночных записей или автоматических звонков.
+                        <span class="font-bold text-parchment-50">Индивидуальное согласование:</span>
+                        <span class="text-slate-300">Каждая заявка согласуется преподавателем лично в течение 2 часов. Никаких ночных записей или роботов.</span>
                     </div>
                 </div>
 
@@ -714,19 +543,19 @@
                         <!-- Populated by JS -->
                     </div>
 
-                    <div id="slotNotice" class="text-xs text-gold bg-gold/10 gold-border p-3 rounded-2xl flex items-center gap-2.5 mt-3 shadow-sm">
+                    <div id="slotNotice" class="text-xs text-gold gold-border p-3 rounded-2xl flex items-center gap-2.5 mt-3 shadow-sm">
                         <i data-lucide="clock" class="w-4 h-4 text-gold flex-shrink-0"></i>
                         <span id="slotNoticeText">Выбрано: 16:00 (консультация до 17:00)</span>
                     </div>
                 </div>
 
                 <!-- 3. CLIENT INFO & MESSENGER CHOICE -->
-                <form id="bookingForm" onsubmit="submitClientBooking(event)" class="space-y-4 pt-2 border-t border-gold/20">
+                <form id="bookingForm" onsubmit="submitClientBooking(event)" class="space-y-4 pt-2 border-t gold-border">
                     
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                         <div class="space-y-1">
                             <label class="block text-xs font-bold text-slate-300">Класс ученика *</label>
-                            <select id="custGrade" class="w-full px-3 py-2.5 rounded-xl bg-navy-900 gold-border text-xs font-bold text-slate-200 focus:outline-none focus:border-gold">
+                            <select id="custGrade" class="w-full px-3 py-2.5 rounded-xl gold-border text-xs font-bold focus:outline-none">
                                 <option value="8">8 класс</option>
                                 <option value="9">9 класс (ОГЭ)</option>
                                 <option value="10">10 класс (База ЕГЭ)</option>
@@ -735,34 +564,34 @@
                         </div>
                         <div class="space-y-1">
                             <label class="block text-xs font-bold text-slate-300">Имя ученика или родителя *</label>
-                            <input type="text" id="custName" required placeholder="Например: Михаил" class="w-full px-3.5 py-2.5 rounded-xl bg-navy-900 gold-border text-xs text-slate-100 focus:outline-none focus:border-gold">
+                            <input type="text" id="custName" required placeholder="Например: Михаил" class="w-full px-3.5 py-2.5 rounded-xl gold-border text-xs focus:outline-none">
                         </div>
                         <div class="space-y-1">
                             <label class="block text-xs font-bold text-slate-300">Телефон *</label>
-                            <input type="tel" id="custPhone" required placeholder="+7 (999) 000-00-00" class="w-full px-3.5 py-2.5 rounded-xl bg-navy-900 gold-border text-xs text-slate-100 focus:outline-none focus:border-gold">
+                            <input type="tel" id="custPhone" required placeholder="+7 (999) 000-00-00" class="w-full px-3.5 py-2.5 rounded-xl gold-border text-xs focus:outline-none">
                         </div>
                     </div>
 
-                    <!-- Messenger Preference -->
+                    <!-- Messenger Preference (Strict 2-Color Design) -->
                     <div class="space-y-1.5">
-                        <label class="block text-xs font-bold text-slate-300">Где удобнее получить подтверждение и согласовать детали?</label>
+                        <label class="block text-xs font-bold text-slate-300">Где удобнее получить подтверждение?</label>
                         <div class="grid grid-cols-3 gap-2.5">
-                            <label class="flex items-center justify-center gap-2 p-2.5 rounded-xl bg-blue-900/30 gold-border cursor-pointer hover:border-[#0077FF] transition-colors text-xs font-bold text-[#4CA5FF]">
-                                <input type="radio" name="custMessenger" value="МАКС" checked class="accent-[#0077FF]">
-                                <span>МАКС (MAX)</span>
+                            <label class="flex items-center justify-center gap-2 p-3 rounded-xl gold-border cursor-pointer transition-all text-xs font-bold hover:border-gold">
+                                <input type="radio" name="custMessenger" value="МАКС" checked class="accent-current text-gold">
+                                <span>МАКС</span>
                             </label>
-                            <label class="flex items-center justify-center gap-2 p-2.5 rounded-xl bg-sky-950/30 gold-border cursor-pointer hover:border-[#2AABEE] transition-colors text-xs font-bold text-[#54C2FF]">
-                                <input type="radio" name="custMessenger" value="Telegram" class="accent-[#2AABEE]">
+                            <label class="flex items-center justify-center gap-2 p-3 rounded-xl gold-border cursor-pointer transition-all text-xs font-bold hover:border-gold">
+                                <input type="radio" name="custMessenger" value="Telegram" class="accent-current text-gold">
                                 <span>Telegram</span>
                             </label>
-                            <label class="flex items-center justify-center gap-2 p-2.5 rounded-xl bg-navy-900 gold-border cursor-pointer hover:border-gold transition-colors text-xs font-bold text-gold">
-                                <input type="radio" name="custMessenger" value="Звонок" class="accent-gold">
+                            <label class="flex items-center justify-center gap-2 p-3 rounded-xl gold-border cursor-pointer transition-all text-xs font-bold hover:border-gold">
+                                <input type="radio" name="custMessenger" value="Звонок" class="accent-current text-gold">
                                 <span>Звонок</span>
                             </label>
                         </div>
                     </div>
 
-                    <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-gold to-gold-dark hover:from-gold-dark hover:to-gold text-navy-900 font-extrabold text-sm uppercase tracking-wider shadow-lg transition-all flex items-center justify-center gap-2">
+                    <button type="submit" class="btn-primary w-full py-4 rounded-xl font-extrabold text-sm uppercase tracking-wider shadow-lg transition-all flex items-center justify-center gap-2">
                         <span>Зафиксировать заявку на консультацию</span>
                         <i data-lucide="check-circle-2" class="w-5 h-5"></i>
                     </button>
@@ -1209,21 +1038,21 @@
                 const isSelected = selectedProgId === f.id;
                 return `
                     <div onclick="selectProgram('${f.id}')" class="p-7 rounded-2xl bg-navy-800 gold-border cursor-pointer transition-all flex flex-col justify-between relative ${
-                        isSelected ? 'border-2 border-gold shadow-xl ring-2 ring-gold/20' : 'hover:border-gold shadow-sm'
+                        isSelected ? 'ring-2 ring-gold shadow-xl' : 'hover:border-gold shadow-sm'
                     }">
-                        ${f.badge ? `<div class="absolute -top-3 right-6 px-3.5 py-1 rounded-full bg-gold text-navy-900 text-[10px] font-extrabold uppercase tracking-widest">${f.badge}</div>` : ''}
+                        ${f.badge ? `<div class="absolute -top-3 right-6 px-3.5 py-1 rounded-full btn-primary text-[10px] font-extrabold uppercase tracking-widest">${f.badge}</div>` : ''}
                         <div class="space-y-3">
                             <div class="text-3xl">${f.icon}</div>
                             <h3 class="font-serif font-bold text-2xl text-parchment-50">${f.title}</h3>
                             <p class="text-xs text-slate-300 leading-relaxed font-normal">${f.desc}</p>
-                            <div class="pt-2 border-t border-gold/20">
+                            <div class="pt-2 border-t gold-border">
                                 <span class="font-display text-3xl font-bold text-gold">${f.price.toLocaleString('ru-RU')} ₽</span>
                                 <span class="text-[11px] text-slate-400"> / 60 мин</span>
                             </div>
                         </div>
                         <div class="pt-5">
                             <div class="w-full py-3 rounded-xl text-xs font-bold uppercase tracking-wider text-center transition-all ${
-                                isSelected ? 'bg-gold text-navy-900 shadow-md' : 'bg-navy-700 gold-border text-parchment-100 hover:bg-gold hover:text-navy-900'
+                                isSelected ? 'btn-primary shadow-md' : 'btn-secondary'
                             }">
                                 ${isSelected ? '✓ Выбрано' : 'Выбрать программу'}
                             </div>
@@ -1258,7 +1087,7 @@
                 btn.type = 'button';
                 const active = selectedDateIso === iso;
                 btn.className = `flex-shrink-0 px-4 py-3 rounded-xl gold-border text-center transition-all ${
-                    active ? 'bg-gold text-navy-900 font-bold shadow-md' : 'bg-navy-900 text-slate-300 hover:border-gold'
+                    active ? 'btn-primary shadow-md' : 'btn-secondary'
                 }`;
                 btn.innerHTML = `
                     <div class="text-[10px] uppercase font-bold tracking-wider opacity-80">${dayTitle}</div>
@@ -1295,13 +1124,13 @@
 
                 if (isConflict) {
                     slotBtn.disabled = true;
-                    slotBtn.className = 'py-3 px-2 rounded-xl gold-border bg-navy-900/60 text-slate-600 text-xs font-semibold cursor-not-allowed line-through text-center';
-                    slotBtn.innerHTML = `<div>${timeStr}</div><div class="text-[9px] uppercase tracking-wider text-rose-400 font-bold">Занято</div>`;
+                    slotBtn.className = 'py-3 px-2 rounded-xl gold-border opacity-40 text-xs font-semibold cursor-not-allowed line-through text-center';
+                    slotBtn.innerHTML = `<div>${timeStr}</div><div class="text-[9px] uppercase tracking-wider font-bold">Занято</div>`;
                 } else {
                     if (!firstValid) firstValid = timeStr;
                     const isSelected = selectedTime === timeStr;
                     slotBtn.className = `py-3 px-2 rounded-xl gold-border text-center text-xs font-semibold transition-all ${
-                        isSelected ? 'bg-gradient-to-r from-gold to-gold-dark text-navy-900 font-bold shadow-sm' : 'bg-navy-900 text-slate-300 hover:border-gold'
+                        isSelected ? 'btn-primary shadow-sm' : 'btn-secondary'
                     }`;
                     slotBtn.innerHTML = `<div>${timeStr}</div><div class="text-[10px] font-normal opacity-75">до ${endStr}</div>`;
                     slotBtn.onclick = () => selectSlot(timeStr, endStr);
@@ -1309,11 +1138,11 @@
                 grid.appendChild(slotBtn);
             }
 
-            if (firstValid && (!selectedTime || grid.querySelector('.line-through.text-navy-900'))) {
+            if (firstValid && (!selectedTime || grid.querySelector('.line-through.btn-primary'))) {
                 selectSlot(firstValid, minToTime(parseInt(firstValid.split(':')[0]) * 60 + LESSON_DURATION));
             } else if (!firstValid) {
                 selectedTime = '';
-                document.getElementById('slotNotice').className = 'text-xs text-rose-300 bg-rose-950/40 border border-rose-500/40 p-3 rounded-xl flex items-center gap-2 mt-3';
+                document.getElementById('slotNotice').className = 'text-xs gold-border p-3 rounded-xl flex items-center gap-2 mt-3 opacity-80';
                 document.getElementById('slotNoticeText').innerText = 'На выбранный день все часы заняты или закрыты преподавателем. Выберите другой день!';
             }
         }
@@ -1322,12 +1151,12 @@
             selectedTime = timeStr;
             document.querySelectorAll('#slotsGrid button').forEach(b => {
                 if (b.innerText.includes(timeStr) && !b.disabled) {
-                    b.className = 'py-3 px-2 rounded-xl gold-border text-center text-xs font-bold transition-all bg-gradient-to-r from-gold to-gold-dark text-navy-900 shadow-sm';
+                    b.className = 'py-3 px-2 rounded-xl gold-border text-center text-xs font-bold transition-all btn-primary shadow-sm';
                 } else if (!b.disabled) {
-                    b.className = 'py-3 px-2 rounded-xl gold-border text-center text-xs font-semibold transition-all bg-navy-900 text-slate-300 hover:border-gold';
+                    b.className = 'py-3 px-2 rounded-xl gold-border text-center text-xs font-semibold transition-all btn-secondary';
                 }
             });
-            document.getElementById('slotNotice').className = 'text-xs text-gold bg-gold/10 gold-border p-3 rounded-2xl flex items-center gap-2.5 mt-3 shadow-sm';
+            document.getElementById('slotNotice').className = 'text-xs text-gold gold-border p-3 rounded-2xl flex items-center gap-2.5 mt-3 shadow-sm';
             document.getElementById('slotNoticeText').innerText = `Выбрано: ${formatRuDate(selectedDateIso)} в ${timeStr} (консультация до ${endStr})`;
             lucide.createIcons();
         }
