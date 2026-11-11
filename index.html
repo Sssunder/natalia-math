@@ -399,6 +399,28 @@
         [data-theme="light"] #reviewSubmitNotice .notice-sub {
             color: #047857 !important;
         }
+        [data-theme="light"] #teacherView .slot-open-card {
+            background-color: #ECFDF5 !important;
+            border-color: #10B981 !important;
+        }
+        [data-theme="light"] #teacherView .slot-open-label {
+            color: #047857 !important;
+        }
+        [data-theme="light"] #teacherView .slot-closed-card {
+            background-color: #F1F5F9 !important;
+            border-color: #CBD5E1 !important;
+        }
+        [data-theme="light"] #teacherView .slot-closed-badge {
+            background-color: #E2E8F0 !important;
+            color: #475569 !important;
+            border-color: #CBD5E1 !important;
+        }
+        [data-theme="light"] #teacherSaveToast,
+        [data-theme="light"] #teacherSyncBadge {
+            background-color: #ECFDF5 !important;
+            color: #065F46 !important;
+            border-color: #6EE7B7 !important;
+        }
 
         /* Theme Switcher Dock */
         .theme-dock {
@@ -423,17 +445,17 @@
 <body class="bg-navy-950 text-slate-100 font-sans antialiased min-h-screen selection:bg-gold selection:text-navy-900">
 
     <!-- Teacher Admin Floating Sticky Bar when logged in -->
-    <div id="teacherStickyBar" class="hidden sticky top-0 z-50 bg-navy-900 text-gold py-2.5 px-4 text-xs shadow-xl border-b border-gold/30 flex items-center justify-between">
-        <div class="flex items-center gap-2">
-            <span class="w-2.5 h-2.5 rounded-full bg-gold animate-pulse"></span>
-            <span class="font-serif font-bold text-sm text-parchment-50">Кабинет Натальи Игоревны активен</span>
-            <span class="text-slate-400 hidden sm:inline">• Режим управления расписанием</span>
+    <div id="teacherStickyBar" class="hidden sticky top-0 z-50 bg-navy-900 text-gold py-2.5 px-3 sm:px-4 text-xs shadow-xl border-b border-gold/30 flex flex-wrap items-center justify-between gap-2">
+        <div class="flex items-center gap-2 min-w-0">
+            <span class="w-2.5 h-2.5 rounded-full bg-gold animate-pulse flex-shrink-0"></span>
+            <span class="font-serif font-bold text-xs sm:text-sm text-parchment-50 truncate">Кабинет Натальи Игоревны</span>
+            <span class="text-slate-400 hidden sm:inline">• Облачный режим управления</span>
         </div>
-        <div class="flex items-center gap-2">
-            <button onclick="toggleTeacherModeView()" id="toggleViewBtn" class="px-3 py-1 rounded-lg bg-gold/20 hover:bg-gold/30 text-gold font-bold transition-all">
+        <div class="flex items-center gap-2 flex-shrink-0">
+            <button onclick="toggleTeacherModeView()" id="toggleViewBtn" class="px-3 py-1.5 rounded-lg bg-gold/20 hover:bg-gold/30 text-gold font-bold transition-all whitespace-nowrap">
                 Тетрадка преподавателя
             </button>
-            <button onclick="logoutTeacher()" class="px-2.5 py-1 rounded-lg bg-red-950/60 hover:bg-red-900 text-red-300 font-semibold transition-all">
+            <button onclick="logoutTeacher()" class="px-2.5 py-1.5 rounded-lg bg-red-950/60 hover:bg-red-900 text-red-300 font-semibold transition-all">
                 Выйти
             </button>
         </div>
@@ -535,13 +557,13 @@
                     </button>
 
                     <!-- Messenger Button (Apple Pill, Real Phone Link) -->
-                    <a href="https://max.ru/u/+79195740214" target="_blank" title="Написать Наталье Игоревне в МАКС (+7 919 574 02 14)" class="hidden lg:flex btn-secondary px-3.5 py-1.5 rounded-full font-bold text-xs items-center gap-1.5 transition-all shadow-sm active:scale-95">
+                    <a id="headerMaxBtn" href="https://max.ru/u/+79195740214" target="_blank" title="Написать Наталье Игоревне в МАКС (+7 919 574 02 14)" class="hidden lg:flex btn-secondary px-3.5 py-1.5 rounded-full font-bold text-xs items-center gap-1.5 transition-all shadow-sm active:scale-95">
                         <span class="w-2 h-2 rounded-full bg-current animate-pulse"></span>
                         <span>МАКС</span>
                     </a>
 
                     <!-- Telegram Button (Apple Pill, Real Phone Link) -->
-                    <a href="https://t.me/+79195740214" target="_blank" title="Написать Наталье Игоревне в Telegram (+7 919 574 02 14)" class="hidden lg:flex btn-secondary px-3.5 py-1.5 rounded-full font-bold text-xs items-center gap-1.5 transition-all shadow-sm active:scale-95">
+                    <a id="headerTgBtn" href="https://t.me/+79195740214" target="_blank" title="Написать Наталье Игоревне в Telegram (+7 919 574 02 14)" class="hidden lg:flex btn-secondary px-3.5 py-1.5 rounded-full font-bold text-xs items-center gap-1.5 transition-all shadow-sm active:scale-95">
                         <i data-lucide="send" class="w-3.5 h-3.5"></i>
                         <span>Telegram</span>
                     </a>
@@ -567,7 +589,7 @@
                         <div class="max-w-lg text-white space-y-1.5 sm:space-y-2">
                             <div class="inline-flex items-center gap-1.5 px-2.5 sm:px-3.5 py-0.5 sm:py-1 rounded-full bg-black/40 border border-white/20 text-white text-[11px] sm:text-xs font-semibold tracking-wider">
                                 <i data-lucide="award" class="w-3.5 h-3.5 text-gold"></i>
-                                <span>15+ лет практики • Высшая категория</span>
+                                <span id="heroBadgeText">15+ лет практики • Высшая категория</span>
                             </div>
                             <h2 id="heroSubtitle" class="font-serif text-xl sm:text-3xl font-bold leading-tight !text-white drop-shadow-md">
                                 Математика без зубрежки. Уверенная сдача ОГЭ
@@ -581,10 +603,10 @@
                     <!-- Left: Credentials & Pitch -->
                     <div class="lg:col-span-7 space-y-5 sm:space-y-6">
                         <h1 class="font-serif text-2xl sm:text-5xl font-bold text-parchment-50 leading-[1.2] sm:leading-[1.15] tracking-tight">
-                            Сложные темы ОГЭ <span class="text-gold italic font-serif">простыми словами</span>
+                            <span id="heroTitleMain">Сложные темы ОГЭ</span> <span id="heroTitleAccent" class="text-gold italic font-serif">простыми словами</span>
                         </h1>
 
-                        <p class="text-xs sm:text-base text-slate-300 leading-relaxed font-normal">
+                        <p id="heroDescText" class="text-xs sm:text-base text-slate-300 leading-relaxed font-normal">
                             Занятия только в мини-группах для 9 класса с преподавателем высшей категории. Спокойно и по полочкам разбираем алгебру и геометрию для уверенной сдачи ОГЭ на 4 и 5 без паники и стресса.
                         </p>
 
@@ -611,11 +633,11 @@
                                 <i data-lucide="arrow-right" class="w-4 h-4"></i>
                             </a>
                             <div class="flex items-center gap-2 w-full sm:w-auto">
-                                <a href="https://max.ru/u/+79195740214" target="_blank" title="Написать в МАКС (+7 919 574 02 14)" class="btn-secondary flex-1 sm:flex-initial px-4 py-3 sm:px-5 sm:py-4 rounded-xl font-bold text-xs flex items-center justify-center gap-2 transition-colors">
+                                <a id="heroMaxBtn" href="https://max.ru/u/+79195740214" target="_blank" title="Написать в МАКС (+7 919 574 02 14)" class="btn-secondary flex-1 sm:flex-initial px-4 py-3 sm:px-5 sm:py-4 rounded-xl font-bold text-xs flex items-center justify-center gap-2 transition-colors">
                                     <span class="w-2 h-2 rounded-full bg-current animate-pulse"></span>
                                     <span>Написать в МАКС</span>
                                 </a>
-                                <a href="https://t.me/+79195740214" target="_blank" title="Написать в Telegram (+7 919 574 02 14)" class="btn-secondary flex-1 sm:flex-initial px-4 py-3 sm:px-5 sm:py-4 rounded-xl font-semibold text-xs flex items-center justify-center gap-2 transition-colors">
+                                <a id="heroTgBtn" href="https://t.me/+79195740214" target="_blank" title="Написать в Telegram (+7 919 574 02 14)" class="btn-secondary flex-1 sm:flex-initial px-4 py-3 sm:px-5 sm:py-4 rounded-xl font-semibold text-xs flex items-center justify-center gap-2 transition-colors">
                                     <i data-lucide="send" class="w-3.5 h-3.5"></i>
                                     <span>Telegram</span>
                                 </a>
@@ -893,9 +915,9 @@
             </section>
             <section id="formats" class="space-y-6">
                 <div class="text-center max-w-xl mx-auto space-y-2">
-                    <span class="text-xs font-bold uppercase tracking-widest text-gold">Форматы обучения • Только 9 класс</span>
-                    <h2 class="font-serif text-3xl font-bold text-parchment-50">Подготовка к ОГЭ в мини-группах</h2>
-                    <p class="text-xs text-slate-400">Занятия проходят только в мини-группах 9 класса — системный разбор тем и внимание каждому ученику</p>
+                    <span id="formatsTagText" class="text-xs font-bold uppercase tracking-widest text-gold">Форматы обучения • Только 9 класс</span>
+                    <h2 id="formatsTitleText" class="font-serif text-3xl font-bold text-parchment-50">Подготовка к ОГЭ в мини-группах</h2>
+                    <p id="formatsSubtitleText" class="text-xs text-slate-400">Занятия проходят только в мини-группах 9 класса — системный разбор тем и внимание каждому ученику</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="formatsCards">
@@ -909,11 +931,17 @@
                     <div class="space-y-1">
                         <span class="text-xs font-bold uppercase tracking-widest text-gold">Обратная связь</span>
                         <h2 class="font-serif text-2xl sm:text-3xl font-bold text-parchment-50">Отзывы учеников и родителей</h2>
-                        <p class="text-xs sm:text-sm text-slate-300">Поделитесь впечатлениями о мини-группах ОГЭ — отзыв сразу появится на странице, а копию можно переслать Наталье Игоревне</p>
+                        <p class="text-xs sm:text-sm text-slate-300">Поделитесь впечатлениями о мини-группах ОГЭ — отзыв сразу сохранится на сайте и станет виден всем родителям и ученикам</p>
                     </div>
-                    <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-2xl bg-navy-900 gold-border text-xs font-bold text-parchment-50 shadow-sm self-start sm:self-auto flex-shrink-0">
-                        <span>⭐</span>
-                        <span>Отзывы о занятиях • <span id="reviewsCountBadge" class="text-gold">0</span></span>
+                    <div class="flex flex-wrap items-center gap-2 self-start sm:self-auto flex-shrink-0">
+                        <a id="reviewsAvitoLink" href="#" target="_blank" rel="noopener noreferrer" class="hidden btn-secondary px-3.5 py-2 rounded-2xl text-xs font-bold flex items-center gap-1.5 shadow-sm transition-all">
+                            <span>⭐ Отзывы на Авито</span>
+                            <i data-lucide="external-link" class="w-3.5 h-3.5 text-gold"></i>
+                        </a>
+                        <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-2xl bg-navy-900 gold-border text-xs font-bold text-parchment-50 shadow-sm">
+                            <span>⭐</span>
+                            <span>Отзывы • <span id="reviewsCountBadge" class="text-gold">0</span></span>
+                        </div>
                     </div>
                 </div>
 
@@ -1049,7 +1077,7 @@
 
                     <div id="slotNotice" class="text-xs text-gold gold-border p-3 rounded-2xl flex items-center gap-2.5 mt-3 shadow-sm">
                         <i data-lucide="clock" class="w-4 h-4 text-gold flex-shrink-0"></i>
-                        <span id="slotNoticeText">Выбрано: 16:00 (консультация до 17:00)</span>
+                        <span id="slotNoticeText">Загружаем актуальное расписание...</span>
                     </div>
                 </div>
 
@@ -1111,9 +1139,10 @@
                 </div>
 
                 <div class="flex flex-wrap items-center gap-4">
-                    <a href="https://max.ru/u/+79195740214" target="_blank" class="hover:text-[#4CA5FF] transition-colors font-bold flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-current animate-pulse"></span>МАКС (+7 919 574 02 14)</a>
-                    <a href="https://t.me/+79195740214" target="_blank" class="hover:text-gold transition-colors font-bold flex items-center gap-1.5"><i data-lucide="send" class="w-3.5 h-3.5"></i>Telegram (+7 919 574 02 14)</a>
-                    <a href="tel:+79195740214" class="hover:text-gold transition-colors font-bold flex items-center gap-1.5"><span>📞</span>+7 919 574 02 14</a>
+                    <a id="footerMaxLink" href="https://max.ru/u/+79195740214" target="_blank" class="hover:text-[#4CA5FF] transition-colors font-bold flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-current animate-pulse"></span><span>МАКС (+7 919 574 02 14)</span></a>
+                    <a id="footerTgLink" href="https://t.me/+79195740214" target="_blank" class="hover:text-gold transition-colors font-bold flex items-center gap-1.5"><i data-lucide="send" class="w-3.5 h-3.5"></i><span>Telegram (+7 919 574 02 14)</span></a>
+                    <a id="footerPhoneLink" href="tel:+79195740214" class="hover:text-gold transition-colors font-bold flex items-center gap-1.5"><span>📞</span><span>+7 919 574 02 14</span></a>
+                    <a id="footerAvitoLink" href="#" target="_blank" rel="noopener noreferrer" class="hidden hover:text-gold transition-colors font-bold flex items-center gap-1.5"><span>⭐</span><span>Профиль и отзывы на Авито</span></a>
                     <button onclick="requestTeacherAccess()" class="text-slate-500 hover:text-gold flex items-center gap-1 font-semibold transition-colors">
                         <i data-lucide="lock" class="w-3.5 h-3.5"></i>
                         <span>Кабинет Натальи Игоревны</span>
@@ -1124,100 +1153,274 @@
         </main>
     </div>
 
-    <!-- TEACHER NOTEBOOK VIEW (ПОЛНОЦЕННАЯ ТЕТРАДКА НАТАЛЬИ ИГОРЕВНЫ) -->
-    <div id="teacherView" class="hidden max-w-4xl mx-auto px-4 py-6 space-y-6">
+    <!-- TEACHER NOTEBOOK VIEW (ОБЛАЧНЫЙ КАБИНЕТ НАТАЛЬИ ИГОРЕВНЫ) -->
+    <div id="teacherView" class="hidden max-w-4xl mx-auto px-3 sm:px-4 py-5 sm:py-6 space-y-5">
         
         <!-- Top Teacher Bar -->
-        <div class="flex flex-wrap items-center justify-between gap-3 bg-navy-900 rounded-3xl p-5 shadow-xl gold-border">
-            <div class="flex items-center gap-3.5 min-w-0">
-                <div class="w-12 h-12 rounded-2xl bg-gold/15 text-gold flex items-center justify-center text-2xl font-bold gold-border flex-shrink-0">
+        <div class="flex flex-wrap items-center justify-between gap-3 bg-navy-900 rounded-3xl p-4 sm:p-5 shadow-xl gold-border">
+            <div class="flex items-center gap-3 min-w-0">
+                <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-gold/15 text-gold flex items-center justify-center text-2xl font-bold gold-border flex-shrink-0">
                     🏛
                 </div>
                 <div class="min-w-0">
-                    <h2 class="font-serif font-bold text-xl text-parchment-50">Тетрадка преподавателя — Наталья Игоревна</h2>
-                    <p class="text-xs text-slate-400">Почасовой график мини-групп 9 класса, защита от ночных записей и отзывы</p>
+                    <h2 class="font-serif font-bold text-lg sm:text-xl text-parchment-50 leading-tight">Кабинет преподавателя — Наталья Игоревна</h2>
+                    <div class="flex flex-wrap items-center gap-2 mt-0.5">
+                        <p class="text-[11px] sm:text-xs text-slate-400">Все изменения сразу публикуются на сайте для всех учеников</p>
+                        <span id="teacherSyncBadge" class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-950/50 border border-emerald-500/40 text-emerald-400 text-[10px] font-bold">
+                            ✓ Облако подключено
+                        </span>
+                    </div>
                 </div>
             </div>
-            <div class="flex flex-wrap items-center gap-2">
-                <button onclick="openManualAddModal()" class="px-4 py-2 rounded-xl bg-gold hover:bg-gold-dark text-navy-900 font-bold text-xs uppercase tracking-wider flex items-center gap-1.5 shadow-sm transition-all">
+            <div class="flex flex-wrap items-center gap-2 w-full sm:w-auto">
+                <button onclick="openManualAddModal()" class="flex-1 sm:flex-initial px-3.5 py-2 rounded-xl bg-gold hover:bg-gold-dark text-navy-900 font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 shadow-sm transition-all">
                     <i data-lucide="plus" class="w-3.5 h-3.5"></i>
-                    <span>+ Записать ученика</span>
+                    <span>Записать ученика</span>
                 </button>
-                <button onclick="toggleTeacherModeView()" class="px-3 py-2 rounded-xl gold-border text-slate-200 font-bold text-xs hover:bg-navy-800 transition-colors">
+                <button onclick="toggleTeacherModeView()" class="px-3.5 py-2 rounded-xl btn-secondary font-bold text-xs transition-colors">
                     К сайту
                 </button>
             </div>
         </div>
 
-        <!-- Master Day Metrics -->
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-            <div class="p-4 rounded-2xl bg-navy-900 gold-border text-center shadow-sm">
-                <div class="text-xs text-slate-400 font-semibold">Уроков на выбранный день</div>
-                <div id="teacherDayLessonsCount" class="font-display text-2xl font-bold text-gold mt-1">0</div>
-            </div>
-            <div class="p-4 rounded-2xl bg-navy-900 gold-border text-center shadow-sm">
-                <div class="text-xs text-slate-400 font-semibold">Ожидаемая выручка за день</div>
-                <div id="teacherDayIncome" class="font-display text-2xl font-bold text-emerald-400 mt-1">0 ₽</div>
-            </div>
-            <div class="p-4 rounded-2xl bg-navy-900 gold-border text-center shadow-sm">
-                <div class="text-xs text-slate-400 font-semibold">Свободных окон для записи</div>
-                <div id="teacherDayFreeSlots" class="font-display text-2xl font-bold text-parchment-50 mt-1">0</div>
-            </div>
+        <!-- Global Save Feedback Toast -->
+        <div id="teacherSaveToast" class="hidden p-3 rounded-2xl bg-emerald-950/60 border border-emerald-500/40 text-emerald-300 text-xs font-bold flex items-center gap-2">
+            <i data-lucide="check-circle-2" class="w-4 h-4 flex-shrink-0"></i>
+            <span id="teacherSaveToastText">Сохранено в облако!</span>
         </div>
 
-        <!-- Teacher Day Selector (Horizontal Bar) -->
-        <div class="bg-navy-900 rounded-3xl p-5 shadow-xl gold-border space-y-3">
-            <label class="block text-xs font-bold uppercase tracking-wider text-gold">Выберите дату в расписании</label>
-            <div id="teacherDaysBar" class="flex gap-2 overflow-x-auto pb-1">
-                <!-- Populated by JS -->
-            </div>
+        <!-- Cabinet Section Tabs -->
+        <div class="flex flex-wrap gap-2">
+            <button type="button" onclick="switchTeacherTab('slots')" data-teacher-tab="slots" class="teacher-tab-btn px-4 py-2.5 rounded-2xl text-xs font-bold gold-border btn-primary shadow-sm transition-all">
+                🗓 Свободные окна и записи
+            </button>
+            <button type="button" onclick="switchTeacherTab('texts')" data-teacher-tab="texts" class="teacher-tab-btn px-4 py-2.5 rounded-2xl text-xs font-bold gold-border btn-secondary transition-all">
+                ✏️ Тексты, цены и ссылки
+            </button>
+            <button type="button" onclick="switchTeacherTab('reviews')" data-teacher-tab="reviews" class="teacher-tab-btn px-4 py-2.5 rounded-2xl text-xs font-bold gold-border btn-secondary transition-all">
+                ⭐ Отзывы и PIN-код
+            </button>
         </div>
 
-        <!-- HOURLY TIMELINE (ПОЧАСОВОЙ ГРАФИК 10:00 — 21:00) -->
-        <div class="bg-navy-900 rounded-3xl p-6 shadow-xl gold-border space-y-4">
-            <div class="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-gold/20">
-                <div>
-                    <h3 class="font-serif font-bold text-xl text-parchment-50">Почасовой график на день</h3>
-                    <p class="text-xs text-gold" id="teacherTimelineDateLabel">16 ноября 2026</p>
+        <!-- TAB 1: SCHEDULE & SLOTS -->
+        <div id="teacherTabSlots" class="space-y-5">
+            <!-- Master Day Metrics -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <div class="p-4 rounded-2xl bg-navy-900 gold-border text-center shadow-sm">
+                    <div class="text-xs text-slate-400 font-semibold">Уроков на выбранный день</div>
+                    <div id="teacherDayLessonsCount" class="font-display text-2xl font-bold text-gold mt-1">0</div>
                 </div>
-                <div class="flex flex-wrap items-center gap-2 text-xs">
-                    <span class="px-2.5 py-1 rounded-lg bg-emerald-950/60 text-emerald-400 border border-emerald-500/40 font-bold">Свободно</span>
-                    <span class="px-2.5 py-1 rounded-lg bg-navy-800 text-gold border border-gold/40 font-bold">Урок</span>
-                    <span class="px-2.5 py-1 rounded-lg bg-navy-950 text-slate-500 border border-slate-700 font-bold">Заблокировано</span>
+                <div class="p-4 rounded-2xl bg-navy-900 gold-border text-center shadow-sm">
+                    <div class="text-xs text-slate-400 font-semibold">Ожидаемая выручка за день</div>
+                    <div id="teacherDayIncome" class="font-display text-2xl font-bold text-emerald-400 mt-1">0 ₽</div>
+                </div>
+                <div class="p-4 rounded-2xl bg-navy-900 gold-border text-center shadow-sm">
+                    <div class="text-xs text-slate-400 font-semibold">Открытых окон на дату</div>
+                    <div id="teacherDayFreeSlots" class="font-display text-2xl font-bold text-parchment-50 mt-1">0</div>
                 </div>
             </div>
 
-            <div id="teacherTimeline" class="space-y-2.5">
-                <!-- Populated by JS -->
+            <!-- WEEKLY TEMPLATE SCHEDULE (WHITELIST) -->
+            <div class="bg-navy-900 rounded-3xl p-4 sm:p-6 shadow-xl gold-border space-y-4">
+                <div class="flex flex-wrap items-start justify-between gap-2 pb-3 border-b border-gold/20">
+                    <div>
+                        <h3 class="font-serif font-bold text-lg sm:text-xl text-parchment-50">Постоянный недельный график</h3>
+                        <p class="text-xs text-slate-400 mt-0.5">Отметьте только те часы, в которые вы реально свободны для консультаций. Вечера и неотмеченные часы закрыты для записи автоматически.</p>
+                    </div>
+                </div>
+
+                <!-- Weekday Tabs (Mon..Sun) -->
+                <div id="weeklyDowTabs" class="flex flex-wrap gap-1.5">
+                    <!-- Populated by JS -->
+                </div>
+
+                <!-- 12 Hourly Toggles (09:00 .. 20:00) -->
+                <div id="weeklyHoursGrid" class="grid grid-cols-3 sm:grid-cols-6 gap-2">
+                    <!-- Populated by JS -->
+                </div>
+
+                <div class="flex flex-wrap items-center gap-2 pt-1">
+                    <button type="button" onclick="applyWeeklyPreset('daytime')" class="px-3 py-1.5 rounded-xl btn-secondary text-[11px] font-bold transition-all">
+                        ☀ Только дневные (10–14)
+                    </button>
+                    <button type="button" onclick="applyWeeklyPreset('clear')" class="px-3 py-1.5 rounded-xl btn-secondary text-[11px] font-bold transition-all">
+                        ⛔ Закрыть весь этот день недели
+                    </button>
+                </div>
+            </div>
+
+            <!-- Teacher Day Selector (Horizontal Bar) -->
+            <div class="bg-navy-900 rounded-3xl p-4 sm:p-5 shadow-xl gold-border space-y-3">
+                <div class="flex flex-wrap items-center justify-between gap-2">
+                    <label class="block text-xs font-bold uppercase tracking-wider text-gold">Точечная настройка на конкретную дату</label>
+                    <div class="flex flex-wrap items-center gap-1.5">
+                        <button type="button" onclick="runBulkDayAction('close_day')" class="px-2.5 py-1.5 rounded-xl btn-secondary text-[11px] font-bold">⛔ Закрыть весь день</button>
+                        <button type="button" onclick="runBulkDayAction('open_daytime')" class="px-2.5 py-1.5 rounded-xl btn-secondary text-[11px] font-bold">☀ Открыть 10–14</button>
+                        <button type="button" onclick="runBulkDayAction('reset_day')" class="px-2.5 py-1.5 rounded-xl btn-secondary text-[11px] font-bold">↺ По шаблону</button>
+                    </div>
+                </div>
+                <div id="teacherDaysBar" class="flex gap-2 overflow-x-auto pb-1">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+
+            <!-- HOURLY TIMELINE (09:00 — 21:00) -->
+            <div class="bg-navy-900 rounded-3xl p-4 sm:p-6 shadow-xl gold-border space-y-4">
+                <div class="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-gold/20">
+                    <div>
+                        <h3 class="font-serif font-bold text-lg sm:text-xl text-parchment-50">Окна и уроки на дату</h3>
+                        <p class="text-xs text-gold" id="teacherTimelineDateLabel">12 ноября 2026</p>
+                    </div>
+                    <div class="flex flex-wrap items-center gap-1.5 text-[11px]">
+                        <span class="px-2.5 py-1 rounded-lg bg-emerald-950/60 text-emerald-400 border border-emerald-500/40 font-bold">Открыто</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-navy-800 text-gold border border-gold/40 font-bold">Ученик</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-navy-950 text-slate-400 border border-slate-700 font-bold">Закрыто</span>
+                    </div>
+                </div>
+
+                <div id="teacherTimeline" class="space-y-2.5">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+
+            <!-- ALL STUDENTS DATABASE & RECENT BOOKINGS -->
+            <div class="bg-navy-900 rounded-3xl p-4 sm:p-6 shadow-xl gold-border space-y-4">
+                <div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-gold/20">
+                    <h3 class="font-serif font-bold text-lg sm:text-xl text-parchment-50">Все ученики и заявки (<span id="teacherTotalCount">0</span>)</h3>
+                    <button onclick="exportTeacherCalendarAll()" class="px-3 py-1.5 rounded-xl bg-gold/20 hover:bg-gold/30 text-gold font-bold text-xs flex items-center gap-1.5 transition-colors">
+                        <i data-lucide="calendar" class="w-3.5 h-3.5"></i>
+                        <span>В Яндекс.Календарь</span>
+                    </button>
+                </div>
+
+                <div id="teacherAllBookingsList" class="space-y-2.5">
+                    <!-- Populated by JS -->
+                </div>
             </div>
         </div>
 
-        <!-- ALL STUDENTS DATABASE & RECENT BOOKINGS -->
-        <div class="bg-navy-900 rounded-3xl p-6 shadow-xl gold-border space-y-4">
-            <div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-gold/20">
-                <h3 class="font-serif font-bold text-xl text-parchment-50">Все ученики и заявки (<span id="teacherTotalCount">0</span>)</h3>
-                <button onclick="exportTeacherCalendarAll()" class="px-3 py-1.5 rounded-xl bg-gold/20 hover:bg-gold/30 text-gold font-bold text-xs flex items-center gap-1.5 transition-colors">
-                    <i data-lucide="calendar" class="w-3.5 h-3.5"></i>
-                    <span>В Яндекс.Календарь</span>
+        <!-- TAB 2: EDIT SITE TEXTS, PRICES & LINKS -->
+        <div id="teacherTabTexts" class="hidden space-y-5">
+            <form onsubmit="saveTeacherTextsAndConfig(event)" class="bg-navy-900 rounded-3xl p-4 sm:p-6 shadow-xl gold-border space-y-6">
+                <div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-gold/20">
+                    <div>
+                        <h3 class="font-serif font-bold text-xl text-parchment-50">Редактор текстов, цен и контактов</h3>
+                        <p class="text-xs text-slate-400">Меняйте любую формулировку — после нажатия кнопки «Опубликовать» текст обновится у всех посетителей</p>
+                    </div>
+                </div>
+
+                <!-- Hero Texts -->
+                <div class="space-y-3 text-xs">
+                    <div class="font-bold uppercase tracking-wider text-gold text-[11px]">Главный экран и шапка</div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div>
+                            <label class="font-bold text-slate-300 block mb-1">Верхняя полоса объявления</label>
+                            <input type="text" id="cfgAnnouncement" class="w-full px-3 py-2.5 rounded-xl gold-border text-xs">
+                        </div>
+                        <div>
+                            <label class="font-bold text-slate-300 block mb-1">Плашка стажа на фото-баннере</label>
+                            <input type="text" id="cfgHeroBadge" class="w-full px-3 py-2.5 rounded-xl gold-border text-xs">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="font-bold text-slate-300 block mb-1">Заголовок на фото-баннере</label>
+                        <input type="text" id="cfgHeroSubtitle" class="w-full px-3 py-2.5 rounded-xl gold-border text-xs">
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div>
+                            <label class="font-bold text-slate-300 block mb-1">Главный заголовок (начало)</label>
+                            <input type="text" id="cfgHeroTitleMain" class="w-full px-3 py-2.5 rounded-xl gold-border text-xs">
+                        </div>
+                        <div>
+                            <label class="font-bold text-slate-300 block mb-1">Выделение золотом (конец)</label>
+                            <input type="text" id="cfgHeroTitleAccent" class="w-full px-3 py-2.5 rounded-xl gold-border text-xs">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="font-bold text-slate-300 block mb-1">Основной текст под заголовком</label>
+                        <textarea id="cfgHeroDesc" rows="3" class="w-full px-3 py-2.5 rounded-xl gold-border text-xs"></textarea>
+                    </div>
+                    <div>
+                        <label class="font-bold text-slate-300 block mb-1">Девиз под портретом</label>
+                        <input type="text" id="cfgHeroMotto" class="w-full px-3 py-2.5 rounded-xl gold-border text-xs">
+                    </div>
+                </div>
+
+                <!-- Programs & Prices -->
+                <div class="space-y-3 text-xs pt-2 border-t border-gold/20">
+                    <div class="font-bold uppercase tracking-wider text-gold text-[11px]">Программы и стоимость занятий</div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div>
+                            <label class="font-bold text-slate-300 block mb-1">Заголовок раздела программ</label>
+                            <input type="text" id="cfgFormatsTitle" class="w-full px-3 py-2.5 rounded-xl gold-border text-xs">
+                        </div>
+                        <div>
+                            <label class="font-bold text-slate-300 block mb-1">Подзаголовок раздела программ</label>
+                            <input type="text" id="cfgFormatsSubtitle" class="w-full px-3 py-2.5 rounded-xl gold-border text-xs">
+                        </div>
+                    </div>
+                    <div id="cfgProgramsList" class="space-y-3 pt-1">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+                <!-- Contacts & Avito -->
+                <div class="space-y-3 text-xs pt-2 border-t border-gold/20">
+                    <div class="font-bold uppercase tracking-wider text-gold text-[11px]">Контакты и ссылка на отзывы Авито</div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div>
+                            <label class="font-bold text-slate-300 block mb-1">Ссылка на профиль / объявление Авито</label>
+                            <input type="url" id="cfgAvitoUrl" placeholder="https://www.avito.ru/..." class="w-full px-3 py-2.5 rounded-xl gold-border text-xs">
+                            <p class="text-[10px] text-slate-400 mt-1">Как только вставите ссылку Авито — на сайте сразу появится кнопка «Отзывы на Авито»</p>
+                        </div>
+                        <div>
+                            <label class="font-bold text-slate-300 block mb-1">Телефон для отображения</label>
+                            <input type="text" id="cfgPhoneDisplay" class="w-full px-3 py-2.5 rounded-xl gold-border text-xs">
+                        </div>
+                        <div>
+                            <label class="font-bold text-slate-300 block mb-1">Ссылка Telegram</label>
+                            <input type="url" id="cfgTgUrl" class="w-full px-3 py-2.5 rounded-xl gold-border text-xs">
+                        </div>
+                        <div>
+                            <label class="font-bold text-slate-300 block mb-1">Ссылка МАКС</label>
+                            <input type="url" id="cfgMaxUrl" class="w-full px-3 py-2.5 rounded-xl gold-border text-xs">
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" id="cfgPublishBtn" class="btn-primary w-full py-4 rounded-2xl font-extrabold text-xs sm:text-sm uppercase tracking-wider shadow-lg flex items-center justify-center gap-2 transition-all">
+                    <i data-lucide="save" class="w-4 h-4"></i>
+                    <span>Сохранить и опубликовать на сайт</span>
                 </button>
-            </div>
-
-            <div id="teacherAllBookingsList" class="space-y-2.5">
-                <!-- Populated by JS -->
-            </div>
+            </form>
         </div>
 
-        <!-- TEACHER REVIEWS MODERATION -->
-        <div class="bg-navy-900 rounded-3xl p-6 shadow-xl gold-border space-y-4">
-            <div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-gold/20">
-                <div>
-                    <h3 class="font-serif font-bold text-xl text-parchment-50">Отзывы учеников и родителей (<span id="teacherReviewsCount">0</span>)</h3>
-                    <p class="text-[11px] text-slate-400">Модерация и удаление записей в локальной базе браузера</p>
+        <!-- TAB 3: REVIEWS & PIN -->
+        <div id="teacherTabReviews" class="hidden space-y-5">
+            <!-- TEACHER REVIEWS MODERATION -->
+            <div class="bg-navy-900 rounded-3xl p-4 sm:p-6 shadow-xl gold-border space-y-4">
+                <div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-gold/20">
+                    <div>
+                        <h3 class="font-serif font-bold text-lg sm:text-xl text-parchment-50">Отзывы учеников и родителей (<span id="teacherReviewsCount">0</span>)</h3>
+                        <p class="text-[11px] text-slate-400">Облачная база Supabase — удалённый отзыв пропадёт у всех посетителей</p>
+                    </div>
+                </div>
+
+                <div id="teacherReviewsList" class="space-y-2.5">
+                    <!-- Populated by JS -->
                 </div>
             </div>
 
-            <div id="teacherReviewsList" class="space-y-2.5">
-                <!-- Populated by JS -->
+            <!-- CHANGE PIN -->
+            <div class="bg-navy-900 rounded-3xl p-4 sm:p-6 shadow-xl gold-border space-y-3 text-xs">
+                <h3 class="font-serif font-bold text-lg text-parchment-50">Сменить PIN-код входа в кабинет</h3>
+                <p class="text-slate-400">Придумайте свой код (от 4 до 8 цифр), чтобы только вы могли менять расписание и тексты</p>
+                <div class="flex flex-wrap items-center gap-2">
+                    <input type="password" id="newPinInput" maxlength="8" inputmode="numeric" placeholder="Новый PIN (4-8 цифр)" class="flex-1 min-w-[160px] px-3.5 py-2.5 rounded-xl gold-border text-xs">
+                    <button type="button" onclick="changeTeacherPin()" class="btn-primary px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider">
+                        Обновить PIN
+                    </button>
+                </div>
             </div>
         </div>
 
@@ -1231,14 +1434,15 @@
             </div>
             <div>
                 <h3 class="font-serif font-bold text-xl text-parchment-50">Кабинет Натальи</h3>
-                <p class="text-xs text-slate-400 mt-0.5">Введите PIN-код преподавателя (по умолчанию <strong>1234</strong>)</p>
+                <p id="pinModalHint" class="text-xs text-slate-400 mt-0.5">Введите PIN-код преподавателя</p>
             </div>
             <div>
-                <input type="password" id="pinInput" maxlength="4" placeholder="••••" class="w-36 text-center tracking-widest text-2xl font-bold py-2 rounded-xl bg-navy-800 gold-border text-gold focus:outline-none focus:border-gold">
+                <input type="password" id="pinInput" maxlength="8" inputmode="numeric" placeholder="••••" onkeydown="if(event.key==='Enter'){event.preventDefault();verifyPin();}" class="w-40 text-center tracking-widest text-2xl font-bold py-2 rounded-xl bg-navy-800 gold-border text-gold focus:outline-none focus:border-gold">
             </div>
+            <div id="pinErrorMsg" class="hidden text-xs text-rose-400 font-bold"></div>
             <div class="flex gap-2">
                 <button onclick="closePinModal()" class="flex-1 py-2.5 rounded-xl bg-navy-800 text-xs font-bold text-slate-300">Отмена</button>
-                <button onclick="verifyPin()" class="flex-1 py-2.5 rounded-xl bg-gold hover:bg-gold-dark text-xs font-bold text-navy-900 uppercase">Войти</button>
+                <button id="pinSubmitBtn" onclick="verifyPin()" class="flex-1 py-2.5 rounded-xl bg-gold hover:bg-gold-dark text-xs font-bold text-navy-900 uppercase">Войти</button>
             </div>
         </div>
     </div>
@@ -1678,9 +1882,7 @@
             soundEnabled = !soundEnabled;
             const btn = document.getElementById('soundToggleBtn');
             if (btn) {
-                btn.innerHTML = soundEnabled 
-                    ? '<span>🔔</span><span class="hidden sm:inline">Звук</span>' 
-                    : '<span>🔕</span><span class="hidden sm:inline">Без звука</span>';
+                btn.innerHTML = soundEnabled ? '<span>🔔</span>' : '<span>🔕</span>';
             }
             if (soundEnabled) playAcademicChime(659.25, 0.2);
         }
@@ -1779,103 +1981,234 @@
             playAcademicChime(320 + score * 14, 0.05);
         }
 
-        // 1. CONFIG & DATA
-        const TUTOR_PROGRAMS = [
-            {
-                id: 'oge_prep',
-                title: 'Мини-группа ОГЭ: полный курс (9 класс)',
-                desc: 'Занятия только в мини-группах 9 класса: полный разбор 1-й и сложнейшей 2-й части (№20–25). Алгебра, уравнения, текстовые задачи и геометрия на 4 и 5.',
-                price: 2500,
-                duration: 60,
-                icon: '🎓',
-                badge: 'Основной курс'
-            },
-            {
-                id: 'oge_geometry',
-                title: 'Мини-группа ОГЭ: геометрия и 2-я часть',
-                desc: 'Закрываем пробелы в геометрии в небольшой команде 9-классников: гарантия порога ФИПИ (от 2 баллов за геометрию) и разбор задач №20–25.',
-                price: 2500,
-                duration: 60,
-                icon: '📐',
-                badge: 'Ключевой блок'
-            },
-            {
-                id: 'diagnostic',
-                title: 'Вводная ОГЭ-диагностика в мини-группу',
-                desc: '60-минутный срез знаний по спецификации ФИПИ для 9 класса. Определение стартового балла (0–31), выявление слабых мест и подбор группы.',
-                price: 2000,
-                duration: 60,
-                icon: '🧭',
-                badge: null
-            }
-        ];
+        // 1. SUPABASE CLOUD CONFIG & DEFAULT STATE
+        const SUPABASE_URL = 'https://ngsonqwylcwcziwxurkc.supabase.co';
+        const SUPABASE_KEY = 'sb_publishable_yW45_DoFX6OHfZHYYNcStA_tRDiM_z_';
+        const SITE_SLUG = 'natalia-math';
+        const ALL_HOURS = ['09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00'];
+        const LESSON_DURATION = 60;
 
+        const DEFAULT_SITE_CONFIG = {
+            announcement: '🏛 Мини-группы 9 класс • Экспертная подготовка к ОГЭ',
+            hero_badge: '15+ лет практики • Высшая категория',
+            hero_subtitle: 'Математика без зубрежки. Уверенная сдача ОГЭ',
+            hero_title_main: 'Сложные темы ОГЭ',
+            hero_title_accent: 'простыми словами',
+            hero_desc: 'Занятия только в мини-группах для 9 класса с преподавателем высшей категории. Спокойно и по полочкам разбираем алгебру и геометрию для уверенной сдачи ОГЭ на 4 и 5 без паники и стресса.',
+            hero_motto: '«Математика — строгая наука, где каждый шаг вытекает из аксиом, а не из случайности»',
+            formats_tag: 'Форматы обучения • Только 9 класс',
+            formats_title: 'Подготовка к ОГЭ в мини-группах',
+            formats_subtitle: 'Занятия проходят только в мини-группах 9 класса — системный разбор тем и внимание каждому ученику',
+            contacts: {
+                phone_display: '+7 919 574 02 14',
+                phone_raw: '+79195740214',
+                tg_url: 'https://t.me/+79195740214',
+                max_url: 'https://max.ru/u/+79195740214',
+                avito_url: ''
+            },
+            programs: [
+                {
+                    id: 'oge_prep',
+                    title: 'Мини-группа ОГЭ: полный курс (9 класс)',
+                    desc: 'Занятия только в мини-группах 9 класса: полный разбор 1-й и сложнейшей 2-й части (№20–25). Алгебра, уравнения, текстовые задачи и геометрия на 4 и 5.',
+                    price: 2500,
+                    duration: 60,
+                    icon: '🎓',
+                    badge: 'Основной курс'
+                },
+                {
+                    id: 'oge_geometry',
+                    title: 'Мини-группа ОГЭ: геометрия и 2-я часть',
+                    desc: 'Закрываем пробелы в геометрии в небольшой команде 9-классников: гарантия порога ФИПИ (от 2 баллов за геометрию) и разбор задач №20–25.',
+                    price: 2500,
+                    duration: 60,
+                    icon: '📐',
+                    badge: 'Ключевой блок'
+                },
+                {
+                    id: 'diagnostic',
+                    title: 'Вводная ОГЭ-диагностика в мини-группу',
+                    desc: '60-минутный срез знаний по спецификации ФИПИ для 9 класса. Определение стартового балла (0–31), выявление слабых мест и подбор группы.',
+                    price: 2000,
+                    duration: 60,
+                    icon: '🧭',
+                    badge: null
+                }
+            ],
+            // Evenings (15:00-20:00) CLOSED by default as Natalia teaches evening classes!
+            weekly_open_slots: {
+                '0': [],
+                '1': ['10:00', '11:00', '12:00', '13:00', '14:00'],
+                '2': ['10:00', '11:00', '12:00', '13:00', '14:00'],
+                '3': ['10:00', '11:00', '12:00', '13:00', '14:00'],
+                '4': ['10:00', '11:00', '12:00', '13:00', '14:00'],
+                '5': ['10:00', '11:00', '12:00', '13:00', '14:00'],
+                '6': ['11:00', '12:00']
+            }
+        };
+
+        let siteConfig = JSON.parse(JSON.stringify(DEFAULT_SITE_CONFIG));
+        let slotEntries = [];
+        let publicReviews = [];
+        let teacherBookings = [];
+        let teacherPin = '';
+        let selectedWeeklyDow = '1';
+        let activeTeacherTab = 'slots';
         let selectedProgId = 'oge_prep';
         let selectedDateIso = '';
-        let selectedTime = '16:00';
+        let selectedTime = '';
+        let userPickedDateManually = false;
         let isTeacherMode = false;
         let teacherSelectedDateIso = '';
         let lastCreatedBooking = null;
 
-        const WORK_START = 10 * 60; // 10:00
-        const WORK_END = 21 * 60;   // 21:00
-        const LESSON_DURATION = 60;
-        const STEP_MIN = 60;
-
-        function getSchedule() {
-            const data = localStorage.getItem('natalia_schedule_v3');
-            if (data) return JSON.parse(data);
-
-            const today = getIso(0);
-            const tomorrow = getIso(1);
-            const in2days = getIso(2);
-
-            const initial = [
-                {
-                    id: 301,
-                    date: today,
-                    time: '15:00',
-                    startMin: 15 * 60,
-                    duration: 60,
-                    name: 'Константин (9 кл)',
-                    phone: '+7 (919) 444-22-11',
-                    format: 'Мини-группа ОГЭ: полный курс (2 500 ₽)',
-                    price: 2500,
-                    messenger: 'МАКС',
-                    isBlocked: false
-                },
-                {
-                    id: 302,
-                    date: tomorrow,
-                    time: '17:00',
-                    startMin: 17 * 60,
-                    duration: 60,
-                    name: 'Елена (мама Софии)',
-                    phone: '+7 (908) 555-11-99',
-                    format: 'Вводная ОГЭ-диагностика в мини-группу (2 000 ₽)',
-                    price: 2000,
-                    messenger: 'Telegram',
-                    isBlocked: false
-                },
-                {
-                    id: 303,
-                    date: in2days,
-                    time: '11:00',
-                    startMin: 11 * 60,
-                    duration: 60,
-                    name: 'Методический перерыв',
-                    phone: '-',
-                    format: 'Заблокировано',
-                    price: 0,
-                    isBlocked: true
-                }
-            ];
-            localStorage.setItem('natalia_schedule_v3', JSON.stringify(initial));
-            return initial;
+        function safeExternalUrl(url) {
+            const trimmed = String(url || '').trim();
+            return /^https?:\/\//i.test(trimmed) ? trimmed : '';
         }
 
-        function saveSchedule(items) {
-            localStorage.setItem('natalia_schedule_v3', JSON.stringify(items));
+        function mapRpcError(msg) {
+            const m = String(msg || '');
+            if (m.includes('INVALID_PIN')) return 'Неверный PIN-код преподавателя.';
+            if (m.includes('SLOT_TAKEN')) return 'Это время только что заняли. Выберите другое свободное окно.';
+            if (m.includes('SLOT_CLOSED')) return 'Это время закрыто в расписании преподавателя.';
+            if (m.includes('HAS_BOOKING')) return 'Сначала отмените запись ученика на этот час.';
+            if (m.includes('INVALID_NEW_PIN')) return 'PIN-код должен состоять из 4–8 цифр.';
+            if (m.includes('INVALID_CONTACT_INFO')) return 'Укажите корректное имя и номер телефона.';
+            return m || 'Не удалось связаться с сервером расписания.';
+        }
+
+        async function sbRpc(fnName, params = {}) {
+            const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/${fnName}`, {
+                method: 'POST',
+                headers: {
+                    'apikey': SUPABASE_KEY,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(params)
+            });
+            let data = null;
+            try {
+                data = await res.json();
+            } catch (e) {}
+            if (!res.ok) {
+                throw new Error(mapRpcError(data && (data.message || data.hint || data.details)));
+            }
+            return data;
+        }
+
+        function mergeSiteConfig(remoteCfg) {
+            const base = JSON.parse(JSON.stringify(DEFAULT_SITE_CONFIG));
+            if (!remoteCfg || typeof remoteCfg !== 'object') return base;
+            const merged = { ...base, ...remoteCfg };
+            merged.contacts = { ...base.contacts, ...(remoteCfg.contacts || {}) };
+            merged.weekly_open_slots = { ...base.weekly_open_slots, ...(remoteCfg.weekly_open_slots || {}) };
+            if (Array.isArray(remoteCfg.programs) && remoteCfg.programs.length > 0) {
+                merged.programs = remoteCfg.programs.map((p, idx) => ({ ...(base.programs[idx] || {}), ...p }));
+            }
+            return merged;
+        }
+
+        function applySiteConfigToDom() {
+            const c = siteConfig;
+            const setTxt = (id, val) => {
+                const el = document.getElementById(id);
+                if (el && val !== undefined && val !== null) el.innerText = val;
+            };
+            setTxt('announcementText', c.announcement);
+            setTxt('heroBadgeText', c.hero_badge);
+            setTxt('heroSubtitle', c.hero_subtitle);
+            setTxt('heroTitleMain', c.hero_title_main);
+            setTxt('heroTitleAccent', c.hero_title_accent);
+            setTxt('heroDescText', c.hero_desc);
+            setTxt('heroMotto', c.hero_motto);
+            setTxt('formatsTagText', c.formats_tag);
+            setTxt('formatsTitleText', c.formats_title);
+            setTxt('formatsSubtitleText', c.formats_subtitle);
+
+            const contacts = c.contacts || {};
+            const tgUrl = safeExternalUrl(contacts.tg_url) || DEFAULT_SITE_CONFIG.contacts.tg_url;
+            const maxUrl = safeExternalUrl(contacts.max_url) || DEFAULT_SITE_CONFIG.contacts.max_url;
+            const phoneDisplay = contacts.phone_display || DEFAULT_SITE_CONFIG.contacts.phone_display;
+            const phoneDigits = String(contacts.phone_raw || phoneDisplay).replace(/[^\d+]/g, '') || '+79195740214';
+            const avitoUrl = safeExternalUrl(contacts.avito_url);
+
+            ['headerTgBtn', 'heroTgBtn'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.href = tgUrl;
+            });
+            ['headerMaxBtn', 'heroMaxBtn'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.href = maxUrl;
+            });
+            const fMax = document.getElementById('footerMaxLink');
+            if (fMax) {
+                fMax.href = maxUrl;
+                const spans = fMax.querySelectorAll('span');
+                if (spans[1]) spans[1].innerText = `МАКС (${phoneDisplay})`;
+            }
+            const fTg = document.getElementById('footerTgLink');
+            if (fTg) {
+                fTg.href = tgUrl;
+                const sp = fTg.querySelector('span');
+                if (sp) sp.innerText = `Telegram (${phoneDisplay})`;
+            }
+            const fPhone = document.getElementById('footerPhoneLink');
+            if (fPhone) {
+                fPhone.href = `tel:${phoneDigits}`;
+                const spans = fPhone.querySelectorAll('span');
+                if (spans[1]) spans[1].innerText = phoneDisplay;
+            }
+            ['reviewsAvitoLink', 'footerAvitoLink'].forEach(id => {
+                const el = document.getElementById(id);
+                if (!el) return;
+                if (avitoUrl) {
+                    el.href = avitoUrl;
+                    el.classList.remove('hidden');
+                } else {
+                    el.href = '#';
+                    el.classList.add('hidden');
+                }
+            });
+
+            renderFormatCards();
+            populateManualProgramOptions();
+        }
+
+        function pickInitialAvailableDate() {
+            for (let i = 0; i < 14; i++) {
+                const iso = getIso(i);
+                const info = getDaySlotsInfo(iso);
+                if (info.some(s => s.publicStatus === 'free')) {
+                    return iso;
+                }
+            }
+            return getIso(0);
+        }
+
+        async function loadPublicSiteBundle() {
+            try {
+                const bundle = await sbRpc('get_public_site_bundle', { p_slug: SITE_SLUG });
+                if (bundle && bundle.site && bundle.site.config) {
+                    siteConfig = mergeSiteConfig(bundle.site.config);
+                }
+                if (Array.isArray(bundle.slot_entries)) {
+                    slotEntries = bundle.slot_entries;
+                }
+                if (Array.isArray(bundle.reviews)) {
+                    publicReviews = bundle.reviews;
+                }
+                if (!userPickedDateManually) {
+                    selectedDateIso = pickInitialAvailableDate();
+                }
+                applySiteConfigToDom();
+                renderReviews();
+                renderDaysScroll();
+                recomputeSlots();
+                if (window.lucide) lucide.createIcons();
+            } catch (err) {
+                console.warn('Offline fallback mode:', err.message);
+            }
         }
 
         function toLocalIso(date) {
@@ -1905,14 +2238,67 @@
             return `${h}:${m}`;
         }
 
+        function getDaySlotsInfo(dateIso) {
+            const parts = dateIso.split('-').map(Number);
+            const d = new Date(parts[0], parts[1] - 1, parts[2]);
+            const dow = String(d.getDay());
+            const weeklyList = (siteConfig.weekly_open_slots && siteConfig.weekly_open_slots[dow]) || [];
+            const weeklySet = new Set(weeklyList);
+            const activeSource = (isTeacherMode && teacherPin) ? teacherBookings : slotEntries;
+            const dayEntries = activeSource.filter(e => e.date === dateIso);
+
+            const now = new Date();
+            const todayIso = toLocalIso(now);
+            const nowMin = now.getHours() * 60 + now.getMinutes();
+
+            return ALL_HOURS.map(timeStr => {
+                const startMin = parseInt(timeStr.split(':')[0], 10) * 60;
+                const entry = dayEntries.find(e => e.time === timeStr) || null;
+                const isWeeklyOpen = weeklySet.has(timeStr);
+                const isOpenOverride = !!(entry && entry.entryType === 'open_override');
+                const isBlocked = !!(entry && entry.entryType === 'blocked');
+                const isBooked = !!(entry && entry.entryType === 'booking');
+                const isAllowed = isWeeklyOpen || isOpenOverride;
+                const isPastToday = (dateIso === todayIso) && (startMin <= nowMin);
+
+                let teacherStatus = 'closed_weekly';
+                if (isBooked) teacherStatus = 'booked';
+                else if (isBlocked) teacherStatus = 'blocked';
+                else if (isAllowed) teacherStatus = 'open';
+
+                let publicStatus = 'hidden';
+                if (isBooked) {
+                    publicStatus = 'busy';
+                } else if (isBlocked) {
+                    publicStatus = 'hidden';
+                } else if (isAllowed) {
+                    publicStatus = isPastToday ? 'hidden' : 'free';
+                }
+
+                return {
+                    timeStr,
+                    endStr: minToTime(startMin + LESSON_DURATION),
+                    startMin,
+                    entry,
+                    isWeeklyOpen,
+                    isOpenOverride,
+                    isBlocked,
+                    isBooked,
+                    isPastToday,
+                    teacherStatus,
+                    publicStatus
+                };
+            });
+        }
+
         // --- INIT ---
-        document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('DOMContentLoaded', async () => {
             initTheme();
             loadSavedPortrait();
-            selectedDateIso = getIso(0);
+            selectedDateIso = pickInitialAvailableDate();
             teacherSelectedDateIso = getIso(0);
 
-            renderFormatCards();
+            applySiteConfigToDom();
             setReviewRating(5);
             renderReviews();
             renderDaysScroll();
@@ -1920,8 +2306,13 @@
             populateManualDateDropdowns();
             lucide.createIcons();
 
-            if (window.location.hash === '#admin' || window.location.hash === '#master' || sessionStorage.getItem('natalia_teacher_auth') === 'true') {
-                grantTeacherMode();
+            await loadPublicSiteBundle();
+
+            const savedPin = sessionStorage.getItem('natalia_teacher_pin');
+            if (savedPin) {
+                await attemptAutoTeacherLogin(savedPin);
+            } else if (window.location.hash === '#admin' || window.location.hash === '#master') {
+                requestTeacherAccess();
             }
         });
 
@@ -1955,57 +2346,81 @@
         }
 
         function getReviews() {
-            try {
-                return JSON.parse(localStorage.getItem('natalia_reviews_v1') || '[]');
-            } catch (e) {
-                return [];
-            }
+            return Array.isArray(publicReviews) ? publicReviews : [];
         }
 
-        function saveReviews(list) {
-            localStorage.setItem('natalia_reviews_v1', JSON.stringify(list));
-        }
-
-        function submitStudentReview(e) {
+        async function submitStudentReview(e) {
             e.preventDefault();
             const author = document.getElementById('revAuthor').value.trim();
             const role = document.getElementById('revRole').value;
             const text = document.getElementById('revText').value.trim();
-            if (!author || !text) return;
+            if (!author || text.length < 3) {
+                alert('Пожалуйста, напишите имя и отзыв (минимум 3 символа).');
+                return;
+            }
 
-            const newReview = {
-                id: Date.now(),
-                author,
-                role,
-                rating: currentReviewRating,
-                text,
-                date: new Date().toLocaleDateString('ru-RU')
-            };
+            const btn = e.target.querySelector('button[type="submit"]');
+            const prevBtnHtml = btn ? btn.innerHTML : '';
+            if (btn) {
+                btn.disabled = true;
+                btn.innerHTML = '<span>Отправляем...</span>';
+            }
 
-            const list = getReviews();
-            list.unshift(newReview);
-            saveReviews(list);
-            renderReviews();
-            if (isTeacherMode) renderTeacherReviews();
+            try {
+                const res = await sbRpc('create_public_review', {
+                    p_slug: SITE_SLUG,
+                    p_author: author,
+                    p_role: role,
+                    p_rating: currentReviewRating,
+                    p_text: text,
+                    p_created_date: new Date().toLocaleDateString('ru-RU')
+                });
+                if (res && res.review) {
+                    publicReviews.unshift(res.review);
+                } else {
+                    await loadPublicSiteBundle();
+                }
+                renderReviews();
+                if (isTeacherMode) renderTeacherReviews();
 
-            const starsStr = '★'.repeat(currentReviewRating);
-            const tgMsg = encodeURIComponent(`Здравствуйте, Наталья Игоревна! Отзыв с сайта от ${author} (${role}) — ${starsStr} (${currentReviewRating}/5):\n«${text}»`);
-            const tgBtn = document.getElementById('revSendTgBtn');
-            if (tgBtn) tgBtn.href = `https://t.me/+79195740214?text=${tgMsg}`;
+                const starsStr = '★'.repeat(currentReviewRating);
+                const tgMsg = encodeURIComponent(`Здравствуйте, Наталья Игоревна! Отзыв с сайта от ${author} (${role}) — ${starsStr} (${currentReviewRating}/5):\n«${text}»`);
+                const baseTg = safeExternalUrl((siteConfig.contacts || {}).tg_url) || 'https://t.me/+79195740214';
+                const tgBtn = document.getElementById('revSendTgBtn');
+                if (tgBtn) tgBtn.href = `${baseTg}${baseTg.includes('?') ? '&' : '?'}text=${tgMsg}`;
+                const maxBtn = document.getElementById('revSendMaxBtn');
+                const baseMax = safeExternalUrl((siteConfig.contacts || {}).max_url);
+                if (maxBtn && baseMax) maxBtn.href = baseMax;
 
-            document.getElementById('reviewForm').reset();
-            setReviewRating(5);
-            document.getElementById('reviewSubmitNotice').classList.remove('hidden');
-            playAcademicChime(659.25, 0.25);
-            if (window.lucide) lucide.createIcons();
+                document.getElementById('reviewForm').reset();
+                setReviewRating(5);
+                document.getElementById('reviewSubmitNotice').classList.remove('hidden');
+                playAcademicChime(659.25, 0.25);
+                if (window.lucide) lucide.createIcons();
+            } catch (err) {
+                alert('Не удалось сохранить отзыв: ' + err.message);
+            } finally {
+                if (btn) {
+                    btn.disabled = false;
+                    btn.innerHTML = prevBtnHtml;
+                    if (window.lucide) lucide.createIcons();
+                }
+            }
         }
 
-        function deleteReview(id) {
-            if (!confirm('Удалить этот отзыв?')) return;
-            const filtered = getReviews().filter(r => r.id !== id);
-            saveReviews(filtered);
-            renderReviews();
-            renderTeacherReviews();
+        async function deleteReview(id) {
+            if (!confirm('Удалить этот отзыв с сайта для всех посетителей?')) return;
+            try {
+                const data = await sbRpc('admin_delete_review', {
+                    p_slug: SITE_SLUG,
+                    p_pin: teacherPin,
+                    p_review_id: Number(id)
+                });
+                applyAdminPayload(data);
+                showTeacherToast('Отзыв удалён');
+            } catch (err) {
+                alert('Ошибка удаления отзыва: ' + err.message);
+            }
         }
 
         function renderReviews() {
@@ -2022,7 +2437,7 @@
                         <div class="w-14 h-14 rounded-2xl bg-gold/15 text-gold mx-auto flex items-center justify-center text-2xl gold-border">🏛</div>
                         <h3 class="font-serif font-bold text-xl text-parchment-50">Отзывы учеников и родителей уже собираются</h3>
                         <p class="text-xs sm:text-sm text-slate-300 max-w-md mx-auto leading-relaxed">
-                            Если вы занимаетесь с Натальей Игоревной в мини-группе 9 класса или уже сдали ОГЭ — оставьте отзыв в форме справа. Он сразу появится здесь.
+                            Если вы занимаетесь с Натальей Игоревной в мини-группе 9 класса или уже сдали ОГЭ — оставьте отзыв в форме справа. Он сразу сохранится на сайте для всех.
                         </p>
                     </div>
                 `;
@@ -2036,7 +2451,7 @@
                         <div class="flex flex-wrap items-center justify-between gap-2">
                             <div class="flex items-center gap-2.5">
                                 <div class="w-9 h-9 rounded-full bg-gold/15 text-gold gold-border font-display font-bold text-sm flex items-center justify-center flex-shrink-0">
-                                    ${escapeHtml(r.author.charAt(0).toUpperCase())}
+                                    ${escapeHtml(String(r.author || '').charAt(0).toUpperCase())}
                                 </div>
                                 <div>
                                     <div class="font-serif font-bold text-base text-parchment-50 leading-tight">${escapeHtml(r.author)}</div>
@@ -2063,7 +2478,7 @@
             if (badge) badge.innerText = list.length;
 
             if (list.length === 0) {
-                container.innerHTML = '<div class="p-4 text-center text-xs text-slate-400">Пока нет сохранённых отзывов в этом браузере</div>';
+                container.innerHTML = '<div class="p-4 text-center text-xs text-slate-400">Пока нет опубликованных отзывов</div>';
                 return;
             }
 
@@ -2073,7 +2488,7 @@
                         <div class="font-bold text-parchment-50">${escapeHtml(r.author)} <span class="text-gold">(${escapeHtml(r.role)})</span> • ${'★'.repeat(r.rating)}</div>
                         <div class="text-slate-300">«${escapeHtml(r.text)}»</div>
                     </div>
-                    <button onclick="deleteReview(${r.id})" class="px-2.5 py-1 rounded-lg bg-rose-950/60 border border-rose-500/40 text-rose-300 font-bold hover:bg-rose-900/60 flex-shrink-0">Удалить</button>
+                    <button onclick="deleteReview(${Number(r.id)})" class="px-2.5 py-1 rounded-lg bg-rose-950/60 border border-rose-500/40 text-rose-300 font-bold hover:bg-rose-900/60 flex-shrink-0">Удалить</button>
                 </div>
             `).join('');
         }
@@ -2081,20 +2496,22 @@
         // 2. FORMATS
         function renderFormatCards() {
             const container = document.getElementById('formatsCards');
-            container.innerHTML = TUTOR_PROGRAMS.map(f => {
+            const progs = Array.isArray(siteConfig.programs) ? siteConfig.programs : [];
+            container.innerHTML = progs.map(f => {
                 const isSelected = selectedProgId === f.id;
+                const priceNum = Number(f.price || 0);
                 return `
-                    <div onclick="selectProgram('${f.id}')" class="p-7 rounded-2xl bg-navy-800 gold-border cursor-pointer transition-all flex flex-col justify-between relative ${
+                    <div onclick="selectProgram('${escapeHtml(f.id)}')" class="p-7 rounded-2xl bg-navy-800 gold-border cursor-pointer transition-all flex flex-col justify-between relative ${
                         isSelected ? 'ring-2 ring-gold shadow-xl' : 'hover:border-gold shadow-sm'
                     }">
-                        ${f.badge ? `<div class="absolute -top-3 right-6 px-3.5 py-1 rounded-full btn-primary text-[10px] font-extrabold uppercase tracking-widest">${f.badge}</div>` : ''}
+                        ${f.badge ? `<div class="absolute -top-3 right-6 px-3.5 py-1 rounded-full btn-primary text-[10px] font-extrabold uppercase tracking-widest">${escapeHtml(f.badge)}</div>` : ''}
                         <div class="space-y-3">
-                            <div class="text-3xl">${f.icon}</div>
-                            <h3 class="font-serif font-bold text-2xl text-parchment-50">${f.title}</h3>
-                            <p class="text-xs text-slate-300 leading-relaxed font-normal">${f.desc}</p>
+                            <div class="text-3xl">${escapeHtml(f.icon || '🎓')}</div>
+                            <h3 class="font-serif font-bold text-2xl text-parchment-50">${escapeHtml(f.title)}</h3>
+                            <p class="text-xs text-slate-300 leading-relaxed font-normal">${escapeHtml(f.desc)}</p>
                             <div class="pt-2 border-t gold-border">
-                                <span class="font-display text-3xl font-bold text-gold">${f.price.toLocaleString('ru-RU')} ₽</span>
-                                <span class="text-[11px] text-slate-400"> / 60 мин</span>
+                                <span class="font-display text-3xl font-bold text-gold">${priceNum.toLocaleString('ru-RU')} ₽</span>
+                                <span class="text-[11px] text-slate-400"> / ${Number(f.duration || 60)} мин</span>
                             </div>
                         </div>
                         <div class="pt-5">
@@ -2122,6 +2539,13 @@
             container.innerHTML = '';
             const daysOfWeek = ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'];
             const months = ['янв', 'фев', 'мар', 'апр', 'мая', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'];
+            const fullMonths = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'];
+
+            if (selectedDateIso) {
+                const sp = selectedDateIso.split('-').map(Number);
+                const mEl = document.getElementById('currentSelectedMonth');
+                if (mEl && sp.length === 3) mEl.innerText = `${fullMonths[sp[1] - 1]} ${sp[0]}`;
+            }
 
             for (let i = 0; i < 14; i++) {
                 const date = new Date();
@@ -2129,18 +2553,22 @@
                 const iso = toLocalIso(date);
                 const dayTitle = i === 0 ? 'Сегодня' : i === 1 ? 'Завтра' : daysOfWeek[date.getDay()];
                 const dayNum = `${date.getDate()} ${months[date.getMonth()]}`;
+                const freeCount = getDaySlotsInfo(iso).filter(s => s.publicStatus === 'free').length;
 
                 const btn = document.createElement('button');
                 btn.type = 'button';
                 const active = selectedDateIso === iso;
-                btn.className = `flex-shrink-0 px-4 py-3 rounded-xl gold-border text-center transition-all ${
-                    active ? 'btn-primary shadow-md' : 'btn-secondary'
+                btn.className = `flex-shrink-0 px-4 py-2.5 rounded-xl gold-border text-center transition-all ${
+                    active ? 'btn-primary shadow-md' : (freeCount > 0 ? 'btn-secondary' : 'btn-secondary opacity-55')
                 }`;
+                const badgeText = freeCount > 0 ? `${freeCount} окн.` : 'нет окон';
                 btn.innerHTML = `
                     <div class="text-[10px] uppercase font-bold tracking-wider opacity-80">${dayTitle}</div>
                     <div class="text-xs font-bold mt-0.5">${dayNum}</div>
+                    <div class="text-[9px] font-bold mt-1 ${active ? 'opacity-90' : (freeCount > 0 ? 'text-gold' : 'opacity-65')}">${badgeText}</div>
                 `;
                 btn.onclick = () => {
+                    userPickedDateManually = true;
                     selectedDateIso = iso;
                     renderDaysScroll();
                     recomputeSlots();
@@ -2149,50 +2577,49 @@
             }
         }
 
-        // 4. SMART SLOTS
+        // 4. SMART SLOTS (WHITELIST + OVERRIDES)
         function recomputeSlots() {
             const grid = document.getElementById('slotsGrid');
             grid.innerHTML = '';
-            const schedule = getSchedule();
-            const dayItems = schedule.filter(b => b.date === selectedDateIso);
+            const dayInfo = getDaySlotsInfo(selectedDateIso);
+            const visibleSlots = dayInfo.filter(s => s.publicStatus === 'free' || s.publicStatus === 'busy');
 
             let firstValid = null;
-            let selectedIsBlocked = false;
+            let selectedStillValid = false;
 
-            for (let min = WORK_START; min < WORK_END; min += STEP_MIN) {
-                const timeStr = minToTime(min);
-                const endStr = minToTime(min + LESSON_DURATION);
-                
-                const isConflict = dayItems.some(b => {
-                    return Math.max(min, b.startMin) < Math.min(min + LESSON_DURATION, b.startMin + b.duration);
-                });
-
+            visibleSlots.forEach(slot => {
                 const slotBtn = document.createElement('button');
                 slotBtn.type = 'button';
 
-                if (isConflict) {
-                    if (selectedTime === timeStr) selectedIsBlocked = true;
+                if (slot.publicStatus === 'busy') {
                     slotBtn.disabled = true;
                     slotBtn.className = 'py-3 px-2 rounded-xl gold-border opacity-40 text-xs font-semibold cursor-not-allowed line-through text-center';
-                    slotBtn.innerHTML = `<div>${timeStr}</div><div class="text-[9px] uppercase tracking-wider font-bold">Занято</div>`;
+                    slotBtn.innerHTML = `<div>${slot.timeStr}</div><div class="text-[9px] uppercase tracking-wider font-bold">Занято</div>`;
                 } else {
-                    if (!firstValid) firstValid = timeStr;
-                    const isSelected = selectedTime === timeStr;
+                    if (!firstValid) firstValid = slot.timeStr;
+                    if (selectedTime === slot.timeStr) selectedStillValid = true;
+                    const isSelected = selectedTime === slot.timeStr;
                     slotBtn.className = `py-3 px-2 rounded-xl gold-border text-center text-xs font-semibold transition-all ${
                         isSelected ? 'btn-primary shadow-sm' : 'btn-secondary'
                     }`;
-                    slotBtn.innerHTML = `<div>${timeStr}</div><div class="text-[10px] font-normal opacity-75">до ${endStr}</div>`;
-                    slotBtn.onclick = () => selectSlot(timeStr, endStr);
+                    slotBtn.innerHTML = `<div>${slot.timeStr}</div><div class="text-[10px] font-normal opacity-75">до ${slot.endStr}</div>`;
+                    slotBtn.onclick = () => selectSlot(slot.timeStr, slot.endStr);
                 }
                 grid.appendChild(slotBtn);
-            }
+            });
 
-            if (firstValid && (!selectedTime || selectedIsBlocked)) {
-                selectSlot(firstValid, minToTime(parseInt(firstValid.split(':')[0]) * 60 + LESSON_DURATION));
-            } else if (!firstValid) {
+            if (visibleSlots.length === 0 || !firstValid) {
                 selectedTime = '';
+                grid.innerHTML = `<div class="col-span-full p-4 rounded-2xl bg-navy-900 gold-border text-center text-xs text-slate-300">На ${formatRuDate(selectedDateIso)} свободных окон нет — выберите дату с отметкой «окн.» выше.</div>`;
                 document.getElementById('slotNotice').className = 'text-xs gold-border p-3 rounded-xl flex items-center gap-2 mt-3 opacity-80';
-                document.getElementById('slotNoticeText').innerText = 'На выбранный день все часы заняты или закрыты преподавателем. Выберите другой день!';
+                document.getElementById('slotNoticeText').innerText = 'На выбранный день свободных окон для записи нет. Выберите другую дату выше!';
+            } else if (!selectedTime || !selectedStillValid) {
+                const endMin = parseInt(firstValid.split(':')[0], 10) * 60 + LESSON_DURATION;
+                selectSlot(firstValid, minToTime(endMin));
+            } else {
+                const endMin = parseInt(selectedTime.split(':')[0], 10) * 60 + LESSON_DURATION;
+                document.getElementById('slotNotice').className = 'text-xs text-gold gold-border p-3 rounded-2xl flex items-center gap-2.5 mt-3 shadow-sm';
+                document.getElementById('slotNoticeText').innerText = `Выбрано: ${formatRuDate(selectedDateIso)} в ${selectedTime} (консультация до ${minToTime(endMin)})`;
             }
         }
 
@@ -2207,11 +2634,11 @@
             });
             document.getElementById('slotNotice').className = 'text-xs text-gold gold-border p-3 rounded-2xl flex items-center gap-2.5 mt-3 shadow-sm';
             document.getElementById('slotNoticeText').innerText = `Выбрано: ${formatRuDate(selectedDateIso)} в ${timeStr} (консультация до ${endStr})`;
-            lucide.createIcons();
+            if (window.lucide) lucide.createIcons();
         }
 
-        // 5. CLIENT SUBMIT
-        function submitClientBooking(e) {
+        // 5. CLIENT SUBMIT (SUPABASE RPC)
+        async function submitClientBooking(e) {
             e.preventDefault();
             const name = document.getElementById('custName').value.trim();
             const phone = document.getElementById('custPhone').value.trim();
@@ -2221,47 +2648,80 @@
             if (!name || !phone) return alert('Пожалуйста, укажите имя и телефон');
             if (!selectedTime) return alert('Пожалуйста, выберите свободное время');
 
-            const progObj = TUTOR_PROGRAMS.find(p => p.id === selectedProgId);
-            const startH = parseInt(selectedTime.split(':')[0]);
-            const startMin = startH * 60;
+            const progs = Array.isArray(siteConfig.programs) ? siteConfig.programs : [];
+            const progObj = progs.find(p => p.id === selectedProgId) || progs[0];
+            const startMin = parseInt(selectedTime.split(':')[0], 10) * 60;
 
-            const schedule = getSchedule();
-            const newBooking = {
-                id: Date.now(),
-                date: selectedDateIso,
-                time: selectedTime,
-                startMin: startMin,
-                duration: LESSON_DURATION,
-                name: name,
-                grade: grade,
-                phone: phone,
-                format: progObj.title,
-                price: progObj.price,
-                messenger: messenger,
-                isBlocked: false,
-                created: new Date().toLocaleString('ru-RU')
-            };
+            const submitBtn = e.target.querySelector('button[type="submit"]');
+            const prevHtml = submitBtn ? submitBtn.innerHTML : '';
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<span>Фиксируем время в графике...</span>';
+            }
 
-            schedule.push(newBooking);
-            saveSchedule(schedule);
-            lastCreatedBooking = newBooking;
+            try {
+                const res = await sbRpc('create_public_booking', {
+                    p_slug: SITE_SLUG,
+                    p_date: selectedDateIso,
+                    p_time: selectedTime,
+                    p_name: name,
+                    p_phone: phone,
+                    p_grade: grade,
+                    p_format: progObj.title,
+                    p_price: Number(progObj.price || 0),
+                    p_messenger: messenger
+                });
 
-            recomputeSlots();
+                if (res && res.slot_entry) {
+                    slotEntries = slotEntries.filter(s => !(s.date === selectedDateIso && s.time === selectedTime));
+                    slotEntries.push(res.slot_entry);
+                }
+                if (isTeacherMode && teacherPin) {
+                    await refreshTeacherBundle();
+                }
 
-            document.getElementById('modalSummaryBox').innerHTML = `
-                <div><span class="text-slate-400">Ученик/Родитель:</span> <strong>${escapeHtml(name)}</strong> (${escapeHtml(grade)})</div>
-                <div><span class="text-slate-400">Дата и время:</span> <strong>${formatRuDate(selectedDateIso)} в ${selectedTime}</strong></div>
-                <div><span class="text-slate-400">Программа:</span> ${escapeHtml(progObj.title)} (${progObj.price} ₽)</div>
-                <div><span class="text-slate-400">Связь для подтверждения:</span> <strong>${escapeHtml(messenger)}</strong> (${escapeHtml(phone)})</div>
-            `;
+                lastCreatedBooking = {
+                    date: selectedDateIso,
+                    time: selectedTime,
+                    startMin,
+                    name,
+                    grade,
+                    phone,
+                    format: progObj.title,
+                    price: progObj.price,
+                    messenger
+                };
 
-            const msg = encodeURIComponent(`Здравствуйте, Наталья Игоревна! Меня зовут ${name}. Оставили заявку в мини-группу 9 класса по подготовке к ОГЭ:\n- Дата: ${selectedDateIso} в ${selectedTime}\n- Программа: ${progObj.title}\n- Цель: ${grade}\n- Телефон: ${phone}\n- Мессенджер: ${messenger}`);
-            document.getElementById('tgDirectBtn').href = `https://t.me/+79195740214?text=${msg}`;
-            document.getElementById('maxDirectBtn').href = `https://max.ru/u/+79195740214`;
+                renderDaysScroll();
+                recomputeSlots();
 
-            document.getElementById('confirmModal').classList.remove('hidden');
-            document.getElementById('confirmModal').classList.add('flex');
-            lucide.createIcons();
+                document.getElementById('modalSummaryBox').innerHTML = `
+                    <div><span class="text-slate-400">Ученик/Родитель:</span> <strong>${escapeHtml(name)}</strong> (${escapeHtml(grade)})</div>
+                    <div><span class="text-slate-400">Дата и время:</span> <strong>${formatRuDate(lastCreatedBooking.date)} в ${lastCreatedBooking.time}</strong></div>
+                    <div><span class="text-slate-400">Программа:</span> ${escapeHtml(progObj.title)} (${Number(progObj.price || 0)} ₽)</div>
+                    <div><span class="text-slate-400">Связь для подтверждения:</span> <strong>${escapeHtml(messenger)}</strong> (${escapeHtml(phone)})</div>
+                `;
+
+                const msg = encodeURIComponent(`Здравствуйте, Наталья Игоревна! Меня зовут ${name}. Оставили заявку в мини-группу 9 класса по подготовке к ОГЭ:\n- Дата: ${lastCreatedBooking.date} в ${lastCreatedBooking.time}\n- Программа: ${progObj.title}\n- Цель: ${grade}\n- Телефон: ${phone}\n- Мессенджер: ${messenger}`);
+                const baseTg = safeExternalUrl((siteConfig.contacts || {}).tg_url) || 'https://t.me/+79195740214';
+                const baseMax = safeExternalUrl((siteConfig.contacts || {}).max_url) || 'https://max.ru/u/+79195740214';
+                document.getElementById('tgDirectBtn').href = `${baseTg}${baseTg.includes('?') ? '&' : '?'}text=${msg}`;
+                document.getElementById('maxDirectBtn').href = baseMax;
+
+                document.getElementById('confirmModal').classList.remove('hidden');
+                document.getElementById('confirmModal').classList.add('flex');
+                document.getElementById('bookingForm').reset();
+                if (window.lucide) lucide.createIcons();
+            } catch (err) {
+                await loadPublicSiteBundle();
+                alert(err.message);
+            } finally {
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = prevHtml;
+                    if (window.lucide) lucide.createIcons();
+                }
+            }
         }
 
         function closeConfirmModal() {
@@ -2310,16 +2770,30 @@
             a.click();
         }
 
-        // ================= TEACHER ADMIN NOTEBOOK ENGINE =================
+        // ================= TEACHER ADMIN NOTEBOOK ENGINE (SUPABASE CLOUD) =================
+        function showTeacherToast(message) {
+            const toast = document.getElementById('teacherSaveToast');
+            const textEl = document.getElementById('teacherSaveToastText');
+            if (!toast || !textEl) return;
+            textEl.innerText = message;
+            toast.classList.remove('hidden');
+            clearTimeout(window._teacherToastTimer);
+            window._teacherToastTimer = setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 3200);
+        }
+
         function requestTeacherAccess() {
-            if (sessionStorage.getItem('natalia_teacher_auth') === 'true') {
+            if (teacherPin && isTeacherMode) {
                 grantTeacherMode();
-            } else {
-                document.getElementById('pinInput').value = '';
-                document.getElementById('pinModal').classList.remove('hidden');
-                document.getElementById('pinModal').classList.add('flex');
-                document.getElementById('pinInput').focus();
+                return;
             }
+            const errBox = document.getElementById('pinErrorMsg');
+            if (errBox) errBox.classList.add('hidden');
+            document.getElementById('pinInput').value = '';
+            document.getElementById('pinModal').classList.remove('hidden');
+            document.getElementById('pinModal').classList.add('flex');
+            document.getElementById('pinInput').focus();
         }
 
         function closePinModal() {
@@ -2327,14 +2801,95 @@
             document.getElementById('pinModal').classList.remove('flex');
         }
 
-        function verifyPin() {
-            const p = document.getElementById('pinInput').value.trim();
-            if (p === '1234') {
-                sessionStorage.setItem('natalia_teacher_auth', 'true');
-                closePinModal();
+        function applyAdminPayload(data) {
+            if (!data) return;
+            if (data.site && data.site.config) {
+                siteConfig = mergeSiteConfig(data.site.config);
+            }
+            if (Array.isArray(data.bookings)) {
+                teacherBookings = data.bookings;
+                slotEntries = data.bookings.map(b => ({
+                    id: b.id,
+                    date: b.date,
+                    time: b.time,
+                    startMin: b.startMin,
+                    duration: b.duration,
+                    entryType: b.entryType,
+                    isBlocked: (b.entryType === 'booking' || b.entryType === 'blocked')
+                }));
+            }
+            if (Array.isArray(data.reviews)) {
+                publicReviews = data.reviews;
+            }
+            applySiteConfigToDom();
+            renderReviews();
+            renderDaysScroll();
+            recomputeSlots();
+            renderWeeklyScheduleEditor();
+            renderTeacherDaysBar();
+            renderTeacherTimeline();
+            renderTeacherAllBookings();
+            renderTeacherReviews();
+            populateTeacherTextsForm();
+        }
+
+        async function refreshTeacherBundle() {
+            if (!teacherPin) return;
+            const data = await sbRpc('admin_login_and_fetch', {
+                p_slug: SITE_SLUG,
+                p_pin: teacherPin
+            });
+            applyAdminPayload(data);
+        }
+
+        async function attemptAutoTeacherLogin(pin) {
+            try {
+                const data = await sbRpc('admin_login_and_fetch', {
+                    p_slug: SITE_SLUG,
+                    p_pin: pin
+                });
+                teacherPin = pin;
+                applyAdminPayload(data);
                 grantTeacherMode();
-            } else {
-                alert('Неверный PIN-код (по умолчанию 1234)');
+            } catch (e) {
+                sessionStorage.removeItem('natalia_teacher_pin');
+            }
+        }
+
+        async function verifyPin() {
+            const p = document.getElementById('pinInput').value.trim();
+            const btn = document.getElementById('pinSubmitBtn');
+            const errBox = document.getElementById('pinErrorMsg');
+            if (!p) return;
+
+            if (errBox) errBox.classList.add('hidden');
+            if (btn) {
+                btn.disabled = true;
+                btn.innerText = '...';
+            }
+
+            try {
+                const data = await sbRpc('admin_login_and_fetch', {
+                    p_slug: SITE_SLUG,
+                    p_pin: p
+                });
+                teacherPin = p;
+                sessionStorage.setItem('natalia_teacher_pin', p);
+                closePinModal();
+                applyAdminPayload(data);
+                grantTeacherMode();
+            } catch (err) {
+                if (errBox) {
+                    errBox.innerText = err.message;
+                    errBox.classList.remove('hidden');
+                } else {
+                    alert(err.message);
+                }
+            } finally {
+                if (btn) {
+                    btn.disabled = false;
+                    btn.innerText = 'Войти';
+                }
             }
         }
 
@@ -2345,11 +2900,36 @@
             document.getElementById('teacherView').classList.remove('hidden');
             document.getElementById('toggleViewBtn').innerText = 'Вернуться на сайт';
 
+            switchTeacherTab(activeTeacherTab || 'slots');
+            renderWeeklyScheduleEditor();
             renderTeacherDaysBar();
             renderTeacherTimeline();
             renderTeacherAllBookings();
             renderTeacherReviews();
-            lucide.createIcons();
+            populateTeacherTextsForm();
+            if (window.lucide) lucide.createIcons();
+        }
+
+        function switchTeacherTab(tab) {
+            activeTeacherTab = tab;
+            const panels = {
+                slots: document.getElementById('teacherTabSlots'),
+                texts: document.getElementById('teacherTabTexts'),
+                reviews: document.getElementById('teacherTabReviews')
+            };
+            Object.entries(panels).forEach(([k, el]) => {
+                if (!el) return;
+                if (k === tab) el.classList.remove('hidden');
+                else el.classList.add('hidden');
+            });
+            document.querySelectorAll('.teacher-tab-btn').forEach(btn => {
+                const isActive = btn.getAttribute('data-teacher-tab') === tab;
+                btn.className = `teacher-tab-btn px-4 py-2.5 rounded-2xl text-xs font-bold gold-border transition-all ${
+                    isActive ? 'btn-primary shadow-sm' : 'btn-secondary'
+                }`;
+            });
+            if (tab === 'texts') populateTeacherTextsForm();
+            if (window.lucide) lucide.createIcons();
         }
 
         function toggleTeacherModeView() {
@@ -2361,26 +2941,133 @@
                 tView.classList.remove('hidden');
                 cView.classList.add('hidden');
                 btn.innerText = 'Вернуться на сайт';
+                renderWeeklyScheduleEditor();
                 renderTeacherTimeline();
                 renderTeacherReviews();
+                populateTeacherTextsForm();
             } else {
                 tView.classList.add('hidden');
                 cView.classList.remove('hidden');
                 btn.innerText = 'Тетрадка преподавателя';
+                renderDaysScroll();
                 recomputeSlots();
             }
-            lucide.createIcons();
+            if (window.lucide) lucide.createIcons();
         }
 
         function logoutTeacher() {
             isTeacherMode = false;
-            sessionStorage.removeItem('natalia_teacher_auth');
-            window.location.hash = '';
+            teacherPin = '';
+            teacherBookings = [];
+            sessionStorage.removeItem('natalia_teacher_pin');
+            if (window.location.hash === '#admin' || window.location.hash === '#master') {
+                history.replaceState(null, '', window.location.pathname + window.location.search);
+            }
             document.getElementById('teacherStickyBar').classList.add('hidden');
             document.getElementById('teacherView').classList.add('hidden');
             document.getElementById('clientView').classList.remove('hidden');
+            renderDaysScroll();
             recomputeSlots();
-            lucide.createIcons();
+            if (window.lucide) lucide.createIcons();
+        }
+
+        // Weekly Whitelist Editor
+        const WEEKLY_ORDER = [
+            { dow: '1', label: 'Пн' },
+            { dow: '2', label: 'Вт' },
+            { dow: '3', label: 'Ср' },
+            { dow: '4', label: 'Чт' },
+            { dow: '5', label: 'Пт' },
+            { dow: '6', label: 'Сб' },
+            { dow: '0', label: 'Вс' }
+        ];
+
+        function renderWeeklyScheduleEditor() {
+            const tabsEl = document.getElementById('weeklyDowTabs');
+            const gridEl = document.getElementById('weeklyHoursGrid');
+            if (!tabsEl || !gridEl) return;
+
+            const weekly = siteConfig.weekly_open_slots || {};
+            tabsEl.innerHTML = WEEKLY_ORDER.map(item => {
+                const count = Array.isArray(weekly[item.dow]) ? weekly[item.dow].length : 0;
+                const active = selectedWeeklyDow === item.dow;
+                return `
+                    <button type="button" onclick="selectWeeklyDow('${item.dow}')" class="px-3 py-1.5 rounded-xl text-xs font-bold gold-border transition-all ${
+                        active ? 'btn-primary shadow-sm' : 'btn-secondary'
+                    }">
+                        ${item.label} <span class="opacity-80">(${count})</span>
+                    </button>
+                `;
+            }).join('');
+
+            const activeHours = new Set(Array.isArray(weekly[selectedWeeklyDow]) ? weekly[selectedWeeklyDow] : []);
+            gridEl.innerHTML = ALL_HOURS.map(hour => {
+                const open = activeHours.has(hour);
+                return `
+                    <button type="button" onclick="toggleWeeklyHour('${hour}')" class="py-2 px-2 rounded-xl text-xs font-bold border transition-all text-center ${
+                        open
+                            ? 'bg-emerald-600 hover:bg-emerald-700 text-white border-emerald-500 shadow-sm'
+                            : 'btn-secondary opacity-70'
+                    }">
+                        <div>${hour}</div>
+                        <div class="text-[9px] font-semibold mt-0.5">${open ? '✓ Открыто' : 'Закрыто'}</div>
+                    </button>
+                `;
+            }).join('');
+        }
+
+        function selectWeeklyDow(dow) {
+            selectedWeeklyDow = dow;
+            renderWeeklyScheduleEditor();
+        }
+
+        async function persistConfigToCloud(toastMsg) {
+            const data = await sbRpc('admin_save_config', {
+                p_slug: SITE_SLUG,
+                p_pin: teacherPin,
+                p_config: siteConfig
+            });
+            if (data && data.config) {
+                siteConfig = mergeSiteConfig(data.config);
+            }
+            applySiteConfigToDom();
+            renderWeeklyScheduleEditor();
+            renderTeacherTimeline();
+            renderDaysScroll();
+            recomputeSlots();
+            showTeacherToast(toastMsg);
+        }
+
+        async function toggleWeeklyHour(hourStr) {
+            if (!siteConfig.weekly_open_slots) siteConfig.weekly_open_slots = {};
+            const current = new Set(siteConfig.weekly_open_slots[selectedWeeklyDow] || []);
+            if (current.has(hourStr)) current.delete(hourStr);
+            else current.add(hourStr);
+            siteConfig.weekly_open_slots[selectedWeeklyDow] = ALL_HOURS.filter(h => current.has(h));
+
+            renderWeeklyScheduleEditor();
+            try {
+                await persistConfigToCloud(`Недельный график (${hourStr}) сохранён и опубликован!`);
+            } catch (err) {
+                alert('Ошибка сохранения графика: ' + err.message);
+                await refreshTeacherBundle();
+            }
+        }
+
+        async function applyWeeklyPreset(preset) {
+            if (!siteConfig.weekly_open_slots) siteConfig.weekly_open_slots = {};
+            if (preset === 'daytime') {
+                siteConfig.weekly_open_slots[selectedWeeklyDow] = ['10:00', '11:00', '12:00', '13:00', '14:00'];
+            } else {
+                siteConfig.weekly_open_slots[selectedWeeklyDow] = [];
+            }
+            renderWeeklyScheduleEditor();
+            try {
+                await persistConfigToCloud('Шаблон дня недели обновлён на сайте!');
+            } catch (err) {
+                alert('Ошибка сохранения: ' + err.message);
+                await refreshTeacherBundle();
+            }
         }
 
         function renderTeacherDaysBar() {
@@ -2397,9 +3084,9 @@
                 const btn = document.createElement('button');
                 btn.type = 'button';
                 btn.className = `px-3.5 py-2 rounded-xl text-xs font-bold whitespace-nowrap gold-border transition-all ${
-                    active ? 'bg-gold text-navy-900 shadow-md' : 'bg-navy-800 text-slate-300 hover:border-gold'
+                    active ? 'btn-primary shadow-md' : 'btn-secondary'
                 }`;
-                btn.innerText = i === 0 ? 'Сегодня' : i === 1 ? 'Завтра' : `${daysOfWeek[date.getDay()]} ${date.getDate()}.${date.getMonth()+1}`;
+                btn.innerText = i === 0 ? 'Сегодня' : i === 1 ? 'Завтра' : `${daysOfWeek[date.getDay()]} ${date.getDate()}.${date.getMonth() + 1}`;
                 btn.onclick = () => {
                     teacherSelectedDateIso = iso;
                     renderTeacherDaysBar();
@@ -2414,129 +3101,146 @@
             container.innerHTML = '';
             document.getElementById('teacherTimelineDateLabel').innerText = formatRuDate(teacherSelectedDateIso);
 
-            const schedule = getSchedule();
-            const dayItems = schedule.filter(b => b.date === teacherSelectedDateIso);
-
+            const slots = getDaySlotsInfo(teacherSelectedDateIso);
             let lessonsCount = 0;
             let income = 0;
             let freeCount = 0;
 
-            for (let min = WORK_START; min < WORK_END; min += STEP_MIN) {
-                const timeStr = minToTime(min);
-                const endStr = minToTime(min + LESSON_DURATION);
-                const booking = dayItems.find(b => min >= b.startMin && min < (b.startMin + b.duration));
-
+            slots.forEach(s => {
                 const row = document.createElement('div');
-                row.className = 'p-4 rounded-2xl gold-border transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-3';
+                row.className = 'p-3.5 sm:p-4 rounded-2xl border gold-border transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-2.5';
 
-                if (booking) {
-                    if (booking.isBlocked) {
-                        row.className += ' bg-navy-950/80 border-slate-700';
-                        row.innerHTML = `
-                            <div class="flex items-center gap-3">
-                                <span class="font-display font-bold text-sm text-slate-500 w-16">${timeStr}</span>
-                                <span class="px-2.5 py-1 rounded-lg bg-navy-800 text-slate-400 text-xs font-bold border border-slate-700">⛔ Закрыто для записи</span>
-                                <span class="text-xs text-slate-500">Час заблокирован преподавателем</span>
-                            </div>
-                            <button onclick="unblockSlot(${booking.id})" class="px-3 py-1.5 rounded-xl bg-navy-800 gold-border text-xs font-bold text-parchment-100 hover:bg-navy-700 self-start sm:self-auto">
-                                Разблокировать
-                            </button>
-                        `;
-                    } else {
-                        lessonsCount++;
-                        income += (booking.price || 0);
-                        row.className += ' bg-navy-800 gold-border shadow-md';
-                        row.innerHTML = `
-                            <div class="flex items-start sm:items-center gap-3 min-w-0">
-                                <span class="font-display font-bold text-sm text-gold w-16 flex-shrink-0">${timeStr}</span>
-                                <div class="space-y-0.5 min-w-0">
-                                    <div class="flex flex-wrap items-center gap-2">
-                                        <span class="font-serif font-bold text-base text-parchment-50">${escapeHtml(booking.name)}</span>
-                                        <span class="px-2.5 py-0.5 rounded-full bg-gold/15 text-gold border border-gold/30 text-[10px] font-bold">${escapeHtml(booking.format)}</span>
-                                    </div>
-                                    <div class="text-xs text-slate-400">
-                                        Связь: <strong>${escapeHtml(booking.messenger || 'МАКС')}</strong> • Телефон: <strong>${escapeHtml(booking.phone)}</strong>
-                                    </div>
+                if (s.teacherStatus === 'booked' && s.entry) {
+                    const b = s.entry;
+                    lessonsCount++;
+                    income += Number(b.price || 0);
+                    row.className += ' bg-navy-800 shadow-md';
+                    row.innerHTML = `
+                        <div class="flex items-start sm:items-center gap-3 min-w-0">
+                            <span class="font-display font-bold text-sm text-gold w-14 flex-shrink-0">${s.timeStr}</span>
+                            <div class="space-y-0.5 min-w-0">
+                                <div class="flex flex-wrap items-center gap-2">
+                                    <span class="font-serif font-bold text-base text-parchment-50">${escapeHtml(b.name)}</span>
+                                    <span class="px-2.5 py-0.5 rounded-full bg-gold/15 text-gold border border-gold/30 text-[10px] font-bold">${escapeHtml(b.format)}</span>
+                                </div>
+                                <div class="text-xs text-slate-400">
+                                    Связь: <strong>${escapeHtml(b.messenger || 'МАКС')}</strong> • Телефон: <strong>${escapeHtml(b.phone)}</strong>
                                 </div>
                             </div>
-                            <div class="flex items-center gap-2 self-start sm:self-auto flex-shrink-0">
-                                <a href="tel:${escapeHtml(booking.phone)}" class="px-3 py-1.5 rounded-xl bg-gold hover:bg-gold-dark text-navy-900 text-xs font-bold">Звонок</a>
-                                <button onclick="deleteBooking(${booking.id})" class="p-1.5 rounded-xl text-rose-400 hover:bg-rose-950/50 text-sm font-bold" title="Отменить">&times;</button>
-                            </div>
-                        `;
-                    }
-                } else {
-                    freeCount++;
-                    row.className += ' bg-emerald-950/20 border-emerald-500/30 hover:bg-emerald-950/30';
-                    row.innerHTML = `
-                        <div class="flex items-center gap-3">
-                            <span class="font-display font-bold text-sm text-emerald-400 w-16">${timeStr}</span>
-                            <span class="px-2.5 py-1 rounded-lg bg-emerald-950/60 text-emerald-400 border border-emerald-500/40 text-xs font-bold">Свободно</span>
-                            <span class="text-xs text-slate-400 hidden sm:inline">Окно открыто для онлайн-записи</span>
                         </div>
-                        <div class="flex items-center gap-2 self-start sm:self-auto">
-                            <button onclick="quickAddForSlot('${timeStr}')" class="px-3 py-1.5 rounded-xl bg-gold hover:bg-gold-dark text-navy-900 font-bold text-xs uppercase tracking-wider shadow-sm">
+                        <div class="flex items-center gap-2 self-start sm:self-auto flex-shrink-0">
+                            <a href="tel:${escapeHtml(b.phone)}" class="px-3 py-1.5 rounded-xl bg-gold hover:bg-gold-dark text-navy-900 text-xs font-bold">Звонок</a>
+                            <button onclick="deleteBookingBySlot('${s.entry.date}', '${s.timeStr}')" class="px-2.5 py-1.5 rounded-xl bg-rose-950/50 border border-rose-500/40 text-rose-300 hover:bg-rose-900/60 text-xs font-bold" title="Отменить">&times;</button>
+                        </div>
+                    `;
+                } else if (s.teacherStatus === 'open') {
+                    freeCount++;
+                    row.className += ' slot-open-card bg-emerald-950/20 border-emerald-500/30';
+                    row.innerHTML = `
+                        <div class="flex flex-wrap items-center gap-2.5 min-w-0">
+                            <span class="font-display font-bold text-sm text-emerald-400 slot-open-label w-14">${s.timeStr}</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-emerald-600/20 text-emerald-400 slot-open-label border border-emerald-500/40 text-xs font-bold">✓ Открыто</span>
+                            <span class="text-xs text-slate-400">${s.isOpenOverride ? 'Добавлено вручную на эту дату' : 'Открыто по недельному графику'}</span>
+                        </div>
+                        <div class="flex flex-wrap items-center gap-2 self-start sm:self-auto">
+                            <button onclick="quickAddForSlot('${s.timeStr}')" class="px-3 py-1.5 rounded-xl bg-gold hover:bg-gold-dark text-navy-900 font-bold text-xs uppercase tracking-wider shadow-sm">
                                 + Записать
                             </button>
-                            <button onclick="quickBlockSlot('${timeStr}')" class="px-2.5 py-1.5 rounded-xl border border-slate-700 bg-navy-900 text-slate-300 font-bold text-xs hover:bg-navy-800">
+                            <button onclick="toggleDaySlot('${s.timeStr}', 'close')" class="px-2.5 py-1.5 rounded-xl btn-secondary text-xs font-bold">
                                 ⛔ Закрыть
                             </button>
                         </div>
                     `;
+                } else {
+                    const reason = s.teacherStatus === 'blocked'
+                        ? 'Закрыто вручную на эту дату'
+                        : 'Закрыто по недельному графику';
+                    row.className += ' slot-closed-card bg-navy-950/80 border-slate-700/60 opacity-85';
+                    row.innerHTML = `
+                        <div class="flex flex-wrap items-center gap-2.5 min-w-0">
+                            <span class="font-display font-bold text-sm text-slate-500 w-14">${s.timeStr}</span>
+                            <span class="slot-closed-badge px-2.5 py-1 rounded-lg bg-navy-800 text-slate-400 text-xs font-bold border border-slate-700">⛔ Закрыто</span>
+                            <span class="text-xs text-slate-500">${reason}</span>
+                        </div>
+                        <button onclick="toggleDaySlot('${s.timeStr}', 'open')" class="px-3 py-1.5 rounded-xl btn-secondary text-xs font-bold self-start sm:self-auto">
+                            + Открыть окно
+                        </button>
+                    `;
                 }
 
                 container.appendChild(row);
-            }
+            });
 
             document.getElementById('teacherDayLessonsCount').innerText = lessonsCount;
             document.getElementById('teacherDayIncome').innerText = `${income.toLocaleString('ru-RU')} ₽`;
             document.getElementById('teacherDayFreeSlots').innerText = freeCount;
-            lucide.createIcons();
+            if (window.lucide) lucide.createIcons();
         }
 
-        function quickBlockSlot(timeStr) {
-            const startH = parseInt(timeStr.split(':')[0]);
-            const schedule = getSchedule();
-            schedule.push({
-                id: Date.now(),
-                date: teacherSelectedDateIso,
-                time: timeStr,
-                startMin: startH * 60,
-                duration: LESSON_DURATION,
-                name: 'Блокировка слота',
-                isBlocked: true
-            });
-            saveSchedule(schedule);
-            renderTeacherTimeline();
+        async function toggleDaySlot(timeStr, action) {
+            try {
+                const data = await sbRpc('admin_set_slot_state', {
+                    p_slug: SITE_SLUG,
+                    p_pin: teacherPin,
+                    p_date: teacherSelectedDateIso,
+                    p_time: timeStr,
+                    p_action: action
+                });
+                applyAdminPayload(data);
+                showTeacherToast(action === 'open' ? `Окно ${timeStr} открыто для записи!` : `Час ${timeStr} закрыт.`);
+            } catch (err) {
+                alert('Ошибка обновления окна: ' + err.message);
+            }
         }
 
-        function unblockSlot(id) {
-            let schedule = getSchedule();
-            schedule = schedule.filter(b => b.id !== id);
-            saveSchedule(schedule);
-            renderTeacherTimeline();
+        async function runBulkDayAction(action) {
+            try {
+                const data = await sbRpc('admin_bulk_day_action', {
+                    p_slug: SITE_SLUG,
+                    p_pin: teacherPin,
+                    p_date: teacherSelectedDateIso,
+                    p_action: action
+                });
+                applyAdminPayload(data);
+                const labels = {
+                    close_day: 'Все свободные окна этого дня закрыты.',
+                    open_daytime: 'Открыты дневные окна 10:00–14:00 на эту дату.',
+                    reset_day: 'День возвращён к постоянному недельному графику.'
+                };
+                showTeacherToast(labels[action] || 'Готово!');
+            } catch (err) {
+                alert('Ошибка массового действия: ' + err.message);
+            }
         }
 
-        function deleteBooking(id) {
-            if (!confirm('Отменить это занятие и освободить слот?')) return;
-            let schedule = getSchedule();
-            schedule = schedule.filter(b => b.id !== id);
-            saveSchedule(schedule);
-            renderTeacherTimeline();
-            renderTeacherAllBookings();
+        async function deleteBookingBySlot(dateIso, timeStr) {
+            if (!confirm(`Отменить занятие ${dateIso} в ${timeStr}?`)) return;
+            try {
+                const data = await sbRpc('admin_set_slot_state', {
+                    p_slug: SITE_SLUG,
+                    p_pin: teacherPin,
+                    p_date: dateIso,
+                    p_time: timeStr,
+                    p_action: 'delete_booking'
+                });
+                applyAdminPayload(data);
+                showTeacherToast('Запись отменена');
+            } catch (err) {
+                alert('Ошибка отмены записи: ' + err.message);
+            }
         }
 
         function renderTeacherAllBookings() {
-            const schedule = getSchedule().filter(b => !b.isBlocked);
-            document.getElementById('teacherTotalCount').innerText = schedule.length;
+            const bookings = teacherBookings.filter(b => b.entryType === 'booking');
+            document.getElementById('teacherTotalCount').innerText = bookings.length;
             const container = document.getElementById('teacherAllBookingsList');
 
-            if (schedule.length === 0) {
-                container.innerHTML = '<div class="p-6 text-center text-xs text-slate-500">Список пока пуст</div>';
+            if (bookings.length === 0) {
+                container.innerHTML = '<div class="p-6 text-center text-xs text-slate-400">Пока нет активных заявок учеников</div>';
                 return;
             }
 
-            container.innerHTML = schedule.map(b => `
+            container.innerHTML = bookings.map(b => `
                 <div class="p-4 rounded-xl bg-navy-800 gold-border flex flex-wrap items-start justify-between gap-3 text-xs">
                     <div class="min-w-0">
                         <div class="font-serif font-bold text-parchment-50 text-base">${escapeHtml(b.name)} ${b.grade ? `<span class="text-xs text-gold">(${escapeHtml(b.grade)})</span>` : ''}</div>
@@ -2545,15 +3249,26 @@
                     </div>
                     <div class="flex items-center gap-2 flex-shrink-0">
                         <a href="tel:${escapeHtml(b.phone)}" class="px-3 py-1.5 rounded-lg bg-gold hover:bg-gold-dark text-navy-900 font-bold">Звонок</a>
-                        <button onclick="deleteBooking(${b.id})" class="p-1 rounded-lg text-rose-400 font-bold">&times;</button>
+                        <button onclick="deleteBookingBySlot('${escapeHtml(b.date)}', '${escapeHtml(b.time)}')" class="px-2 py-1 rounded-lg text-rose-400 hover:bg-rose-950/40 font-bold">&times;</button>
                     </div>
                 </div>
             `).join('');
-            lucide.createIcons();
+            if (window.lucide) lucide.createIcons();
         }
 
         // Manual Add Modal
+        function populateManualProgramOptions() {
+            const sel = document.getElementById('manualCustFormat');
+            if (!sel) return;
+            const progs = Array.isArray(siteConfig.programs) ? siteConfig.programs : [];
+            sel.innerHTML = progs.map(p => {
+                const label = `${p.title} (${Number(p.price || 0).toLocaleString('ru-RU')} ₽)`;
+                return `<option value="${escapeHtml(label)}" data-price="${Number(p.price || 0)}">${escapeHtml(label)}</option>`;
+            }).join('');
+        }
+
         function openManualAddModal() {
+            populateManualProgramOptions();
             document.getElementById('manualAddModal').classList.remove('hidden');
             document.getElementById('manualAddModal').classList.add('flex');
         }
@@ -2580,51 +3295,184 @@
                 dateSel.innerHTML += `<option value="${iso}">${iso}</option>`;
             }
 
-            for (let min = WORK_START; min < WORK_END; min += STEP_MIN) {
-                const t = minToTime(min);
+            ALL_HOURS.forEach(t => {
                 timeSel.innerHTML += `<option value="${t}">${t}</option>`;
-            }
+            });
         }
 
-        function saveManualStudentEntry() {
+        async function saveManualStudentEntry() {
             const name = document.getElementById('manualCustName').value.trim();
             const phone = document.getElementById('manualCustPhone').value.trim() || '—';
-            const format = document.getElementById('manualCustFormat').value;
+            const formatSel = document.getElementById('manualCustFormat');
+            const format = formatSel.value;
+            const selectedOpt = formatSel.options[formatSel.selectedIndex];
+            const price = selectedOpt ? parseInt(selectedOpt.getAttribute('data-price') || '2500', 10) : 2500;
             const date = document.getElementById('manualCustDateSelect').value;
             const time = document.getElementById('manualCustTimeSelect').value;
 
             if (!name) return alert('Укажите имя ученика');
-            const startH = parseInt(time.split(':')[0]);
 
-            const schedule = getSchedule();
-            schedule.push({
-                id: Date.now(),
-                date: date,
-                time: time,
-                startMin: startH * 60,
-                duration: LESSON_DURATION,
-                name: name,
-                phone: phone,
-                format: format,
-                price: format.includes('2 500') ? 2500 : 2000,
-                messenger: 'Личная запись',
-                isBlocked: false,
-                created: new Date().toLocaleString('ru-RU')
+            try {
+                const data = await sbRpc('admin_set_slot_state', {
+                    p_slug: SITE_SLUG,
+                    p_pin: teacherPin,
+                    p_date: date,
+                    p_time: time,
+                    p_action: 'add_booking',
+                    p_booking: {
+                        name,
+                        phone,
+                        grade: '9 класс',
+                        format,
+                        price,
+                        messenger: 'Личная запись'
+                    }
+                });
+                closeManualAddModal();
+                document.getElementById('manualCustName').value = '';
+                document.getElementById('manualCustPhone').value = '';
+                applyAdminPayload(data);
+                showTeacherToast(`Ученик ${name} записан на ${date} в ${time}!`);
+            } catch (err) {
+                alert('Ошибка добавления ученика: ' + err.message);
+            }
+        }
+
+        // TAB 2: TEXTS & CONFIG EDITOR
+        function populateTeacherTextsForm() {
+            const c = siteConfig;
+            const setVal = (id, val) => {
+                const el = document.getElementById(id);
+                if (el) el.value = val || '';
+            };
+            setVal('cfgAnnouncement', c.announcement);
+            setVal('cfgHeroBadge', c.hero_badge);
+            setVal('cfgHeroSubtitle', c.hero_subtitle);
+            setVal('cfgHeroTitleMain', c.hero_title_main);
+            setVal('cfgHeroTitleAccent', c.hero_title_accent);
+            setVal('cfgHeroDesc', c.hero_desc);
+            setVal('cfgHeroMotto', c.hero_motto);
+            setVal('cfgFormatsTitle', c.formats_title);
+            setVal('cfgFormatsSubtitle', c.formats_subtitle);
+
+            const contacts = c.contacts || {};
+            setVal('cfgAvitoUrl', contacts.avito_url || '');
+            setVal('cfgPhoneDisplay', contacts.phone_display || '');
+            setVal('cfgTgUrl', contacts.tg_url || '');
+            setVal('cfgMaxUrl', contacts.max_url || '');
+
+            const progContainer = document.getElementById('cfgProgramsList');
+            if (progContainer && Array.isArray(c.programs)) {
+                progContainer.innerHTML = c.programs.map((p, idx) => `
+                    <div class="p-3.5 rounded-2xl bg-navy-800 gold-border space-y-2">
+                        <div class="font-bold text-gold text-[11px]">Программа ${idx + 1} (${escapeHtml(p.icon || '🎓')})</div>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                            <div class="sm:col-span-2">
+                                <label class="block text-[11px] text-slate-400 mb-0.5">Название</label>
+                                <input type="text" data-prog-idx="${idx}" data-prog-field="title" value="${escapeHtml(p.title)}" class="w-full px-3 py-2 rounded-xl gold-border text-xs">
+                            </div>
+                            <div>
+                                <label class="block text-[11px] text-slate-400 mb-0.5">Цена (₽)</label>
+                                <input type="number" min="0" step="100" data-prog-idx="${idx}" data-prog-field="price" value="${Number(p.price || 0)}" class="w-full px-3 py-2 rounded-xl gold-border text-xs">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-[11px] text-slate-400 mb-0.5">Описание</label>
+                            <textarea rows="2" data-prog-idx="${idx}" data-prog-field="desc" class="w-full px-3 py-2 rounded-xl gold-border text-xs">${escapeHtml(p.desc)}</textarea>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        }
+
+        async function saveTeacherTextsAndConfig(e) {
+            e.preventDefault();
+            const getVal = id => {
+                const el = document.getElementById(id);
+                return el ? el.value.trim() : '';
+            };
+
+            const nextConfig = JSON.parse(JSON.stringify(siteConfig));
+            nextConfig.announcement = getVal('cfgAnnouncement') || nextConfig.announcement;
+            nextConfig.hero_badge = getVal('cfgHeroBadge') || nextConfig.hero_badge;
+            nextConfig.hero_subtitle = getVal('cfgHeroSubtitle') || nextConfig.hero_subtitle;
+            nextConfig.hero_title_main = getVal('cfgHeroTitleMain') || nextConfig.hero_title_main;
+            nextConfig.hero_title_accent = getVal('cfgHeroTitleAccent');
+            nextConfig.hero_desc = getVal('cfgHeroDesc') || nextConfig.hero_desc;
+            nextConfig.hero_motto = getVal('cfgHeroMotto');
+            nextConfig.formats_title = getVal('cfgFormatsTitle') || nextConfig.formats_title;
+            nextConfig.formats_subtitle = getVal('cfgFormatsSubtitle') || nextConfig.formats_subtitle;
+
+            const phoneDisp = getVal('cfgPhoneDisplay') || nextConfig.contacts.phone_display;
+            nextConfig.contacts = {
+                ...nextConfig.contacts,
+                avito_url: getVal('cfgAvitoUrl'),
+                phone_display: phoneDisp,
+                phone_raw: phoneDisp.replace(/[^\d+]/g, '') || nextConfig.contacts.phone_raw,
+                tg_url: getVal('cfgTgUrl') || nextConfig.contacts.tg_url,
+                max_url: getVal('cfgMaxUrl') || nextConfig.contacts.max_url
+            };
+
+            document.querySelectorAll('#cfgProgramsList [data-prog-idx]').forEach(el => {
+                const idx = parseInt(el.getAttribute('data-prog-idx'), 10);
+                const field = el.getAttribute('data-prog-field');
+                if (!nextConfig.programs[idx]) return;
+                if (field === 'price') {
+                    nextConfig.programs[idx].price = Math.max(0, parseInt(el.value, 10) || 0);
+                } else {
+                    nextConfig.programs[idx][field] = el.value.trim();
+                }
             });
 
-            saveSchedule(schedule);
-            closeManualAddModal();
-            renderTeacherTimeline();
-            renderTeacherAllBookings();
-            alert('Ученик внесён в расписание!');
+            const btn = document.getElementById('cfgPublishBtn');
+            const prevHtml = btn ? btn.innerHTML : '';
+            if (btn) {
+                btn.disabled = true;
+                btn.innerHTML = '<span>Сохраняем в облако...</span>';
+            }
+
+            try {
+                siteConfig = nextConfig;
+                await persistConfigToCloud('Тексты, цены и ссылки опубликованы на сайт!');
+            } catch (err) {
+                alert('Ошибка публикации: ' + err.message);
+            } finally {
+                if (btn) {
+                    btn.disabled = false;
+                    btn.innerHTML = prevHtml;
+                    if (window.lucide) lucide.createIcons();
+                }
+            }
+        }
+
+        async function changeTeacherPin() {
+            const input = document.getElementById('newPinInput');
+            const newPin = input ? input.value.trim() : '';
+            if (!/^\d{4,8}$/.test(newPin)) {
+                alert('PIN-код должен состоять из 4–8 цифр.');
+                return;
+            }
+            try {
+                await sbRpc('admin_change_pin', {
+                    p_slug: SITE_SLUG,
+                    p_old_pin: teacherPin,
+                    p_new_pin: newPin
+                });
+                teacherPin = newPin;
+                sessionStorage.setItem('natalia_teacher_pin', newPin);
+                input.value = '';
+                showTeacherToast('PIN-код успешно изменён!');
+            } catch (err) {
+                alert('Не удалось сменить PIN: ' + err.message);
+            }
         }
 
         function exportTeacherCalendarAll() {
-            const schedule = getSchedule().filter(b => !b.isBlocked);
-            if (schedule.length === 0) return alert('Расписание пока пусто');
-            const b = schedule[0];
+            const bookings = teacherBookings.filter(b => b.entryType === 'booking');
+            if (bookings.length === 0) return alert('Расписание пока пусто');
+            const b = bookings[0];
             const startStr = `${b.date.replace(/-/g, '')}T${b.time.replace(':', '')}00`;
-            const endH = String(parseInt(b.time.split(':')[0]) + 1).padStart(2, '0');
+            const endH = String(parseInt(b.time.split(':')[0], 10) + 1).padStart(2, '0');
             const endStr = `${b.date.replace(/-/g, '')}T${endH}0000`;
             window.open(`https://calendar.yandex.ru/custom-event?name=${encodeURIComponent('Расписание консультаций Натальи Дружининой')}&start_ts=${startStr}&end_ts=${endStr}`, '_blank');
         }
