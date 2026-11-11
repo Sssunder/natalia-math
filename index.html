@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Наталья Дружинина — Эксперт по профильной математике, ЕГЭ и ОГЭ | Подготовка к ведущим вузам</title>
+    <title>Наталья Дружинина — Преподаватель высшей категории | Сложные темы ОГЭ простыми словами</title>
     
     <!-- Instant Flash-Free Theme Hydration -->
     <script>
@@ -173,11 +173,15 @@
         .bg-navy-900, .bg-navy-800 { background-color: var(--bg-card) !important; }
         .bg-navy-700 { background-color: var(--bg-elevated) !important; }
 
-        /* Text mappings */
+        /* Universal Text Mappings */
         .text-gold { color: var(--color-accent) !important; }
         .text-parchment-50, .text-parchment-100, .text-slate-100 { color: var(--text-heading) !important; }
         .text-slate-200, .text-slate-300 { color: var(--text-body) !important; }
-        .text-slate-400 { color: var(--text-muted) !important; }
+        .text-slate-400, .text-slate-500 { color: var(--text-muted) !important; }
+
+        [class*="text-slate-100"], [class*="text-parchment"] { color: var(--text-heading) !important; }
+        [class*="text-slate-200"], [class*="text-slate-300"] { color: var(--text-body) !important; }
+        [class*="text-slate-400"], [class*="text-slate-500"] { color: var(--text-muted) !important; }
 
         .border-gold, .border-gold\/20, .border-gold\/30, .border-gold\/40 {
             border-color: var(--border-color) !important;
@@ -186,7 +190,7 @@
         .font-serif { font-family: var(--font-heading) !important; }
         .font-display { font-family: var(--font-display) !important; }
 
-        /* Unified 2-Color Buttons */
+        /* Unified Primary Buttons */
         .btn-primary,
         .bg-gradient-to-r.from-gold.to-gold-dark,
         .bg-gold {
@@ -201,9 +205,9 @@
             filter: brightness(1.12);
         }
 
-        /* Unified Secondary Buttons (Monochrome + Accent Border) */
+        /* Unified Secondary Buttons (Solid Surface + High Contrast Text) */
         .btn-secondary {
-            background: transparent !important;
+            background-color: var(--bg-card) !important;
             color: var(--text-heading) !important;
             border: 1px solid var(--border-color) !important;
         }
@@ -223,36 +227,108 @@
             opacity: 0.7;
         }
 
-        /* Photo Overlay Text (Always Ultra High Contrast) */
-        .photo-title {
+        /* Photo & Banner Overlay Text (Always Ultra High Contrast White) */
+        .photo-title,
+        #nataliaPortraitName,
+        #heroSubtitle,
+        .banner-text {
             color: #FFFFFF !important;
             text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9) !important;
         }
-        .photo-subtitle {
+        .photo-subtitle,
+        #nataliaPortraitSub {
             color: #FDE047 !important;
             text-shadow: 0 1px 6px rgba(0, 0, 0, 0.9) !important;
         }
 
-        /* Light Theme Card Polish */
-        [data-theme="light"] .bg-navy-800,
+        /* Light Theme Explicit High Contrast Polish */
+        [data-theme="light"] .bg-navy-950 { background-color: #FBF9F5 !important; }
         [data-theme="light"] .bg-navy-900,
-        [data-theme="light"] section,
-        [data-theme="light"] .gold-border {
+        [data-theme="light"] .bg-navy-800 { 
+            background-color: #FFFFFF !important; 
+            border-color: rgba(180, 83, 9, 0.22) !important;
             box-shadow: 0 4px 18px -2px rgba(0, 0, 0, 0.04) !important;
         }
+        [data-theme="light"] .bg-navy-700 { 
+            background-color: #F5EFE6 !important; 
+            border-color: rgba(180, 83, 9, 0.28) !important;
+        }
+        [data-theme="light"] .text-parchment-50,
+        [data-theme="light"] .text-parchment-100,
+        [data-theme="light"] .text-slate-100,
+        [data-theme="light"] h1,
+        [data-theme="light"] h2:not(#heroSubtitle),
+        [data-theme="light"] h3,
+        [data-theme="light"] h4,
+        [data-theme="light"] .font-serif:not(#nataliaPortraitName):not(#heroSubtitle) {
+            color: #0F172A !important;
+        }
+        [data-theme="light"] #heroSubtitle,
+        [data-theme="light"] #nataliaPortraitName,
+        [data-theme="light"] .photo-title {
+            color: #FFFFFF !important;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9) !important;
+        }
+        [data-theme="light"] #nataliaPortraitSub,
+        [data-theme="light"] .photo-subtitle {
+            color: #FDE047 !important;
+            text-shadow: 0 1px 6px rgba(0, 0, 0, 0.9) !important;
+        }
+        [data-theme="light"] [class*="text-slate-300"],
+        [data-theme="light"] [class*="text-slate-200"],
+        [data-theme="light"] .text-slate-300,
+        [data-theme="light"] .text-slate-200 {
+            color: #334155 !important;
+        }
+        [data-theme="light"] [class*="text-slate-400"],
+        [data-theme="light"] [class*="text-slate-500"],
+        [data-theme="light"] .text-slate-400,
+        [data-theme="light"] .text-slate-500 {
+            color: #64748B !important;
+        }
+        [data-theme="light"] .btn-secondary {
+            background-color: #FFFFFF !important;
+            color: #0F172A !important;
+            border-color: rgba(180, 83, 9, 0.28) !important;
+            box-shadow: 0 2px 8px -1px rgba(0,0,0,0.06);
+        }
+        [data-theme="light"] .btn-secondary:hover {
+            background-color: #F5EFE6 !important;
+            color: #B45309 !important;
+            border-color: #B45309 !important;
+        }
+        [data-theme="light"] #photoModal > div,
         [data-theme="light"] #pinModal > div,
         [data-theme="light"] #manualAddModal > div,
         [data-theme="light"] #confirmModal > div {
             background-color: #FFFFFF !important;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.2) !important;
+            color: #0F172A !important;
+            border-color: rgba(180, 83, 9, 0.25) !important;
+        }
+        [data-theme="light"] #photoModal [class*="bg-navy-800"] {
+            background-color: #F5EFE6 !important;
+            border-color: rgba(180, 83, 9, 0.2) !important;
         }
         [data-theme="light"] #pinModal,
         [data-theme="light"] #manualAddModal,
         [data-theme="light"] #confirmModal {
             background-color: rgba(15, 23, 42, 0.6) !important;
         }
+        [data-theme="light"] .theme-dock {
+            background: rgba(255, 255, 255, 0.96) !important;
+            border-color: rgba(180, 83, 9, 0.28) !important;
+            box-shadow: 0 12px 35px -5px rgba(0, 0, 0, 0.15) !important;
+        }
+        [data-theme="light"] .theme-dock-label {
+            color: #B45309 !important;
+        }
 
         /* Theme Switcher Dock */
+        .theme-dock {
+            background: rgba(10, 15, 28, 0.92);
+            border-color: var(--border-color);
+        }
         .theme-switch-btn {
             color: var(--text-muted);
             border: 1px solid transparent;
@@ -289,8 +365,8 @@
 
     <!-- Top Announcement Bar -->
     <div id="topAnnouncement" class="py-2 px-4 text-xs font-semibold text-center tracking-wide flex items-center justify-center gap-2 border-b gold-border">
-        <span id="announcementText">🏛 Академическая математика • Подготовка к профильному ЕГЭ и ОГЭ 2026/2027</span>
-        <a href="#booking" class="text-gold font-bold underline hover:opacity-80 ml-1">Записаться на аудит &rarr;</a>
+        <span id="announcementText">🏛 Понятная математика • Сложные темы ОГЭ простыми словами</span>
+        <a href="#booking" class="text-gold font-bold underline hover:opacity-80 ml-1">Записаться на занятие &rarr;</a>
     </div>
 
     <!-- CLIENT VIEW CONTAINER -->
@@ -309,7 +385,7 @@
                             Наталья Дружинина
                         </span>
                         <span class="text-[11px] uppercase tracking-widest text-gold font-medium block">
-                            Высшая категория • Профильный ЕГЭ и ОГЭ
+                            Высшая категория • Математика и ОГЭ (5–9 классы)
                         </span>
                     </div>
                 </div>
@@ -364,7 +440,7 @@
                                 <span>15+ лет практики • Высшая категория</span>
                             </div>
                             <h2 id="heroSubtitle" class="font-serif text-2xl sm:text-3xl font-bold leading-tight !text-white drop-shadow-md">
-                                Математика без зубрежки. Подготовка в сильные вузы
+                                Математика без зубрежки. Уверенная сдача ОГЭ
                             </h2>
                         </div>
                     </div>
@@ -375,19 +451,15 @@
                     <!-- Left: Credentials & Pitch -->
                     <div class="lg:col-span-7 space-y-6">
                         <h1 class="font-serif text-3xl sm:text-5xl font-bold text-parchment-50 leading-[1.15] tracking-tight">
-                            Понятная математика. Высокие баллы <span class="text-gold italic font-serif">ЕГЭ и ОГЭ</span>
+                            Сложные темы ОГЭ <span class="text-gold italic font-serif">простыми словами</span>
                         </h1>
 
                         <p class="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
-                            Индивидуальные занятия с экспертом высшей категории. Раскладываем сложные задачи 2-й части ЕГЭ на простые логические шаги без хаоса и зубрежки.
+                            Индивидуальные занятия с преподавателем высшей категории. Спокойно и по полочкам разбираем геометрию и алгебру (5–9 классы) для уверенной сдачи ОГЭ на 4 и 5 без паники и стресса.
                         </p>
 
                         <!-- Trust Stats Ribbon (Clean 2-Color Architecture) -->
                         <div class="grid grid-cols-3 gap-3 pt-2">
-                            <div class="p-4 rounded-2xl bg-navy-700 gold-border shadow-sm">
-                                <div class="font-display text-2xl sm:text-3xl font-bold text-gold">84.6</div>
-                                <div class="text-[11px] text-slate-300 leading-tight mt-1">Средний балл ЕГЭ</div>
-                            </div>
                             <div class="p-4 rounded-2xl bg-navy-700 gold-border shadow-sm">
                                 <div class="font-display text-2xl sm:text-3xl font-bold text-gold">100%</div>
                                 <div class="text-[11px] text-slate-300 leading-tight mt-1">Сдача ОГЭ на 4 и 5</div>
@@ -396,12 +468,16 @@
                                 <div class="font-display text-2xl sm:text-3xl font-bold text-gold">15+</div>
                                 <div class="text-[11px] text-slate-300 leading-tight mt-1">Лет авторского стажа</div>
                             </div>
+                            <div class="p-4 rounded-2xl bg-navy-700 gold-border shadow-sm">
+                                <div class="font-display text-2xl sm:text-3xl font-bold text-gold">5–9</div>
+                                <div class="text-[11px] text-slate-300 leading-tight mt-1">Классы подготовки</div>
+                            </div>
                         </div>
 
                         <!-- CTA Buttons (Strict 2-Color Alignment) -->
                         <div class="flex flex-wrap items-center gap-3 pt-2">
                             <a href="#booking" class="btn-primary px-7 py-4 rounded-xl font-extrabold text-sm uppercase tracking-wider shadow-lg transition-all flex items-center gap-2.5">
-                                <span>Выбрать дату консультации</span>
+                                <span>Выбрать дату занятия</span>
                                 <i data-lucide="arrow-right" class="w-4 h-4"></i>
                             </a>
                             <a href="https://max.ru/" target="_blank" class="btn-secondary px-5 py-4 rounded-xl font-bold text-xs flex items-center gap-2 transition-colors">
@@ -413,14 +489,20 @@
                         </div>
                     </div>
 
-                    <!-- Right: High Authority Portrait -->
+                    <!-- Right: High Authority Portrait with Photo Studio Customizer -->
                     <div class="lg:col-span-5 flex flex-col items-center">
-                        <div class="relative w-72 sm:w-80 rounded-2xl overflow-hidden gold-border shadow-2xl">
-                            <img src="assets/natalia_portrait.jpg" alt="Наталья Дружинина — преподаватель математики" class="w-full h-96 object-cover object-top filter brightness-95 contrast-105">
+                        <div class="relative w-72 sm:w-80 rounded-2xl overflow-hidden gold-border shadow-2xl group">
+                            <!-- Photo Customizer Button -->
+                            <button onclick="openPhotoModal()" class="camera-pulse absolute top-3 right-3 px-3.5 py-1.5 rounded-full bg-slate-900/85 backdrop-blur-md border border-white/30 text-[11px] font-extrabold text-white shadow-xl hover:scale-105 transition-all flex items-center gap-1.5 z-20 cursor-pointer" title="Сменить образ / фото">
+                                <i data-lucide="camera" class="w-3.5 h-3.5 text-amber-300"></i>
+                                <span class="tracking-wide">Примерка фото</span>
+                            </button>
+
+                            <img id="nataliaMainPortrait" src="assets/natalia_portrait.jpg" alt="Наталья Дружинина — преподаватель математики" class="w-full h-96 object-cover object-top filter brightness-95 contrast-105 transition-all duration-300">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent flex items-end p-5">
                                 <div>
-                                    <div class="font-serif font-bold text-xl photo-title">Наталья Дружинина</div>
-                                    <div class="text-xs photo-subtitle">Преподаватель высшей квалификации</div>
+                                    <div class="font-serif font-bold text-xl photo-title" id="nataliaPortraitName">Наталья Дружинина</div>
+                                    <div class="text-xs photo-subtitle" id="nataliaPortraitSub">Преподаватель высшей квалификации</div>
                                 </div>
                             </div>
                         </div>
@@ -436,7 +518,7 @@
             <section class="space-y-6">
                 <div class="text-center max-w-xl mx-auto space-y-2">
                     <span class="text-xs font-bold uppercase tracking-widest text-gold">Методический фундамент</span>
-                    <h2 class="font-serif text-3xl font-bold text-parchment-50">3 ключа к высокому баллу</h2>
+                    <h2 class="font-serif text-3xl font-bold text-parchment-50">3 ключа к высшей оценке ОГЭ</h2>
                     <p class="text-xs text-slate-400">Глубокое понимание логики вместо механического нарешивания тестов</p>
                 </div>
 
@@ -445,9 +527,9 @@
                         <div class="w-12 h-12 rounded-xl bg-navy-700 gold-border flex items-center justify-center text-gold">
                             <i data-lucide="function-square" class="w-6 h-6"></i>
                         </div>
-                        <h3 class="font-serif font-bold text-xl text-parchment-50">Параметры (№18)</h3>
+                        <h3 class="font-serif font-bold text-xl text-parchment-50">Сложные задачи (№20–25)</h3>
                         <p class="text-xs text-slate-300 leading-relaxed font-normal">
-                            Графический и аналитический метод исследования. Задача на 4 первичных балла превращается в четкий и понятный алгоритм.
+                            Пошаговые алгоритмы для уравнений, систем и текстовых задач 2-й части. То, за что другие боятся браться, становится понятным.
                         </p>
                     </div>
 
@@ -455,9 +537,9 @@
                         <div class="w-12 h-12 rounded-xl bg-navy-700 gold-border flex items-center justify-center text-gold">
                             <i data-lucide="box" class="w-6 h-6"></i>
                         </div>
-                        <h3 class="font-serif font-bold text-xl text-parchment-50">Стереометрия и чертёж</h3>
+                        <h3 class="font-serif font-bold text-xl text-parchment-50">Геометрия без страха</h3>
                         <p class="text-xs text-slate-300 leading-relaxed font-normal">
-                            Построение сечений многогранников, метод координат и векторный аппарат. Ребёнок перестаёт гадать и видит пространство в объеме.
+                            Наглядные чертежи, логика теорем и доказательства. Ребёнок перестаёт гадать и видит геометрическую конструкцию целиком.
                         </p>
                     </div>
 
@@ -556,10 +638,11 @@
                         <div class="space-y-1">
                             <label class="block text-xs font-bold text-slate-300">Класс ученика *</label>
                             <select id="custGrade" class="w-full px-3 py-2.5 rounded-xl gold-border text-xs font-bold focus:outline-none">
+                                <option value="5">5 класс</option>
+                                <option value="6">6 класс</option>
+                                <option value="7">7 класс (начало геометрии)</option>
                                 <option value="8">8 класс</option>
-                                <option value="9">9 класс (ОГЭ)</option>
-                                <option value="10">10 класс (База ЕГЭ)</option>
-                                <option value="11" selected>11 класс (Профильный ЕГЭ 80+)</option>
+                                <option value="9" selected>9 класс (Подготовка к ОГЭ)</option>
                             </select>
                         </div>
                         <div class="space-y-1">
@@ -736,7 +819,7 @@
             <div class="space-y-3 text-xs">
                 <div>
                     <label class="font-bold text-slate-300 block mb-1">Имя ученика / родителя</label>
-                    <input type="text" id="manualCustName" placeholder="Например: Александр (11 класс)" class="w-full px-3 py-2 bg-navy-800 gold-border rounded-xl text-slate-100">
+                    <input type="text" id="manualCustName" placeholder="Например: Александр (9 класс)" class="w-full px-3 py-2 bg-navy-800 gold-border rounded-xl text-slate-100">
                 </div>
                 <div>
                     <label class="font-bold text-slate-300 block mb-1">Телефон</label>
@@ -745,8 +828,8 @@
                 <div>
                     <label class="font-bold text-slate-300 block mb-1">Программа</label>
                     <select id="manualCustFormat" class="w-full px-3 py-2 bg-navy-800 gold-border rounded-xl text-slate-100 font-bold">
-                        <option value="Профильный ЕГЭ (2 500 ₽)">Профильный ЕГЭ (2 500 ₽)</option>
-                        <option value="Подготовка к ОГЭ (2 000 ₽)">Подготовка к ОГЭ (2 000 ₽)</option>
+                        <option value="Подготовка к ОГЭ (2 500 ₽)">Подготовка к ОГЭ (2 500 ₽)</option>
+                        <option value="Математика 5–7 кл (2 000 ₽)">Математика 5–7 кл (2 000 ₽)</option>
                         <option value="Академическая диагностика (2 000 ₽)">Академическая диагностика (2 000 ₽)</option>
                     </select>
                 </div>
@@ -811,9 +894,80 @@
         </div>
     </div>
 
+    <!-- PHOTO STUDIO & AVATAR SWAPPER MODAL FOR NATALIA -->
+    <div id="photoModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4">
+        <div class="bg-navy-900 w-full max-w-lg rounded-3xl p-6 sm:p-8 shadow-2xl space-y-5 gold-border relative max-h-[90vh] overflow-y-auto">
+            
+            <div class="flex items-center justify-between pb-3 border-b border-gold/20">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-2xl bg-gold/15 text-gold flex items-center justify-center text-xl shadow-sm gold-border">
+                        📸
+                    </div>
+                    <div>
+                        <h3 class="font-serif font-bold text-xl text-parchment-50">Гардеробная фотографий</h3>
+                        <p class="text-xs text-slate-400">Примерьте образ или загрузите своё фото с телефона / компьютера</p>
+                    </div>
+                </div>
+                <button onclick="closePhotoModal()" class="text-slate-400 hover:text-white text-2xl font-bold leading-none p-1">&times;</button>
+            </div>
+
+            <!-- Preset Images Grid (3 Presets) -->
+            <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-gold mb-2.5">
+                    1. Выберите готовый фотосет
+                </label>
+                <div class="grid grid-cols-3 gap-2.5">
+                    <!-- Preset 1 -->
+                    <div onclick="selectPresetPhoto('assets/natalia_portrait.jpg', 'Наталья Дружинина', 'Преподаватель высшей квалификации')" class="group p-2 rounded-2xl border gold-border hover:border-gold cursor-pointer transition-all bg-navy-800 text-center">
+                        <img src="assets/natalia_portrait.jpg" alt="Основной портрет" class="w-full h-24 object-cover object-top rounded-xl shadow-sm group-hover:scale-105 transition-transform">
+                        <div class="text-[11px] font-bold text-parchment-50 mt-1.5 leading-tight">👩‍🏫 Основной</div>
+                        <div class="text-[9px] text-gold font-semibold">Академический</div>
+                    </div>
+
+                    <!-- Preset 2 -->
+                    <div onclick="selectPresetPhoto('assets/natalia_closeup.jpg', 'Наталья Дружинина', 'Спокойно и по полочкам ✨')" class="group p-2 rounded-2xl border gold-border hover:border-gold cursor-pointer transition-all bg-navy-800 text-center">
+                        <img src="assets/natalia_closeup.jpg" alt="Крупный план" class="w-full h-24 object-cover object-top rounded-xl shadow-sm group-hover:scale-105 transition-transform">
+                        <div class="text-[11px] font-bold text-parchment-50 mt-1.5 leading-tight">👓 Крупный план</div>
+                        <div class="text-[9px] text-gold font-semibold">Тёплая улыбка</div>
+                    </div>
+
+                    <!-- Preset 3 -->
+                    <div onclick="selectPresetPhoto('assets/hero_banner.jpg', 'Академический кабинет', 'Пространство математики и чертежей')" class="group p-2 rounded-2xl border gold-border hover:border-gold cursor-pointer transition-all bg-navy-800 text-center">
+                        <img src="assets/hero_banner.jpg" alt="Кабинет геометрии" class="w-full h-24 object-cover rounded-xl shadow-sm group-hover:scale-105 transition-transform">
+                        <div class="text-[11px] font-bold text-parchment-50 mt-1.5 leading-tight">📐 Кабинет</div>
+                        <div class="text-[9px] text-gold font-semibold">Лофт чертежей</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Custom Photo Upload Drop Area -->
+            <div class="space-y-2 pt-2 border-t border-gold/20">
+                <label class="block text-xs font-bold uppercase tracking-wider text-gold">
+                    2. Или загрузите любое своё фото
+                </label>
+                <input type="file" id="nataliaCustomFileInput" accept="image/*" class="hidden" onchange="handleCustomPhotoUpload(event)">
+                <div onclick="document.getElementById('nataliaCustomFileInput').click()" class="border-2 border-dashed border-gold/40 hover:border-gold rounded-2xl p-4 text-center cursor-pointer bg-navy-800/50 hover:bg-navy-800 transition-all space-y-1">
+                    <div class="text-2xl">📁</div>
+                    <div class="text-xs font-bold text-parchment-50">Нажмите, чтобы выбрать фото с устройства</div>
+                    <div class="text-[10px] text-slate-400">JPG, PNG, WebP • Фото сразу отобразится на сайте и сохранится</div>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-between pt-2">
+                <button onclick="resetToOriginalPhoto()" class="px-3.5 py-2 rounded-xl gold-border text-xs font-bold text-slate-300 hover:text-white transition-colors">
+                    ↺ Сбросить к оригиналу
+                </button>
+                <button onclick="closePhotoModal()" class="btn-primary px-5 py-2 rounded-xl text-xs font-bold shadow-md transition-all">
+                    Готово
+                </button>
+            </div>
+
+        </div>
+    </div>
+
     <!-- FLOATING THEME SWITCHER DOCK (4 VARIANTS) -->
-    <aside id="themeSwitcherDock" aria-label="Переключатель стиля оформления" class="fixed bottom-5 right-4 sm:right-6 z-50 flex items-center gap-1.5 p-1.5 rounded-2xl backdrop-blur-xl border shadow-2xl transition-all duration-300" style="background: var(--bg-header); border-color: var(--border-color); box-shadow: var(--glow);">
-        <div class="flex items-center gap-1.5 px-2 py-1 text-xs font-bold" style="color: var(--accent);">
+    <aside id="themeSwitcherDock" aria-label="Переключатель стиля оформления" class="theme-dock fixed bottom-5 right-4 sm:right-6 z-50 flex items-center gap-1.5 p-1.5 rounded-2xl backdrop-blur-xl border shadow-2xl transition-all duration-300">
+        <div class="theme-dock-label flex items-center gap-1.5 px-2 py-1 text-xs font-bold text-gold">
             <i data-lucide="palette" class="w-4 h-4"></i>
             <span class="hidden sm:inline">Стиль:</span>
         </div>
@@ -839,27 +993,102 @@
 
     <!-- SCRIPTING ENGINE -->
     <script>
+        // ================= PHOTO STUDIO ENGINE FOR NATALIA =================
+        const DEFAULT_PORTRAIT = 'assets/natalia_portrait.jpg';
+        const DEFAULT_NAME = 'Наталья Дружинина';
+        const DEFAULT_SUB = 'Преподаватель высшей квалификации';
+
+        function loadSavedPortrait() {
+            const saved = localStorage.getItem('natalia_custom_portrait');
+            const savedName = localStorage.getItem('natalia_portrait_name');
+            const savedSub = localStorage.getItem('natalia_portrait_sub');
+            if (saved) {
+                const img = document.getElementById('nataliaMainPortrait');
+                if (img) img.src = saved;
+            }
+            if (savedName) {
+                const nameEl = document.getElementById('nataliaPortraitName');
+                if (nameEl) nameEl.innerText = savedName;
+            }
+            if (savedSub) {
+                const subEl = document.getElementById('nataliaPortraitSub');
+                if (subEl) subEl.innerText = savedSub;
+            }
+        }
+
+        function openPhotoModal() {
+            document.getElementById('photoModal').classList.remove('hidden');
+            document.getElementById('photoModal').classList.add('flex');
+            lucide.createIcons();
+        }
+
+        function closePhotoModal() {
+            document.getElementById('photoModal').classList.add('hidden');
+            document.getElementById('photoModal').classList.remove('flex');
+        }
+
+        function selectPresetPhoto(src, name, sub) {
+            const img = document.getElementById('nataliaMainPortrait');
+            const nameEl = document.getElementById('nataliaPortraitName');
+            const subEl = document.getElementById('nataliaPortraitSub');
+            if (img) img.src = src;
+            if (nameEl) nameEl.innerText = name;
+            if (subEl) subEl.innerText = sub;
+
+            localStorage.setItem('natalia_custom_portrait', src);
+            localStorage.setItem('natalia_portrait_name', name);
+            localStorage.setItem('natalia_portrait_sub', sub);
+            closePhotoModal();
+        }
+
+        function handleCustomPhotoUpload(e) {
+            const file = e.target.files && e.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(evt) {
+                const dataUrl = evt.target.result;
+                const img = document.getElementById('nataliaMainPortrait');
+                const nameEl = document.getElementById('nataliaPortraitName');
+                const subEl = document.getElementById('nataliaPortraitSub');
+                if (img) img.src = dataUrl;
+                if (nameEl) nameEl.innerText = 'Наталья Дружинина';
+                if (subEl) subEl.innerText = 'Индивидуальный образ ✨';
+
+                localStorage.setItem('natalia_custom_portrait', dataUrl);
+                localStorage.setItem('natalia_portrait_name', 'Наталья Дружинина');
+                localStorage.setItem('natalia_portrait_sub', 'Индивидуальный образ ✨');
+                closePhotoModal();
+                alert('✨ Новое фото успешно загружено, отображено на сайте и сохранено в браузере!');
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function resetToOriginalPhoto() {
+            selectPresetPhoto(DEFAULT_PORTRAIT, DEFAULT_NAME, DEFAULT_SUB);
+        }
+
         // ================= THEME SWITCHER ENGINE =================
         const THEME_DATA = {
             academic: {
-                subtitle: 'Академический подход к подготовке в МГУ, ВШЭ, МФТИ и СПбГУ',
+                subtitle: 'Математика без зубрежки. Уверенная сдача ОГЭ',
                 motto: '«Математика — строгая наука, где каждый шаг вытекает из аксиом, а не из случайности»',
-                announcement: '🏛 Академическая математика высшей категории • Набор учеников 2026/2027 на профильный ЕГЭ (80+ / 90+)'
+                announcement: '🏛 Понятная математика • Сложные темы ОГЭ простыми словами'
             },
             minimal: {
-                subtitle: 'Инженерная строгость математики и подготовка к профилю 85+',
-                motto: '«Сложная задача перестаёт быть сложной, если разложить её на систему элементарных утверждений»',
-                announcement: '📐 Школа математической логики • Системная подготовка к профильному ЕГЭ и ОГЭ 2026/2027'
+                subtitle: 'Инженерная строгость математики и понятная геометрия',
+                motto: '«Сложная задача перестаёт быть сложной, если разложить её на систему простых шагов»',
+                announcement: '📐 Школа математической логики • Подготовка к ОГЭ и 5–9 классы'
             },
             light: {
-                subtitle: 'Классическая университетская школа и индивидуальная траектория',
+                subtitle: 'Уютный академический кабинет. Понятная алгебра и геометрия',
                 motto: '«Глубокое понимание рождается из доказательства, а не механического заучивания»',
-                announcement: '📜 Университетский кабинет Натальи Дружининой • Индивидуальный аудит и подготовка к ОГЭ/ЕГЭ'
+                announcement: '📜 Индивидуальные занятия с экспертом • Подготовка к ОГЭ 2026/2027'
             },
             emerald: {
-                subtitle: 'Золотое сечение мышления • Стереометрия, планиметрия и высший балл',
-                motto: '«Геометрия открывает внутреннюю гармонию мира и дисциплинирует ум»',
-                announcement: '✨ Золотое сечение высшей математики • Экспертный разбор сложнейшей 2-й части ЕГЭ'
+                subtitle: 'Гармония доказательств и уверенная сдача ОГЭ на 4 и 5',
+                motto: '«Красота геометрического чертежа — в ясности каждой линии и обоснованности шагов»',
+                announcement: '✨ Авторская методика Натальи Дружининой • Сложные задачи ОГЭ простыми словами'
             }
         };
 
@@ -898,18 +1127,18 @@
         // 1. CONFIG & DATA
         const TUTOR_PROGRAMS = [
             {
-                id: 'ege_profile',
-                title: 'Профильный ЕГЭ (10–11 классы)',
-                desc: 'Полный разбор 1-й и 2-й частей. Глубокое погружение в планиметрию, параметры, стереометрию и теорию чисел. Нацеленность на 80–95+ баллов.',
+                id: 'oge_prep',
+                title: 'Подготовка к ОГЭ (8–9 классы)',
+                desc: 'Полный разбор геометрии, алгебры и заданий 2-й части (№20–25). Учимся решать сложные уравнения и текстовые задачи на высший балл.',
                 price: 2500,
                 duration: 60,
                 icon: '🎓',
                 badge: 'Основная программа'
             },
             {
-                id: 'oge_base',
-                title: 'ОГЭ и база (8–9 классы)',
-                desc: 'Ликвидация системных пробелов, уверенная сдача ОГЭ на максимальную оценку «5» и закладывание базы для старшей школы и профильных классов.',
+                id: 'middle_math',
+                title: 'Математика и геометрия (5–7 классы)',
+                desc: 'Ликвидация системных пробелов, наглядное освоение дробей, уравнений и начал геометрии. Возвращаем спокойствие и уверенность.',
                 price: 2000,
                 duration: 60,
                 icon: '📖',
@@ -926,7 +1155,7 @@
             }
         ];
 
-        let selectedProgId = 'ege_profile';
+        let selectedProgId = 'oge_prep';
         let selectedDateIso = '';
         let selectedTime = '16:00';
         let isTeacherMode = false;
@@ -953,9 +1182,9 @@
                     time: '15:00',
                     startMin: 15 * 60,
                     duration: 60,
-                    name: 'Константин (11 кл)',
+                    name: 'Константин (9 кл)',
                     phone: '+7 (919) 444-22-11',
-                    format: 'Профильный ЕГЭ (2 500 ₽)',
+                    format: 'Подготовка к ОГЭ (2 500 ₽)',
                     price: 2500,
                     messenger: 'МАКС',
                     isBlocked: false
@@ -1017,6 +1246,7 @@
         // --- INIT ---
         document.addEventListener('DOMContentLoaded', () => {
             initTheme();
+            loadSavedPortrait();
             selectedDateIso = getIso(0);
             teacherSelectedDateIso = getIso(0);
 
