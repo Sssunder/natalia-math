@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Наталья Дружинина — Эксперт по профильной математике, ЕГЭ и ОГЭ | Подготовка к ведущим вузам</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            900: '#070E18',
+                            800: '#0D1B2A',
+                            700: '#15263D',
+                            600: '#1E3554',
+                            500: '#2A4A74',
+                        },
+                        gold: {
+                            light: '#F4ECE1',
+                            DEFAULT: '#C5A880',
+                            dark: '#9E7E55',
+                            accent: '#D4AF37',
+                        },
+                        parchment: {
+                            50: '#FBF9F5',
+                            100: '#F5EFE6',
+                            200: '#EDE4D4',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        display: ['"Cinzel"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #070E18; }
+        ::-webkit-scrollbar-thumb { background: #C5A880; border-radius: 4px; }
+        .gold-border {
+            border: 1px solid rgba(197, 168, 128, 0.35);
+        }
+        .gold-glow {
+            box-shadow: 0 0 35px -5px rgba(197, 168, 128, 0.15);
+        }
+        .academic-gradient {
+            background: radial-gradient(circle at 80% 20%, rgba(30, 53, 84, 0.6) 0%, rgba(13, 27, 42, 0.95) 60%, #070E18 100%);
+        }
+    </style>
+</head>
+<body class="bg-navy-900 text-slate-100 font-sans antialiased min-h-screen selection:bg-gold selection:text-navy-900">
+
+    <!-- Top Navigation -->
+    <header class="sticky top-0 z-40 bg-navy-900/95 backdrop-blur-md border-b border-gold/20">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+            <!-- Brand Monogram -->
+            <div class="flex items-center gap-3.5">
+                <div class="w-12 h-12 rounded-xl gold-border bg-gradient-to-br from-navy-800 to-navy-900 flex items-center justify-center text-gold font-display font-bold text-xl shadow-inner">
+                    НД
+                </div>
+                <div>
+                    <span class="font-serif font-bold text-xl sm:text-2xl tracking-wide text-parchment-50 block leading-tight">
+                        Наталья Дружинина
+                    </span>
+                    <span class="text-[11px] uppercase tracking-widest text-gold font-medium block">
+                        Высшая академическая математика • ЕГЭ / ОГЭ
+                    </span>
+                </div>
+            </div>
+
+            <!-- Header Action -->
+            <div class="flex items-center gap-3">
+                <a href="#booking" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-gold to-gold-dark hover:from-gold-dark hover:to-gold text-navy-900 font-bold text-xs uppercase tracking-wider shadow-md transition-all flex items-center gap-2">
+                    <span>Диагностика</span>
+                    <i data-lucide="compass" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 py-8 space-y-16">
+
+        <!-- HERO SECTION -->
+        <section class="rounded-3xl academic-gradient gold-border p-6 sm:p-12 gold-glow relative overflow-hidden">
+            <!-- Background Geometry / Blueprint Accents -->
+            <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full border border-gold/10 pointer-events-none"></div>
+            <div class="absolute -top-12 -right-12 w-72 h-72 rounded-full border border-gold/15 pointer-events-none"></div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
+                
+                <!-- Left: Prestige Credentials & Pitch -->
+                <div class="lg:col-span-7 space-y-6">
+                    
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-navy-800 gold-border text-gold text-xs font-semibold tracking-wider">
+                        <i data-lucide="award" class="w-3.5 h-3.5"></i>
+                        <span>15+ лет педагогической практики • Высшая категория</span>
+                    </div>
+
+                    <h1 class="font-serif text-3xl sm:text-5xl font-bold text-parchment-50 leading-[1.15] tracking-tight">
+                        Фундаментальная математика для тех, кто целится в 
+                        <span class="text-gold italic font-serif">топ-вузы</span> страны
+                    </h1>
+
+                    <p class="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
+                        Подготовка к профильному ЕГЭ на <strong>80–95+ баллов</strong> и ОГЭ на высший балл. Пошаговое освоение сложнейшей 2-й части: параметры, экономические задачи, стереометрия и теория чисел без шаблонного зазубривания.
+                    </p>
+
+                    <!-- Trust Stats Ribbon -->
+                    <div class="grid grid-cols-3 gap-3 pt-2">
+                        <div class="p-3.5 rounded-2xl bg-navy-800/80 gold-border">
+                            <div class="font-display text-2xl sm:text-3xl font-bold text-gold">84.6</div>
+                            <div class="text-[11px] text-slate-300 leading-tight mt-1">Средний балл ЕГЭ выпускников</div>
+                        </div>
+                        <div class="p-3.5 rounded-2xl bg-navy-800/80 gold-border">
+                            <div class="font-display text-2xl sm:text-3xl font-bold text-gold">100%</div>
+                            <div class="text-[11px] text-slate-300 leading-tight mt-1">Сдача ОГЭ на 5 и 4</div>
+                        </div>
+                        <div class="p-3.5 rounded-2xl bg-navy-800/80 gold-border">
+                            <div class="font-display text-2xl sm:text-3xl font-bold text-gold">15+</div>
+                            <div class="text-[11px] text-slate-300 leading-tight mt-1">Лет авторского стажа</div>
+                        </div>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-wrap items-center gap-4 pt-2">
+                        <a href="#booking" class="px-7 py-4 rounded-xl bg-gradient-to-r from-gold to-gold-dark hover:from-gold-dark hover:to-gold text-navy-900 font-extrabold text-sm uppercase tracking-wider shadow-lg transition-all flex items-center gap-2.5">
+                            <span>Записаться на консультацию</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                        <a href="#formats" class="px-6 py-4 rounded-xl bg-navy-800 gold-border hover:bg-navy-700 text-parchment-100 font-semibold text-sm transition-colors">
+                            Программы и стоимость
+                        </a>
+                    </div>
+
+                </div>
+
+                <!-- Right: High Authority Portrait -->
+                <div class="lg:col-span-5 flex flex-col items-center">
+                    <div class="relative w-72 sm:w-80 rounded-2xl overflow-hidden gold-border shadow-2xl bg-navy-800">
+                        <img src="assets/natalia_portrait.jpg" alt="Наталья Дружинина — преподаватель математики" class="w-full h-96 object-cover object-top filter brightness-95 contrast-105">
+                        
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-transparent to-transparent flex items-end p-5">
+                            <div>
+                                <div class="font-serif font-bold text-xl text-parchment-50">Наталья Дружинина</div>
+                                <div class="text-xs text-gold">Преподаватель высшей квалификации</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-3 text-center text-xs text-slate-400 italic">
+                        «Математика — строгая наука, где каждый шаг вытекает из аксиом, а не из случайности»
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- METHODOLOGY & ADVANTAGES -->
+        <section class="space-y-6">
+            <div class="text-center max-w-xl mx-auto space-y-2">
+                <span class="text-xs font-bold uppercase tracking-widest text-gold">Методический фундамент</span>
+                <h2 class="font-serif text-3xl font-bold text-parchment-50">Почему результаты учеников стабильно выше средних</h2>
+                <p class="text-xs text-slate-400">Вместо бездумного прорешивания сборников ФИПИ мы строим глубокий математический аппарат</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <div class="p-6 rounded-2xl bg-navy-800 gold-border space-y-3 hover:border-gold transition-colors">
+                    <div class="w-12 h-12 rounded-xl bg-navy-700 gold-border flex items-center justify-center text-gold">
+                        <i data-lucide="function-square" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-serif font-bold text-xl text-parchment-50">Параметры и нестандартная часть</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed font-normal">
+                        Задача №18 (с параметром) даёт 4 первичных балла. Учимся графическому методу и аналитическому исследованию так, что задача становится понятной и логичной.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-navy-800 gold-border space-y-3 hover:border-gold transition-colors">
+                    <div class="w-12 h-12 rounded-xl bg-navy-700 gold-border flex items-center justify-center text-gold">
+                        <i data-lucide="box" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-serif font-bold text-xl text-parchment-50">Стереометрия без иллюзий</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed font-normal">
+                        Построение сечений многогранников, метод координат и векторный аппарат. Ребёнок перестаёт гадать и начинает видеть пространство чертежа.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-navy-800 gold-border space-y-3 hover:border-gold transition-colors">
+                    <div class="w-12 h-12 rounded-xl bg-navy-700 gold-border flex items-center justify-center text-gold">
+                        <i data-lucide="shield-check" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-serif font-bold text-xl text-parchment-50">Критерии проверки экспертов</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed font-normal">
+                        Часто верное решение теряет баллы из-за неточной аргументации или отсутствия ОДЗ. Готовим чистовое оформление по строжайшим канонам ФИПИ.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FORMATS & PRICING -->
+        <section id="formats" class="space-y-6">
+            <div class="text-center max-w-xl mx-auto space-y-2">
+                <span class="text-xs font-bold uppercase tracking-widest text-gold">Форматы сотрудничества</span>
+                <h2 class="font-serif text-3xl font-bold text-parchment-50">Программы индивидуальной подготовки</h2>
+                <p class="text-xs text-slate-400">Каждое занятие строится по индивидуальной образовательной траектории</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <!-- Format 1: EGE Profile (Hero High Ticket) -->
+                <div class="p-7 rounded-2xl bg-gradient-to-b from-navy-800 to-navy-900 border-2 border-gold shadow-xl relative flex flex-col justify-between">
+                    <div class="absolute -top-3 right-6 px-3.5 py-1 rounded-full bg-gold text-navy-900 text-[10px] font-extrabold uppercase tracking-widest">
+                        Основная программа
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="text-gold">
+                            <i data-lucide="graduation-cap" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-2xl text-parchment-50">Профильный ЕГЭ (10–11 классы)</h3>
+                        <p class="text-xs text-slate-300 leading-relaxed font-normal">
+                            Полный разбор 1-й и 2-й частей. Глубокое погружение в планиметрию, параметры, стереометрию и теорию чисел. Нацеленность на 80–95+ баллов.
+                        </p>
+
+                        <div class="pt-3 border-t border-gold/20">
+                            <div class="font-display text-3xl font-bold text-gold">2 500 ₽</div>
+                            <div class="text-[11px] text-slate-400">за академический час (60 мин)</div>
+                        </div>
+
+                        <ul class="space-y-2 text-xs text-slate-300 pt-2 font-normal">
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check" class="w-4 h-4 text-gold"></i>
+                                <span>Индивидуальный план подготовки</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check" class="w-4 h-4 text-gold"></i>
+                                <span>Регулярные пробники с детальным анализом</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check" class="w-4 h-4 text-gold"></i>
+                                <span>Обратная связь родителям после каждого блока</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="pt-6">
+                        <a href="#booking" onclick="selectCourse('Профильный ЕГЭ (2 500 ₽)')" class="w-full py-3.5 rounded-xl bg-gold hover:bg-gold-dark text-navy-900 font-bold text-xs uppercase tracking-wider text-center block transition-colors">
+                            Выбрать программу
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Format 2: OGE & 8-9 Grades -->
+                <div class="p-7 rounded-2xl bg-navy-800 gold-border flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="text-gold">
+                            <i data-lucide="book-open" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-2xl text-parchment-50">ОГЭ и база (8–9 классы)</h3>
+                        <p class="text-xs text-slate-300 leading-relaxed font-normal">
+                            Ликвидация системных пробелов, уверенная сдача ОГЭ на максимальную оценку «5» и закладывание базы для старшей школы и профильных классов.
+                        </p>
+
+                        <div class="pt-3 border-t border-gold/20">
+                            <div class="font-display text-3xl font-bold text-gold">2 000 ₽</div>
+                            <div class="text-[11px] text-slate-400">за академический час (60 мин)</div>
+                        </div>
+
+                        <ul class="space-y-2 text-xs text-slate-300 pt-2 font-normal">
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check" class="w-4 h-4 text-gold"></i>
+                                <span>Разбор 2-й части ОГЭ (геометрия, графики)</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check" class="w-4 h-4 text-gold"></i>
+                                <span>Устранение страха перед контрольными</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check" class="w-4 h-4 text-gold"></i>
+                                <span>Подготовка к поступлению в лицеи</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="pt-6">
+                        <a href="#booking" onclick="selectCourse('Подготовка к ОГЭ (2 000 ₽)')" class="w-full py-3.5 rounded-xl bg-navy-700 gold-border hover:bg-gold hover:text-navy-900 text-parchment-100 font-bold text-xs uppercase tracking-wider text-center block transition-all">
+                            Выбрать программу
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Format 3: Diagnostic Consultation -->
+                <div class="p-7 rounded-2xl bg-navy-800 gold-border flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="text-gold">
+                            <i data-lucide="compass" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-2xl text-parchment-50">Академическая диагностика</h3>
+                        <p class="text-xs text-slate-300 leading-relaxed font-normal">
+                            60-минутный детальный срез знаний ученика. Выявление корневых пробелов в алгебре и геометрии с составлением письменного плана на учебный год.
+                        </p>
+
+                        <div class="pt-3 border-t border-gold/20">
+                            <div class="font-display text-3xl font-bold text-gold">2 000 ₽</div>
+                            <div class="text-[11px] text-slate-400">разовая консультация с отчётом</div>
+                        </div>
+
+                        <ul class="space-y-2 text-xs text-slate-300 pt-2 font-normal">
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check" class="w-4 h-4 text-gold"></i>
+                                <span>Тестирование по ключевым разделам</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check" class="w-4 h-4 text-gold"></i>
+                                <span>Развёрнутая карта дефицитов</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check" class="w-4 h-4 text-gold"></i>
+                                <span>Рекомендации по выбору вуза и баллов</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="pt-6">
+                        <a href="#booking" onclick="selectCourse('Академическая диагностика (2 000 ₽)')" class="w-full py-3.5 rounded-xl bg-navy-700 gold-border hover:bg-gold hover:text-navy-900 text-parchment-100 font-bold text-xs uppercase tracking-wider text-center block transition-all">
+                            Записаться на срез
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- BOOKING / DIAGNOSTIC SCHEDULER SECTION -->
+        <section id="booking" class="rounded-3xl bg-navy-800 gold-border p-6 sm:p-10 gold-glow space-y-8">
+            <div class="space-y-2">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/10 gold-border text-gold text-xs font-semibold">
+                    <i data-lucide="calendar" class="w-3.5 h-3.5"></i>
+                    <span>Персональная запись на консультацию</span>
+                </div>
+                <h2 class="font-serif text-3xl font-bold text-parchment-50">Выберите удобное время для вводной встречи</h2>
+                <p class="text-xs text-slate-400">
+                    Урок проходит в Zoom / Skype с интерактивной доской. Запись фиксируется только после личного подтверждения.
+                </p>
+            </div>
+
+            <!-- Guarantee Alert Box -->
+            <div class="p-4 rounded-xl bg-navy-900/90 gold-border flex items-start gap-3 text-xs text-slate-300">
+                <i data-lucide="shield-check" class="w-5 h-5 text-gold flex-shrink-0 mt-0.5"></i>
+                <div>
+                    <span class="font-bold text-parchment-50">Принцип индивидуального согласования:</span>
+                    Наталья Владимировна лично связывается с родителями для подтверждения выбранного времени в течение 2–3 рабочих часов. Никаких ночных записей или неожиданных списаний.
+                </div>
+            </div>
+
+            <form id="consultForm" onsubmit="handleBookingSubmit(event)" class="space-y-6">
+                
+                <!-- Step 1: Program -->
+                <div class="space-y-2">
+                    <label class="block text-xs font-bold uppercase tracking-wider text-gold">1. Выберите интересующую программу</label>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                        <label class="flex items-center gap-3 p-3.5 rounded-xl bg-navy-900 gold-border cursor-pointer hover:border-gold transition-colors">
+                            <input type="radio" name="program" value="Профильный ЕГЭ (2 500 ₽)" checked class="accent-gold">
+                            <span class="text-xs font-semibold text-slate-200">Профильный ЕГЭ 11 кл (2 500 ₽)</span>
+                        </label>
+                        <label class="flex items-center gap-3 p-3.5 rounded-xl bg-navy-900 gold-border cursor-pointer hover:border-gold transition-colors">
+                            <input type="radio" name="program" value="Подготовка к ОГЭ (2 000 ₽)" class="accent-gold">
+                            <span class="text-xs font-semibold text-slate-200">Подготовка к ОГЭ 9 кл (2 000 ₽)</span>
+                        </label>
+                        <label class="flex items-center gap-3 p-3.5 rounded-xl bg-navy-900 gold-border cursor-pointer hover:border-gold transition-colors">
+                            <input type="radio" name="program" value="Академическая диагностика (2 000 ₽)" class="accent-gold">
+                            <span class="text-xs font-semibold text-slate-200">Академическая диагностика</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Step 2: Date Selector -->
+                <div class="space-y-2">
+                    <label class="block text-xs font-bold uppercase tracking-wider text-gold">2. Выберите удобный день недели</label>
+                    <div id="daySelector" class="grid grid-cols-2 sm:grid-cols-5 gap-2.5">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+                <!-- Step 3: Time Slot -->
+                <div class="space-y-2">
+                    <label class="block text-xs font-bold uppercase tracking-wider text-gold">3. Доступные слоты для консультации</label>
+                    <div id="slotSelector" class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+                <!-- Step 4: Parent Info -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                    <div class="space-y-1.5">
+                        <label class="block text-xs font-bold text-slate-300">Имя родителя или ученика *</label>
+                        <input type="text" id="clientName" required placeholder="Например, Елена или Михаил" class="w-full px-4 py-3 rounded-xl bg-navy-900 gold-border text-sm text-parchment-50 placeholder-slate-500 focus:outline-none focus:border-gold">
+                    </div>
+                    <div class="space-y-1.5">
+                        <label class="block text-xs font-bold text-slate-300">Телефон (WhatsApp / Telegram) *</label>
+                        <input type="tel" id="clientPhone" required placeholder="+7 (999) 000-00-00" class="w-full px-4 py-3 rounded-xl bg-navy-900 gold-border text-sm text-parchment-50 placeholder-slate-500 focus:outline-none focus:border-gold">
+                    </div>
+                </div>
+
+                <div class="space-y-1.5">
+                    <label class="block text-xs font-bold text-slate-300">Текущий уровень и цели (необязательно)</label>
+                    <input type="text" id="clientGoal" placeholder="Например: 10 класс, оценка 4, хотим поступать на IT в МФТИ" class="w-full px-4 py-3 rounded-xl bg-navy-900 gold-border text-sm text-parchment-50 placeholder-slate-500 focus:outline-none focus:border-gold">
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-gold to-gold-dark hover:from-gold-dark hover:to-gold text-navy-900 font-extrabold text-sm uppercase tracking-wider shadow-lg transition-all flex items-center justify-center gap-2">
+                    <span>Зафиксировать заявку на консультацию</span>
+                    <i data-lucide="check-circle-2" class="w-5 h-5"></i>
+                </button>
+
+            </form>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="pt-8 pb-12 border-t border-gold/20 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+            <div class="flex items-center gap-3">
+                <span class="font-serif font-bold text-base text-parchment-100">Наталья Дружинина</span>
+                <span>•</span>
+                <span>Репетитор высшей категории</span>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="https://t.me/" target="_blank" class="hover:text-gold transition-colors flex items-center gap-1.5">
+                    <i data-lucide="send" class="w-4 h-4"></i>
+                    <span>Telegram</span>
+                </a>
+                <a href="#booking" class="hover:text-gold transition-colors">Запись на консультацию</a>
+            </div>
+        </footer>
+
+    </main>
+
+    <!-- SUCCESS MODAL (With Yandex Calendar & ICS Download) -->
+    <div id="successModal" class="fixed inset-0 z-50 bg-navy-900/80 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="max-w-md w-full rounded-3xl bg-navy-800 gold-border p-6 sm:p-8 gold-glow space-y-5 text-center relative animate-fade-in">
+            
+            <div class="w-16 h-16 rounded-2xl bg-gold/15 gold-border text-gold mx-auto flex items-center justify-center text-3xl">
+                🏛
+            </div>
+
+            <div class="space-y-1">
+                <h3 class="font-serif text-2xl font-bold text-parchment-50">Заявка предварительно принята!</h3>
+                <p id="modalSummary" class="text-xs text-slate-300 leading-relaxed font-normal">
+                    Мы зарезервировали выбранный слот. Наталья Владимировна свяжется с вами для подтверждения.
+                </p>
+            </div>
+
+            <div class="p-4 rounded-xl bg-navy-900 gold-border text-left space-y-1 text-xs">
+                <div class="text-gold font-bold" id="modalSlotDetail">Слот: Четверг, 16:00</div>
+                <div class="text-slate-400" id="modalProgramDetail">Программа: Профильный ЕГЭ (2 500 ₽)</div>
+            </div>
+
+            <!-- Calendar Export Actions -->
+            <div class="space-y-2 pt-2">
+                <a id="yandexCalBtn" href="#" target="_blank" class="w-full py-3 rounded-xl bg-gold hover:bg-gold-dark text-navy-900 font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-colors">
+                    <i data-lucide="calendar-plus" class="w-4 h-4"></i>
+                    <span>Добавить в Яндекс.Календарь</span>
+                </a>
+
+                <button onclick="downloadICS()" class="w-full py-2.5 rounded-xl bg-navy-700 gold-border hover:bg-navy-600 text-slate-200 font-semibold text-xs flex items-center justify-center gap-2 transition-colors">
+                    <i data-lucide="download" class="w-4 h-4"></i>
+                    <span>Скачать .ICS (Google / Apple Calendar)</span>
+                </button>
+
+                <a id="tgDirectBtn" href="https://t.me/" target="_blank" class="w-full py-2.5 rounded-xl bg-[#2AABEE]/20 hover:bg-[#2AABEE]/30 text-[#2AABEE] border border-[#2AABEE]/40 font-bold text-xs flex items-center justify-center gap-2 transition-colors">
+                    <i data-lucide="send" class="w-4 h-4"></i>
+                    <span>Написать Наталье Владимировне в Telegram</span>
+                </a>
+            </div>
+
+            <button onclick="closeModal()" class="text-xs text-slate-400 hover:text-parchment-50 font-medium">
+                Закрыть окно
+            </button>
+
+        </div>
+    </div>
+
+    <!-- Scripting for Dynamic Dates, Slots, Yandex.Calendar and .ICS generation -->
+    <script>
+        lucide.createIcons();
+
+        let selectedDay = null;
+        let selectedTime = '16:00';
+        let currentBooking = null;
+
+        const scheduleDays = [
+            { id: 1, name: 'Понедельник', dateStr: '16 ноя', fullDate: '20261116' },
+            { id: 2, name: 'Вторник',     dateStr: '17 ноя', fullDate: '20261117' },
+            { id: 3, name: 'Среда',       dateStr: '18 ноя', fullDate: '20261118' },
+            { id: 4, name: 'Четверг',     dateStr: '19 ноя', fullDate: '20261119' },
+            { id: 5, name: 'Суббота',     dateStr: '21 ноя', fullDate: '20261121' }
+        ];
+
+        const availableSlots = ['15:00', '16:30', '18:00', '19:30'];
+
+        function renderDays() {
+            const container = document.getElementById('daySelector');
+            container.innerHTML = '';
+            scheduleDays.forEach((day, index) => {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = `p-3 rounded-xl gold-border text-center transition-all ${
+                    (selectedDay && selectedDay.id === day.id) || (!selectedDay && index === 0)
+                        ? 'bg-gold text-navy-900 font-bold shadow-md'
+                        : 'bg-navy-900 text-slate-300 hover:border-gold'
+                }`;
+                btn.innerHTML = `<div class="text-xs">${day.name}</div><div class="text-[10px] opacity-80 mt-0.5">${day.dateStr}</div>`;
+                btn.onclick = () => {
+                    selectedDay = day;
+                    renderDays();
+                    renderSlots();
+                };
+                container.appendChild(btn);
+            });
+            if (!selectedDay) selectedDay = scheduleDays[0];
+        }
+
+        function renderSlots() {
+            const container = document.getElementById('slotSelector');
+            container.innerHTML = '';
+            availableSlots.forEach(slot => {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = `py-2.5 px-3 rounded-xl gold-border text-center text-xs font-semibold transition-all ${
+                    selectedTime === slot
+                        ? 'bg-gradient-to-r from-gold to-gold-dark text-navy-900 font-bold shadow-sm'
+                        : 'bg-navy-900 text-slate-300 hover:border-gold'
+                }`;
+                btn.innerText = slot;
+                btn.onclick = () => {
+                    selectedTime = slot;
+                    renderSlots();
+                };
+                container.appendChild(btn);
+            });
+        }
+
+        function selectCourse(courseName) {
+            const radios = document.getElementsByName('program');
+            for (let r of radios) {
+                if (r.value === courseName) {
+                    r.checked = true;
+                    break;
+                }
+            }
+            document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function handleBookingSubmit(e) {
+            e.preventDefault();
+            const program = document.querySelector('input[name="program"]:checked').value;
+            const name = document.getElementById('clientName').value;
+            const phone = document.getElementById('clientPhone').value;
+            const goal = document.getElementById('clientGoal').value;
+
+            currentBooking = {
+                program,
+                name,
+                phone,
+                goal,
+                day: selectedDay,
+                time: selectedTime
+            };
+
+            // Modal text
+            document.getElementById('modalSlotDetail').innerText = `Слот: ${selectedDay.name} (${selectedDay.dateStr}) в ${selectedTime}`;
+            document.getElementById('modalProgramDetail').innerText = `Программа: ${program} • Клиент: ${name}`;
+
+            // Yandex Calendar link
+            // Format: YYYYMMDDTHHMMSS
+            const startHour = selectedTime.split(':')[0];
+            const startMin = selectedTime.split(':')[1];
+            const endHour = String(parseInt(startHour) + 1).padStart(2, '0');
+            const startDateTime = `${selectedDay.fullDate}T${startHour}${startMin}00`;
+            const endDateTime = `${selectedDay.fullDate}T${endHour}${startMin}00`;
+
+            const yandexUrl = `https://calendar.yandex.ru/custom-event?name=${encodeURIComponent('Диагностика по математике с Натальей Дружининой')}&start_ts=${startDateTime}&end_ts=${endDateTime}&description=${encodeURIComponent('Программа: ' + program + '\nПреподаватель: Наталья Дружинина\nКлиент: ' + name + ' (' + phone + ')')}`;
+            document.getElementById('yandexCalBtn').href = yandexUrl;
+
+            // Telegram Link
+            const tgMsg = encodeURIComponent(`Здравствуйте, Наталья Владимировна! Меня зовут ${name}. Записались на сайте на консультацию:\n- Программа: ${program}\n- Дата и время: ${selectedDay.name} (${selectedDay.dateStr}) в ${selectedTime}\n- Телефон: ${phone}\n- Цель: ${goal || 'Подготовка к экзаменам'}`);
+            document.getElementById('tgDirectBtn').href = `https://t.me/share/url?url=${tgMsg}`;
+
+            // Show Modal
+            document.getElementById('successModal').classList.remove('hidden');
+            document.getElementById('successModal').classList.add('flex');
+            lucide.createIcons();
+        }
+
+        function closeModal() {
+            document.getElementById('successModal').classList.add('hidden');
+            document.getElementById('successModal').classList.remove('flex');
+        }
+
+        function downloadICS() {
+            if (!currentBooking) return;
+            const b = currentBooking;
+            const startHour = b.time.split(':')[0];
+            const startMin = b.time.split(':')[1];
+            const endHour = String(parseInt(startHour) + 1).padStart(2, '0');
+            
+            const icsContent = [
+                'BEGIN:VCALENDAR',
+                'VERSION:2.0',
+                'PRODID:-//Natalia Druzhinina Math//RU',
+                'CALSCALE:GREGORIAN',
+                'BEGIN:VEVENT',
+                `SUMMARY:Диагностика по математике — Наталья Дружинина`,
+                `DESCRIPTION:Программа: ${b.program}\\nПреподаватель: Наталья Дружинина\\nУченик: ${b.name} (${b.phone})`,
+                `DTSTART:${b.day.fullDate}T${startHour}${startMin}00`,
+                `DTEND:${b.day.fullDate}T${endHour}${startMin}00`,
+                'STATUS:CONFIRMED',
+                'END:VEVENT',
+                'END:VCALENDAR'
+            ].join('\r\n');
+
+            const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+            const link = document.createElement('a');
+            link.href = window.URL.createObjectURL(blob);
+            link.setAttribute('download', `urok_math_${b.day.fullDate}.ics`);
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        // Initialize
+        renderDays();
+        renderSlots();
+    </script>
+</body>
+</html>
