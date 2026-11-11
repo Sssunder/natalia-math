@@ -324,6 +324,44 @@
             color: #B45309 !important;
         }
 
+        /* Quiz & Calculator Specific Theme Polish */
+        .quiz-option-btn {
+            background-color: var(--bg-card) !important;
+            border: 1px solid var(--border-color) !important;
+            color: var(--text-heading) !important;
+        }
+        .quiz-option-btn:hover {
+            border-color: var(--color-accent) !important;
+        }
+        [data-theme="light"] #quizSection,
+        [data-theme="light"] #ogeCalculatorSection {
+            background-color: #FFFFFF !important;
+            border-color: rgba(180, 83, 9, 0.22) !important;
+            box-shadow: 0 4px 18px -2px rgba(0, 0, 0, 0.04) !important;
+        }
+        [data-theme="light"] #quizSection [class*="bg-navy-900"],
+        [data-theme="light"] #ogeCalculatorSection [class*="bg-navy-900"] {
+            background-color: #F5EFE6 !important;
+            border-color: rgba(180, 83, 9, 0.2) !important;
+        }
+        [data-theme="light"] #quizSection [class*="bg-navy-950"],
+        [data-theme="light"] #ogeCalculatorSection [class*="bg-navy-950"] {
+            background-color: #EDE4D4 !important;
+            border-color: rgba(180, 83, 9, 0.2) !important;
+        }
+        [data-theme="light"] .quiz-option-btn {
+            background-color: #FFFFFF !important;
+            border-color: rgba(180, 83, 9, 0.22) !important;
+        }
+        [data-theme="light"] .quiz-option-btn:hover {
+            border-color: #B45309 !important;
+            background-color: #FDFBF7 !important;
+        }
+        [data-theme="light"] #quizResult {
+            background-color: #F5EFE6 !important;
+            border-color: rgba(180, 83, 9, 0.3) !important;
+        }
+
         /* Theme Switcher Dock */
         .theme-dock {
             background: rgba(10, 15, 28, 0.92);
@@ -404,6 +442,12 @@
                         <button onclick="setThemeVariant('light')" class="px-2 py-0.5 rounded-lg hover:text-gold transition-colors font-bold" title="Светлый Кабинет">📜</button>
                         <button onclick="setThemeVariant('emerald')" class="px-2 py-0.5 rounded-lg hover:text-gold transition-colors font-bold" title="Золотое Сечение">✨</button>
                     </div>
+
+                    <!-- Sound Toggle Button -->
+                    <button onclick="toggleSound()" id="soundToggleBtn" class="btn-secondary px-3 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all" title="Звуковые эффекты">
+                        <span>🔔</span>
+                        <span class="hidden sm:inline">Звук</span>
+                    </button>
 
                     <!-- Messenger Button (Unified 2-Color Theme) -->
                     <a href="https://max.ru/" target="_blank" title="Написать в МАКС" class="btn-secondary px-3.5 py-2 rounded-xl font-bold text-xs flex items-center gap-1.5 transition-all">
@@ -555,7 +599,208 @@
                 </div>
             </section>
 
-            <!-- FORMATS & PRICING (Interactive Cards) -->
+            <!-- 20-SECOND INTERACTIVE MATH DIAGNOSTIC TEST (FULL PARITY WITH MARIA) -->
+            <section id="quizSection" class="rounded-3xl bg-navy-800 gold-border p-6 sm:p-10 shadow-2xl relative overflow-hidden transition-colors">
+                <div class="max-w-2xl mx-auto space-y-6">
+                    
+                    <div class="text-center space-y-2">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full gold-border bg-navy-900 text-gold text-xs font-bold tracking-wide">
+                            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+                            <span>Интерактив за 20 секунд</span>
+                        </div>
+                        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-parchment-50">Какой подход к математике нужен вам?</h2>
+                        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
+                            Ответьте на 3 вопроса — определим сильные стороны и составим персональный план к твёрдой «4» или «5» на ОГЭ без стресса.
+                        </p>
+                    </div>
+
+                    <!-- Progress Step Indicators -->
+                    <div class="flex items-center justify-center gap-2 pt-1" id="quizStepPills">
+                        <div id="quizPill1" class="w-8 h-2 rounded-full bg-gold transition-all"></div>
+                        <div id="quizPill2" class="w-8 h-2 rounded-full bg-navy-700 gold-border transition-all"></div>
+                        <div id="quizPill3" class="w-8 h-2 rounded-full bg-navy-700 gold-border transition-all"></div>
+                    </div>
+
+                    <!-- Quiz Question 1 -->
+                    <div id="quizStep1" class="space-y-4 pt-2">
+                        <div class="font-serif font-bold text-lg text-parchment-50 text-center">
+                            1. Что вызывает больше всего трудностей в школьной математике?
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <button onclick="answerNataliaQuiz(1, 'geo')" class="quiz-option-btn p-4 rounded-2xl bg-navy-900 gold-border text-left hover:border-gold hover:shadow-md transition-all text-xs font-bold text-parchment-50 flex items-start gap-3">
+                                <span class="text-xl">📐</span>
+                                <div>
+                                    <div class="font-bold text-parchment-50 text-sm">Геометрия и чертежи</div>
+                                    <div class="text-[11px] text-slate-300 font-normal mt-0.5">Не вижу рисунок, путаются теоремы и признаки подобия</div>
+                                </div>
+                            </button>
+                            <button onclick="answerNataliaQuiz(1, 'alg')" class="quiz-option-btn p-4 rounded-2xl bg-navy-900 gold-border text-left hover:border-gold hover:shadow-md transition-all text-xs font-bold text-parchment-50 flex items-start gap-3">
+                                <span class="text-xl">🧮</span>
+                                <div>
+                                    <div class="font-bold text-parchment-50 text-sm">Алгебра, дроби и корни</div>
+                                    <div class="text-[11px] text-slate-300 font-normal mt-0.5">Обидные вычислительные ошибки и путаница со знаками</div>
+                                </div>
+                            </button>
+                            <button onclick="answerNataliaQuiz(1, 'panic')" class="quiz-option-btn p-4 rounded-2xl bg-navy-900 gold-border text-left hover:border-gold hover:shadow-md transition-all text-xs font-bold text-parchment-50 flex items-start gap-3">
+                                <span class="text-xl">⏳</span>
+                                <div>
+                                    <div class="font-bold text-parchment-50 text-sm">Страх не успеть на ОГЭ</div>
+                                    <div class="text-[11px] text-slate-300 font-normal mt-0.5">Времени кажется мало, при виде задач охватывает ступор</div>
+                                </div>
+                            </button>
+                            <button onclick="answerNataliaQuiz(1, 'top')" class="quiz-option-btn p-4 rounded-2xl bg-navy-900 gold-border text-left hover:border-gold hover:shadow-md transition-all text-xs font-bold text-parchment-50 flex items-start gap-3">
+                                <span class="text-xl">🎯</span>
+                                <div>
+                                    <div class="font-bold text-parchment-50 text-sm">Хочу твёрдую «пятёрку»</div>
+                                    <div class="text-[11px] text-slate-300 font-normal mt-0.5">База ясна, нужно освоить сложнейшие задачи №20–25</div>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Quiz Question 2 -->
+                    <div id="quizStep2" class="space-y-4 pt-2 hidden">
+                        <div class="font-serif font-bold text-lg text-parchment-50 text-center">
+                            2. Какой темп и формат объяснения для вас самый комфортный?
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <button onclick="answerNataliaQuiz(2, 'visual')" class="quiz-option-btn p-4 rounded-2xl bg-navy-900 gold-border text-left hover:border-gold hover:shadow-md transition-all text-xs font-bold text-parchment-50 flex items-start gap-3">
+                                <span class="text-xl">🎨</span>
+                                <div>
+                                    <div class="font-bold text-parchment-50 text-sm">Наглядный и пошаговый</div>
+                                    <div class="text-[11px] text-slate-300 font-normal mt-0.5">Разбор каждого шага на понятном чертеже и примерах</div>
+                                </div>
+                            </button>
+                            <button onclick="answerNataliaQuiz(2, 'logic')" class="quiz-option-btn p-4 rounded-2xl bg-navy-900 gold-border text-left hover:border-gold hover:shadow-md transition-all text-xs font-bold text-parchment-50 flex items-start gap-3">
+                                <span class="text-xl">📜</span>
+                                <div>
+                                    <div class="font-bold text-parchment-50 text-sm">Строгий алгоритм и система</div>
+                                    <div class="text-[11px] text-slate-300 font-normal mt-0.5">Чёткие правила решения задач без «воды» и догадок</div>
+                                </div>
+                            </button>
+                            <button onclick="answerNataliaQuiz(2, 'dialog')" class="quiz-option-btn p-4 rounded-2xl bg-navy-900 gold-border text-left hover:border-gold hover:shadow-md transition-all text-xs font-bold text-parchment-50 flex items-start gap-3 sm:col-span-2">
+                                <span class="text-xl">☕</span>
+                                <div>
+                                    <div class="font-bold text-parchment-50 text-sm">Спокойный диалог без стресса</div>
+                                    <div class="text-[11px] text-slate-300 font-normal mt-0.5">Возможность переспрашивать без страха показаться глупым</div>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Quiz Question 3 -->
+                    <div id="quizStep3" class="space-y-4 pt-2 hidden">
+                        <div class="font-serif font-bold text-lg text-parchment-50 text-center">
+                            3. В каком классе учится школьник?
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <button onclick="answerNataliaQuiz(3, 'middle')" class="quiz-option-btn p-4 rounded-2xl bg-navy-900 gold-border text-left hover:border-gold hover:shadow-md transition-all text-xs font-bold text-parchment-50 flex items-start gap-3">
+                                <span class="text-xl">🌱</span>
+                                <div>
+                                    <div class="font-bold text-parchment-50 text-sm">5–7 классы</div>
+                                    <div class="text-[11px] text-slate-300 font-normal mt-0.5">Закладываем фундамент, убираем пробелы и страх доски</div>
+                                </div>
+                            </button>
+                            <button onclick="answerNataliaQuiz(3, 'oge')" class="quiz-option-btn p-4 rounded-2xl bg-navy-900 gold-border text-left hover:border-gold hover:shadow-md transition-all text-xs font-bold text-parchment-50 flex items-start gap-3">
+                                <span class="text-xl">🎓</span>
+                                <div>
+                                    <div class="font-bold text-parchment-50 text-sm">8–9 классы (ОГЭ)</div>
+                                    <div class="text-[11px] text-slate-300 font-normal mt-0.5">Целенаправленная подготовка к ОГЭ на оценку «4» и «5»</div>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Quiz Step 4: Result Card -->
+                    <div id="quizResult" class="p-6 sm:p-8 rounded-3xl bg-navy-900 gold-border space-y-4 hidden text-center shadow-inner">
+                        <div class="w-16 h-16 rounded-2xl bg-gold/15 text-gold mx-auto flex items-center justify-center text-3xl shadow-sm gold-border">
+                            <span id="quizResultIcon">🏛</span>
+                        </div>
+                        <div class="space-y-1.5">
+                            <div class="text-xs uppercase font-bold text-gold tracking-widest">Результат экспресс-диагностики</div>
+                            <h3 id="quizResultTitle" class="font-serif text-2xl sm:text-3xl font-bold text-parchment-50">
+                                Геометрический Архитектор 🏛
+                            </h3>
+                            <p id="quizResultDesc" class="text-xs sm:text-sm text-slate-300 max-w-lg mx-auto leading-relaxed font-normal">
+                                У вас пытливый пространственный ум...
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap items-center justify-center gap-3 pt-3">
+                            <button onclick="applyNataliaQuizRecommendation()" class="btn-primary px-7 py-4 rounded-xl text-xs font-extrabold uppercase tracking-wider shadow-lg flex items-center gap-2 transition-all">
+                                <span>Записаться на занятие по совету теста</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </button>
+                            <button onclick="resetNataliaQuiz()" class="btn-secondary px-5 py-4 rounded-xl font-bold text-xs transition-colors">
+                                Пройти заново
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- INTERACTIVE OGE SCORE CALCULATOR & GEOMETRY RULE -->
+            <section id="ogeCalculatorSection" class="rounded-3xl bg-navy-800 gold-border p-6 sm:p-10 shadow-2xl relative overflow-hidden transition-colors">
+                <div class="max-w-2xl mx-auto space-y-6">
+                    <div class="text-center space-y-2">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full gold-border bg-navy-900 text-gold text-xs font-bold tracking-wide">
+                            <i data-lucide="calculator" class="w-3.5 h-3.5"></i>
+                            <span>Интерактивный ориентир</span>
+                        </div>
+                        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-parchment-50">Калькулятор оценки ОГЭ 2026</h2>
+                        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
+                            Подвигайте ползунок первичных баллов (0–31), чтобы увидеть итоговую оценку по официальной шкале ФИПИ.
+                        </p>
+                    </div>
+
+                    <!-- Slider & Result Display -->
+                    <div class="p-6 sm:p-8 rounded-2xl bg-navy-900 gold-border space-y-5">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                            <div>
+                                <span class="text-xs text-slate-400 block font-medium">Первичный балл за экзамен:</span>
+                                <div class="flex items-baseline gap-1 mt-0.5">
+                                    <span id="ogeScoreValue" class="font-display text-4xl sm:text-5xl font-bold text-gold">18</span>
+                                    <span class="text-xs text-slate-400"> / 31 балл</span>
+                                </div>
+                            </div>
+                            <div class="sm:text-right">
+                                <span class="text-xs text-slate-400 block font-medium">Оценка в аттестат:</span>
+                                <div id="ogeGradeBadge" class="inline-block px-5 py-2 rounded-xl font-serif text-2xl font-bold text-white bg-blue-600 shadow-md mt-0.5">
+                                    Оценка «4»
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Range Input -->
+                        <div class="space-y-1.5 pt-2">
+                            <input type="range" id="ogeScoreRange" min="0" max="31" value="18" oninput="updateOgeCalc(this.value)" class="w-full accent-amber-500 cursor-pointer h-2.5 rounded-lg bg-navy-950">
+                            <div class="flex justify-between text-[10px] text-slate-400 font-semibold px-0.5">
+                                <span>0 б («2»)</span>
+                                <span>8 б («3»)</span>
+                                <span>15 б («4»)</span>
+                                <span>22 б («5»)</span>
+                                <span>31 б (Макс)</span>
+                            </div>
+                        </div>
+
+                        <!-- Crucial FIPi Geometry Rule Callout -->
+                        <div id="ogeCalcTip" class="p-4 rounded-xl bg-navy-950 gold-border text-xs text-slate-300 leading-relaxed flex items-start gap-3">
+                            <span class="text-2xl flex-shrink-0">⚠️</span>
+                            <div>
+                                <strong class="text-gold font-bold">Главное строгое правило ФИПИ:</strong>
+                                <span> Для получения любой положительной оценки («3», «4» или «5») школьник обязан набрать минимум <strong>2 балла</strong> за задания по геометрии. Без геометрии ставится «двойка», даже если за алгебру набран максимум! В программе Натальи Владимировны геометрии уделяется особое внимание.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center pt-2">
+                        <a href="#booking" class="btn-primary px-8 py-4 rounded-xl text-xs font-bold uppercase tracking-wider inline-flex items-center gap-2 shadow-lg">
+                            <span>Записаться на вводное занятие с Натальей Владимировной</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
             <section id="formats" class="space-y-6">
                 <div class="text-center max-w-xl mx-auto space-y-2">
                     <span class="text-xs font-bold uppercase tracking-widest text-gold">Форматы сотрудничества</span>
@@ -1122,6 +1367,133 @@
                 saved = localStorage.getItem('natalia_theme_variant') || 'academic';
             } catch(e) {}
             setThemeVariant(saved);
+        }
+
+        // ================= AUDIO ENGINE FOR NATALIA =================
+        let soundEnabled = true;
+
+        function playAcademicChime(freq = 523.25, duration = 0.2) {
+            if (!soundEnabled) return;
+            try {
+                const AudioCtx = window.AudioContext || window.webkitAudioContext;
+                if (!AudioCtx) return;
+                const ctx = new AudioCtx();
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(freq, ctx.currentTime);
+                gain.gain.setValueAtTime(0.12, ctx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + duration);
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+                osc.start();
+                osc.stop(ctx.currentTime + duration);
+            } catch(e) {}
+        }
+
+        function toggleSound() {
+            soundEnabled = !soundEnabled;
+            const btn = document.getElementById('soundToggleBtn');
+            if (btn) {
+                btn.innerHTML = soundEnabled 
+                    ? '<span>🔔</span><span class="hidden sm:inline">Звук</span>' 
+                    : '<span>🔕</span><span class="hidden sm:inline">Без звука</span>';
+            }
+            if (soundEnabled) playAcademicChime(659.25, 0.2);
+        }
+
+        // ================= NATALIA QUIZ ENGINE (PARITY WITH MARIA) =================
+        let nataliaQuizAnswers = {};
+
+        function answerNataliaQuiz(step, answer) {
+            nataliaQuizAnswers[step] = answer;
+            playAcademicChime(440 + step * 110, 0.15);
+
+            if (step === 1) {
+                document.getElementById('quizStep1').classList.add('hidden');
+                document.getElementById('quizStep2').classList.remove('hidden');
+                document.getElementById('quizPill2').className = 'w-8 h-2 rounded-full bg-gold transition-all';
+            } else if (step === 2) {
+                document.getElementById('quizStep2').classList.add('hidden');
+                document.getElementById('quizStep3').classList.remove('hidden');
+                document.getElementById('quizPill3').className = 'w-8 h-2 rounded-full bg-gold transition-all';
+            } else if (step === 3) {
+                document.getElementById('quizStep3').classList.add('hidden');
+                showNataliaQuizResult();
+            }
+        }
+
+        function showNataliaQuizResult() {
+            const resultBox = document.getElementById('quizResult');
+            const titleEl = document.getElementById('quizResultTitle');
+            const descEl = document.getElementById('quizResultDesc');
+            const iconEl = document.getElementById('quizResultIcon');
+
+            if (nataliaQuizAnswers[1] === 'geo') {
+                iconEl.innerText = '📐';
+                titleEl.innerText = 'Геометрический Архитектор 🏛️';
+                descEl.innerText = 'У вас пытливый пространственный ум, которому нужны наглядные чертежи и понятные ассоциации. С Натальей Владимировной геометрия перестанет быть абстракцией: разложим каждый чертёж по полочкам, и задачи №15–19 и №23–25 станут любимыми!';
+            } else if (nataliaQuizAnswers[1] === 'alg') {
+                iconEl.innerText = '⚖️';
+                titleEl.innerText = 'Мастер Точности & Формул 🧮';
+                descEl.innerText = 'Ваша суперсила — логика, но обидные вычислительные описки и спешка срезают баллы. Мы выстроим системную самопроверку, и 1-я часть ОГЭ будет забираться на 100% без ошибок!';
+            } else if (nataliaQuizAnswers[1] === 'top') {
+                iconEl.innerText = '🚀';
+                titleEl.innerText = 'Стратег ОГЭ на «5» 🎯';
+                descEl.innerText = 'Базовая школьная программа уже ясна. Наша совместная цель — сложнейшие задачи 2-й части (№20–25), чистовое оформление по строгим критериям экспертов ФИПИ и максимальный балл!';
+            } else {
+                iconEl.innerText = '🛡️';
+                titleEl.innerText = 'Спокойный Аналитик 🌿';
+                descEl.innerText = 'Вы способны отлично решать задачи, когда нет давления и страха перед доской. В уютной индивидуальной атмосфере тревога уйдёт, вернётся уверенность и твёрдая оценка в четверти!';
+            }
+
+            resultBox.classList.remove('hidden');
+            resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            playAcademicChime(659.25, 0.3);
+            if (window.lucide) lucide.createIcons();
+        }
+
+        function resetNataliaQuiz() {
+            document.getElementById('quizResult').classList.add('hidden');
+            document.getElementById('quizStep3').classList.add('hidden');
+            document.getElementById('quizStep2').classList.add('hidden');
+            document.getElementById('quizStep1').classList.remove('hidden');
+            document.getElementById('quizPill2').className = 'w-8 h-2 rounded-full bg-navy-700 gold-border transition-all';
+            document.getElementById('quizPill3').className = 'w-8 h-2 rounded-full bg-navy-700 gold-border transition-all';
+            playAcademicChime(350, 0.1);
+        }
+
+        function applyNataliaQuizRecommendation() {
+            if (nataliaQuizAnswers[3] === 'middle') {
+                selectProgram('middle_math');
+            } else {
+                selectProgram('oge_prep');
+            }
+            playAcademicChime(587.33, 0.2);
+            document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // ================= OGE SCORE CALCULATOR =================
+        function updateOgeCalc(score) {
+            score = parseInt(score, 10);
+            document.getElementById('ogeScoreValue').innerText = score;
+            const badge = document.getElementById('ogeGradeBadge');
+
+            if (score <= 7) {
+                badge.className = 'inline-block px-5 py-2 rounded-xl font-serif text-2xl font-bold text-white bg-rose-600 shadow-md mt-0.5';
+                badge.innerText = 'Оценка «2»';
+            } else if (score <= 14) {
+                badge.className = 'inline-block px-5 py-2 rounded-xl font-serif text-2xl font-bold text-white bg-amber-600 shadow-md mt-0.5';
+                badge.innerText = 'Оценка «3»';
+            } else if (score <= 21) {
+                badge.className = 'inline-block px-5 py-2 rounded-xl font-serif text-2xl font-bold text-white bg-blue-600 shadow-md mt-0.5';
+                badge.innerText = 'Оценка «4»';
+            } else {
+                badge.className = 'inline-block px-5 py-2 rounded-xl font-serif text-2xl font-bold text-white bg-emerald-600 shadow-md mt-0.5';
+                badge.innerText = 'Оценка «5»';
+            }
+
+            playAcademicChime(320 + score * 14, 0.05);
         }
 
         // 1. CONFIG & DATA
