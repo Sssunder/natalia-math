@@ -148,6 +148,13 @@
         ::-webkit-scrollbar-track { background: var(--scrollbar-track); }
         ::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); border-radius: 4px; }
 
+        /* --- Mobile Responsive Invariants --- */
+        html, body {
+            max-width: 100vw;
+            overflow-x: hidden;
+            position: relative;
+        }
+
         /* --- Global Bindings --- */
         body {
             background-color: var(--bg-page) !important;
@@ -402,9 +409,9 @@
     </div>
 
     <!-- Top Announcement Bar -->
-    <div id="topAnnouncement" class="py-2 px-4 text-xs font-semibold text-center tracking-wide flex items-center justify-center gap-2 border-b gold-border">
-        <span id="announcementText">🏛 Понятная математика • Сложные темы ОГЭ простыми словами</span>
-        <a href="#booking" class="text-gold font-bold underline hover:opacity-80 ml-1">Записаться на занятие &rarr;</a>
+    <div id="topAnnouncement" class="py-1.5 px-3 text-[11px] sm:text-xs font-semibold text-center tracking-wide flex flex-wrap items-center justify-center gap-x-2 gap-y-0.5 border-b gold-border">
+        <span id="announcementText" class="truncate max-w-[270px] sm:max-w-none">🏛 Понятная математика • Сложные темы ОГЭ простыми словами</span>
+        <a href="#booking" class="text-gold font-bold underline hover:opacity-80 flex-shrink-0">Записаться &rarr;</a>
     </div>
 
     <!-- CLIENT VIEW CONTAINER -->
@@ -412,24 +419,24 @@
 
         <!-- Top Navigation -->
         <header class="sticky top-0 z-40 backdrop-blur-md border-b gold-border">
-            <div class="max-w-5xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+            <div class="max-w-5xl mx-auto px-3 sm:px-6 h-16 sm:h-20 flex items-center justify-between gap-2">
                 <!-- Brand Monogram -->
-                <div class="flex items-center gap-3.5">
-                    <div class="w-12 h-12 rounded-xl gold-border flex items-center justify-center text-gold font-display font-bold text-xl shadow-inner">
+                <div class="flex items-center gap-2 sm:gap-3.5 min-w-0">
+                    <div class="w-9 h-9 sm:w-12 sm:h-12 rounded-xl gold-border flex items-center justify-center text-gold font-display font-bold text-sm sm:text-xl shadow-inner flex-shrink-0">
                         НД
                     </div>
-                    <div>
-                        <span class="font-serif font-bold text-xl sm:text-2xl tracking-wide text-parchment-50 block leading-tight">
+                    <div class="min-w-0">
+                        <span class="font-serif font-bold text-sm sm:text-2xl tracking-wide text-parchment-50 block leading-tight whitespace-nowrap">
                             Наталья Дружинина
                         </span>
-                        <span class="text-[11px] uppercase tracking-widest text-gold font-medium block">
+                        <span class="text-[10px] sm:text-[11px] uppercase tracking-wider sm:tracking-widest text-gold font-medium hidden sm:block truncate">
                             Высшая категория • Математика и ОГЭ (5–9 классы)
                         </span>
                     </div>
                 </div>
 
                 <!-- Quick Messengers, Theme Selector & Header CTA -->
-                <div class="flex items-center gap-2.5 sm:gap-3">
+                <div class="flex items-center gap-1.5 sm:gap-3 flex-shrink-0">
                     
                     <!-- Quick Theme Switcher Pill in Header (Desktop) -->
                     <div class="hidden lg:flex items-center gap-1 px-2.5 py-1.5 rounded-xl gold-border text-xs font-semibold shadow-sm">
@@ -443,93 +450,101 @@
                         <button onclick="setThemeVariant('emerald')" class="px-2 py-0.5 rounded-lg hover:text-gold transition-colors font-bold" title="Золотое Сечение">✨</button>
                     </div>
 
-                    <!-- Sound Toggle Button -->
-                    <button onclick="toggleSound()" id="soundToggleBtn" class="btn-secondary px-3 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all" title="Звуковые эффекты">
-                        <span>🔔</span>
-                        <span class="hidden sm:inline">Звук</span>
+                    <!-- Mobile Theme Trigger in Header -->
+                    <button onclick="toggleMobileThemeDock(true)" class="sm:hidden btn-secondary w-8 h-8 rounded-xl text-xs font-bold flex items-center justify-center p-1.5" title="Сменить стиль оформления">
+                        <i data-lucide="palette" class="w-4 h-4 text-gold"></i>
                     </button>
 
-                    <!-- Messenger Button (Unified 2-Color Theme) -->
-                    <a href="https://max.ru/" target="_blank" title="Написать в МАКС" class="btn-secondary px-3.5 py-2 rounded-xl font-bold text-xs flex items-center gap-1.5 transition-all">
+                    <!-- Sound Toggle Button -->
+                    <button onclick="toggleSound()" id="soundToggleBtn" class="btn-secondary w-8 h-8 sm:w-auto sm:h-auto p-1.5 sm:px-3 sm:py-2 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-all" title="Звуковые эффекты">
+                        <span>🔔</span>
+                        <span class="hidden md:inline">Звук</span>
+                    </button>
+
+                    <!-- Messenger Button (Unified 2-Color Theme - Hidden on Mobile, Prominent in Hero) -->
+                    <a href="https://max.ru/" target="_blank" title="Написать в МАКС" class="hidden sm:flex btn-secondary px-3.5 py-2 rounded-xl font-bold text-xs items-center gap-1.5 transition-all">
                         <span class="w-2 h-2 rounded-full bg-current animate-pulse"></span>
                         <span>МАКС</span>
                     </a>
 
-                    <!-- Telegram Button (Unified 2-Color Theme) -->
-                    <a href="https://t.me/" target="_blank" title="Написать в Telegram" class="btn-secondary px-3.5 py-2 rounded-xl font-bold text-xs flex items-center gap-1.5 transition-all">
+                    <!-- Telegram Button (Unified 2-Color Theme - Hidden on Mobile, Prominent in Hero) -->
+                    <a href="https://t.me/" target="_blank" title="Написать в Telegram" class="hidden sm:flex btn-secondary px-3.5 py-2 rounded-xl font-bold text-xs items-center gap-1.5 transition-all">
                         <i data-lucide="send" class="w-3.5 h-3.5"></i>
                         <span>Telegram</span>
                     </a>
 
-                    <a href="#booking" class="btn-primary px-4 sm:px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider shadow-md transition-all flex items-center gap-2">
-                        <span>Диагностика</span>
-                        <i data-lucide="compass" class="w-4 h-4"></i>
+                    <a href="#booking" class="btn-primary px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider shadow-md transition-all flex items-center gap-1.5">
+                        <span class="hidden sm:inline">Диагностика</span>
+                        <span class="sm:hidden text-[11px] font-black">Запись</span>
+                        <i data-lucide="compass" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
                     </a>
                 </div>
             </div>
         </header>
 
-        <main class="max-w-5xl mx-auto px-4 sm:px-6 py-8 space-y-16">
+        <main class="max-w-5xl mx-auto px-3.5 sm:px-6 py-6 sm:py-8 space-y-12 sm:space-y-16 pb-28 sm:pb-16">
 
             <!-- HERO SECTION WITH CINEMATIC BANNER -->
-            <section class="rounded-3xl bg-navy-800 gold-border p-6 sm:p-10 gold-glow relative overflow-hidden">
+            <section class="rounded-3xl bg-navy-800 gold-border p-4 sm:p-10 gold-glow relative overflow-hidden">
                 
                 <!-- Inspiring Modern Loft Workspace Banner -->
-                <div class="relative w-full h-52 sm:h-64 rounded-2xl overflow-hidden mb-8 gold-border shadow-2xl">
+                <div class="relative w-full h-44 sm:h-64 rounded-2xl overflow-hidden mb-6 sm:mb-8 gold-border shadow-2xl">
                     <img src="assets/hero_banner.jpg" alt="Современное вдохновляющее рабочее пространство и чертежи" class="w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/55 to-transparent flex items-center p-6 sm:p-10">
-                        <div class="max-w-lg text-white space-y-2">
-                            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-black/40 border border-white/20 text-white text-xs font-semibold tracking-wider">
+                    <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/55 to-transparent flex items-center p-4 sm:p-10">
+                        <div class="max-w-lg text-white space-y-1.5 sm:space-y-2">
+                            <div class="inline-flex items-center gap-1.5 px-2.5 sm:px-3.5 py-0.5 sm:py-1 rounded-full bg-black/40 border border-white/20 text-white text-[11px] sm:text-xs font-semibold tracking-wider">
                                 <i data-lucide="award" class="w-3.5 h-3.5 text-gold"></i>
                                 <span>15+ лет практики • Высшая категория</span>
                             </div>
-                            <h2 id="heroSubtitle" class="font-serif text-2xl sm:text-3xl font-bold leading-tight !text-white drop-shadow-md">
+                            <h2 id="heroSubtitle" class="font-serif text-xl sm:text-3xl font-bold leading-tight !text-white drop-shadow-md">
                                 Математика без зубрежки. Уверенная сдача ОГЭ
                             </h2>
                         </div>
                     </div>
                 </div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-10 items-center relative z-10">
                     
                     <!-- Left: Credentials & Pitch -->
-                    <div class="lg:col-span-7 space-y-6">
-                        <h1 class="font-serif text-3xl sm:text-5xl font-bold text-parchment-50 leading-[1.15] tracking-tight">
+                    <div class="lg:col-span-7 space-y-5 sm:space-y-6">
+                        <h1 class="font-serif text-2xl sm:text-5xl font-bold text-parchment-50 leading-[1.2] sm:leading-[1.15] tracking-tight">
                             Сложные темы ОГЭ <span class="text-gold italic font-serif">простыми словами</span>
                         </h1>
 
-                        <p class="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
+                        <p class="text-xs sm:text-base text-slate-300 leading-relaxed font-normal">
                             Индивидуальные занятия с преподавателем высшей категории. Спокойно и по полочкам разбираем геометрию и алгебру (5–9 классы) для уверенной сдачи ОГЭ на 4 и 5 без паники и стресса.
                         </p>
 
                         <!-- Trust Stats Ribbon (Clean 2-Color Architecture) -->
-                        <div class="grid grid-cols-3 gap-3 pt-2">
-                            <div class="p-4 rounded-2xl bg-navy-700 gold-border shadow-sm">
-                                <div class="font-display text-2xl sm:text-3xl font-bold text-gold">100%</div>
-                                <div class="text-[11px] text-slate-300 leading-tight mt-1">Сдача ОГЭ на 4 и 5</div>
+                        <div class="grid grid-cols-3 gap-2 sm:gap-3 pt-1">
+                            <div class="p-2.5 sm:p-4 rounded-xl sm:rounded-2xl bg-navy-700 gold-border shadow-sm text-center sm:text-left">
+                                <div class="font-display text-xl sm:text-3xl font-bold text-gold">100%</div>
+                                <div class="text-[10px] sm:text-[11px] text-slate-300 leading-tight mt-1">Сдача ОГЭ на 4 и 5</div>
                             </div>
-                            <div class="p-4 rounded-2xl bg-navy-700 gold-border shadow-sm">
-                                <div class="font-display text-2xl sm:text-3xl font-bold text-gold">15+</div>
-                                <div class="text-[11px] text-slate-300 leading-tight mt-1">Лет авторского стажа</div>
+                            <div class="p-2.5 sm:p-4 rounded-xl sm:rounded-2xl bg-navy-700 gold-border shadow-sm text-center sm:text-left">
+                                <div class="font-display text-xl sm:text-3xl font-bold text-gold">15+</div>
+                                <div class="text-[10px] sm:text-[11px] text-slate-300 leading-tight mt-1">Лет авторского стажа</div>
                             </div>
-                            <div class="p-4 rounded-2xl bg-navy-700 gold-border shadow-sm">
-                                <div class="font-display text-2xl sm:text-3xl font-bold text-gold">5–9</div>
-                                <div class="text-[11px] text-slate-300 leading-tight mt-1">Классы подготовки</div>
+                            <div class="p-2.5 sm:p-4 rounded-xl sm:rounded-2xl bg-navy-700 gold-border shadow-sm text-center sm:text-left">
+                                <div class="font-display text-xl sm:text-3xl font-bold text-gold">5–9</div>
+                                <div class="text-[10px] sm:text-[11px] text-slate-300 leading-tight mt-1">Классы подготовки</div>
                             </div>
                         </div>
 
-                        <!-- CTA Buttons (Strict 2-Color Alignment) -->
-                        <div class="flex flex-wrap items-center gap-3 pt-2">
-                            <a href="#booking" class="btn-primary px-7 py-4 rounded-xl font-extrabold text-sm uppercase tracking-wider shadow-lg transition-all flex items-center gap-2.5">
+                        <!-- CTA Buttons (Responsive Mobile + Desktop) -->
+                        <div class="flex flex-wrap items-center gap-2.5 sm:gap-3 pt-2">
+                            <a href="#booking" class="btn-primary w-full sm:w-auto px-6 py-3.5 sm:px-7 sm:py-4 rounded-xl font-extrabold text-xs sm:text-sm uppercase tracking-wider shadow-lg transition-all flex items-center justify-center gap-2.5">
                                 <span>Выбрать дату занятия</span>
                                 <i data-lucide="arrow-right" class="w-4 h-4"></i>
                             </a>
-                            <a href="https://max.ru/" target="_blank" class="btn-secondary px-5 py-4 rounded-xl font-bold text-xs flex items-center gap-2 transition-colors">
-                                <span>Написать в МАКС</span>
-                            </a>
-                            <a href="https://t.me/" target="_blank" class="btn-secondary px-5 py-4 rounded-xl font-semibold text-xs flex items-center gap-2 transition-colors">
-                                <span>Telegram</span>
-                            </a>
+                            <div class="flex items-center gap-2 w-full sm:w-auto">
+                                <a href="https://max.ru/" target="_blank" class="btn-secondary flex-1 sm:flex-initial px-4 py-3 sm:px-5 sm:py-4 rounded-xl font-bold text-xs flex items-center justify-center gap-2 transition-colors">
+                                    <span>Написать в МАКС</span>
+                                </a>
+                                <a href="https://t.me/" target="_blank" class="btn-secondary flex-1 sm:flex-initial px-4 py-3 sm:px-5 sm:py-4 rounded-xl font-semibold text-xs flex items-center justify-center gap-2 transition-colors">
+                                    <span>Telegram</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
 
@@ -849,12 +864,12 @@
                 </div>
 
                 <!-- 1. DYNAMIC HORIZONTAL DAYS SCROLL (14 Days) -->
-                <div>
+                <div class="min-w-0 max-w-full overflow-hidden">
                     <div class="flex items-center justify-between mb-2">
                         <label class="text-xs font-bold uppercase tracking-wider text-gold">1. Выберите дату (ближайшие 14 дней)</label>
                         <span class="text-[11px] text-slate-400 font-semibold" id="currentSelectedMonth">Ноябрь 2026</span>
                     </div>
-                    <div id="daysScroll" class="flex gap-2 overflow-x-auto pb-2 scroll-smooth">
+                    <div id="daysScroll" class="flex gap-2 overflow-x-auto pb-2 scroll-smooth max-w-full">
                         <!-- Populated by JS -->
                     </div>
                 </div>
@@ -1211,27 +1226,41 @@
     </div>
 
     <!-- FLOATING THEME SWITCHER DOCK (4 VARIANTS) -->
-    <aside id="themeSwitcherDock" aria-label="Переключатель стиля оформления" class="theme-dock fixed bottom-4 right-4 z-40 flex items-center gap-1 p-1.5 rounded-2xl backdrop-blur-xl border shadow-2xl transition-all duration-300">
-        <div class="theme-dock-label flex items-center gap-1 px-2 py-1 text-xs font-bold text-gold">
+    <aside id="themeSwitcherDock" aria-label="Переключатель стиля оформления" class="theme-dock fixed bottom-3 right-3 sm:bottom-4 sm:right-4 z-40 p-1 sm:p-1.5 rounded-2xl backdrop-blur-xl border shadow-2xl transition-all duration-300">
+        <!-- Mobile Collapsed Pill (default on mobile: takes minimal 75px footprint in corner, never covers stats) -->
+        <button onclick="toggleMobileThemeDock(true)" id="mobileThemeTrigger" class="sm:hidden flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl text-xs font-bold text-gold" title="Сменить стиль">
             <i data-lucide="palette" class="w-3.5 h-3.5"></i>
-            <span class="hidden sm:inline">Стиль:</span>
-        </div>
-        <div class="flex items-center gap-1">
-            <button onclick="setThemeVariant('academic')" id="themeBtn_academic" class="theme-switch-btn px-2.5 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1" title="Академический Оксфорд (Тёмно-синий, античное золото)">
-                <span>🏛</span>
-                <span class="hidden lg:inline">Оксфорд</span>
-            </button>
-            <button onclick="setThemeVariant('minimal')" id="themeBtn_minimal" class="theme-switch-btn px-2.5 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1" title="Швейцарский Минимализм (Обсидиан, сапфир, неон)">
-                <span>📐</span>
-                <span class="hidden lg:inline">Минимал</span>
-            </button>
-            <button onclick="setThemeVariant('light')" id="themeBtn_light" class="theme-switch-btn px-2.5 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1" title="Светлый Кабинет (Слоновая кость, чернила, тёплая бронза)">
-                <span>📜</span>
-                <span class="hidden lg:inline">Светлый</span>
-            </button>
-            <button onclick="setThemeVariant('emerald')" id="themeBtn_emerald" class="theme-switch-btn px-2.5 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1" title="Золотое Сечение (Малахит, стереометрия, янтарь)">
-                <span>✨</span>
-                <span class="hidden lg:inline">Изумруд</span>
+            <span id="activeThemeEmoji">🏛</span>
+            <span class="text-[10px] uppercase font-bold tracking-wider">Стиль</span>
+        </button>
+
+        <!-- Expanded Theme Controls (always visible on sm+, expandable on mobile) -->
+        <div id="themeControlsContent" class="hidden sm:flex items-center gap-1">
+            <div class="theme-dock-label flex items-center gap-1 px-2 py-1 text-xs font-bold text-gold">
+                <i data-lucide="palette" class="w-3.5 h-3.5"></i>
+                <span class="hidden md:inline">Стиль:</span>
+            </div>
+            <div class="flex items-center gap-1">
+                <button onclick="setThemeVariant('academic')" id="themeBtn_academic" class="theme-switch-btn px-2.5 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1" title="Академический Оксфорд">
+                    <span>🏛</span>
+                    <span class="hidden lg:inline">Оксфорд</span>
+                </button>
+                <button onclick="setThemeVariant('minimal')" id="themeBtn_minimal" class="theme-switch-btn px-2.5 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1" title="Швейцарский Минимализм">
+                    <span>📐</span>
+                    <span class="hidden lg:inline">Минимал</span>
+                </button>
+                <button onclick="setThemeVariant('light')" id="themeBtn_light" class="theme-switch-btn px-2.5 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1" title="Светлый Кабинет">
+                    <span>📜</span>
+                    <span class="hidden lg:inline">Светлый</span>
+                </button>
+                <button onclick="setThemeVariant('emerald')" id="themeBtn_emerald" class="theme-switch-btn px-2.5 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1" title="Золотое Сечение">
+                    <span>✨</span>
+                    <span class="hidden lg:inline">Изумруд</span>
+                </button>
+            </div>
+            <!-- Close button for mobile -->
+            <button onclick="toggleMobileThemeDock(false)" class="sm:hidden p-1 text-slate-400 hover:text-white rounded-lg transition-colors ml-0.5" title="Свернуть">
+                <i data-lucide="x" class="w-3.5 h-3.5"></i>
             </button>
         </div>
     </aside>
@@ -1337,6 +1366,21 @@
             }
         };
 
+        function toggleMobileThemeDock(show) {
+            const trigger = document.getElementById('mobileThemeTrigger');
+            const controls = document.getElementById('themeControlsContent');
+            if (!trigger || !controls) return;
+            if (show) {
+                trigger.classList.add('hidden');
+                controls.classList.remove('hidden');
+                controls.classList.add('flex');
+            } else {
+                controls.classList.add('hidden');
+                controls.classList.remove('flex');
+                trigger.classList.remove('hidden');
+            }
+        }
+
         function setThemeVariant(themeId) {
             if (!THEME_DATA[themeId]) themeId = 'academic';
             document.documentElement.setAttribute('data-theme', themeId);
@@ -1349,6 +1393,10 @@
             });
             const activeBtn = document.getElementById('themeBtn_' + themeId);
             if (activeBtn) activeBtn.classList.add('active');
+
+            const emojis = { academic: '🏛', minimal: '📐', light: '📜', emerald: '✨' };
+            const emojiEl = document.getElementById('activeThemeEmoji');
+            if (emojiEl && emojis[themeId]) emojiEl.innerText = emojis[themeId];
 
             const meta = THEME_DATA[themeId];
             const subEl = document.getElementById('heroSubtitle');
