@@ -1,10 +1,20 @@
 <!DOCTYPE html>
-<html lang="ru" class="scroll-smooth">
+<html lang="ru" class="scroll-smooth" data-theme="academic">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Наталья Дружинина — Эксперт по профильной математике, ЕГЭ и ОГЭ | Подготовка к ведущим вузам</title>
     
+    <!-- Instant Flash-Free Theme Hydration -->
+    <script>
+        (function() {
+            try {
+                var savedTheme = localStorage.getItem('natalia_theme_variant') || 'academic';
+                document.documentElement.setAttribute('data-theme', savedTheme);
+            } catch (e) {}
+        })();
+    </script>
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,19 +60,246 @@
         }
     </script>
     <style>
+        /* ==============================================================
+           MULTI-THEME ARCHITECTURE FOR NATALIA DRUZHININA
+           ============================================================== */
+        :root, [data-theme="academic"] {
+            --bg-page: #040910;
+            --bg-header: rgba(7, 14, 24, 0.96);
+            --bg-card: #0D1B2A;
+            --bg-card-hover: #13273E;
+            --bg-elevated: #15263D;
+            --bg-input: #070E18;
+            --text-heading: #FBF9F5;
+            --text-body: #CBD5E1;
+            --text-muted: #94A3B8;
+            --accent: #C5A880;
+            --accent-hover: #D4AF37;
+            --accent-btn: linear-gradient(135deg, #C5A880, #9E7E55);
+            --accent-btn-text: #070E18;
+            --border-color: rgba(197, 168, 128, 0.35);
+            --border-subtle: rgba(197, 168, 128, 0.18);
+            --glow: 0 0 40px -8px rgba(197, 168, 128, 0.18);
+            --font-heading: "Cormorant Garamond", serif;
+            --font-display: "Cinzel", serif;
+            --mesh-bg: radial-gradient(at 80% 10%, rgba(30, 53, 84, 0.7) 0px, transparent 60%),
+                       radial-gradient(at 10% 80%, rgba(13, 27, 42, 0.95) 0px, transparent 60%),
+                       #070E18;
+            --scrollbar-track: #070E18;
+            --scrollbar-thumb: #C5A880;
+            --banner-overlay: linear-gradient(to right, rgba(4, 9, 16, 0.92) 0%, rgba(4, 9, 16, 0.55) 60%, rgba(4, 9, 16, 0.2) 100%);
+        }
+
+        [data-theme="minimal"] {
+            --bg-page: #09090b;
+            --bg-header: rgba(9, 9, 11, 0.96);
+            --bg-card: #141418;
+            --bg-card-hover: #1b1b22;
+            --bg-elevated: #202028;
+            --bg-input: #101015;
+            --text-heading: #ffffff;
+            --text-body: #d4d4d8;
+            --text-muted: #a1a1aa;
+            --accent: #38bdf8;
+            --accent-hover: #0ea5e9;
+            --accent-btn: linear-gradient(135deg, #0284c7, #2563eb);
+            --accent-btn-text: #ffffff;
+            --border-color: rgba(56, 189, 248, 0.28);
+            --border-subtle: rgba(56, 189, 248, 0.14);
+            --glow: 0 0 35px -8px rgba(56, 189, 248, 0.22);
+            --font-heading: "Plus Jakarta Sans", sans-serif;
+            --font-display: "Plus Jakarta Sans", sans-serif;
+            --mesh-bg: linear-gradient(rgba(56, 189, 248, 0.035) 1px, transparent 1px),
+                       linear-gradient(90deg, rgba(56, 189, 248, 0.035) 1px, transparent 1px),
+                       radial-gradient(at 90% 10%, rgba(37, 99, 235, 0.2) 0px, transparent 60%),
+                       #09090b;
+            --scrollbar-track: #09090b;
+            --scrollbar-thumb: #38bdf8;
+            --banner-overlay: linear-gradient(to right, rgba(9, 9, 11, 0.95) 0%, rgba(9, 9, 11, 0.6) 60%, rgba(9, 9, 11, 0.2) 100%);
+        }
+
+        [data-theme="light"] {
+            --bg-page: #fbf9f4;
+            --bg-header: rgba(251, 249, 244, 0.96);
+            --bg-card: #ffffff;
+            --bg-card-hover: #fcfbf9;
+            --bg-elevated: #f2ece0;
+            --bg-input: #ffffff;
+            --text-heading: #0f172a;
+            --text-body: #334155;
+            --text-muted: #64748b;
+            --accent: #b45309;
+            --accent-hover: #92400e;
+            --accent-btn: linear-gradient(135deg, #b45309, #d97706);
+            --accent-btn-text: #ffffff;
+            --border-color: rgba(180, 83, 9, 0.24);
+            --border-subtle: rgba(180, 83, 9, 0.12);
+            --glow: 0 10px 30px -4px rgba(180, 83, 9, 0.12);
+            --font-heading: "Cormorant Garamond", serif;
+            --font-display: "Cinzel", serif;
+            --mesh-bg: radial-gradient(at 85% 15%, rgba(254, 243, 199, 0.7) 0px, transparent 60%),
+                       radial-gradient(at 15% 85%, rgba(245, 238, 226, 0.9) 0px, transparent 60%),
+                       #fbf9f4;
+            --scrollbar-track: #f2ece0;
+            --scrollbar-thumb: #b45309;
+            --banner-overlay: linear-gradient(to right, rgba(15, 23, 42, 0.92) 0%, rgba(15, 23, 42, 0.55) 60%, rgba(15, 23, 42, 0.2) 100%);
+        }
+
+        [data-theme="emerald"] {
+            --bg-page: #03140f;
+            --bg-header: rgba(3, 20, 15, 0.96);
+            --bg-card: #07251c;
+            --bg-card-hover: #0b3427;
+            --bg-elevated: #0f4433;
+            --bg-input: #041b14;
+            --text-heading: #f0fdf4;
+            --text-body: #d1fae5;
+            --text-muted: #86efac;
+            --accent: #f59e0b;
+            --accent-hover: #d97706;
+            --accent-btn: linear-gradient(135deg, #f59e0b, #d97706);
+            --accent-btn-text: #03140f;
+            --border-color: rgba(245, 158, 11, 0.32);
+            --border-subtle: rgba(245, 158, 11, 0.16);
+            --glow: 0 0 45px -8px rgba(245, 158, 11, 0.22);
+            --font-heading: "Cormorant Garamond", serif;
+            --font-display: "Cinzel", serif;
+            --mesh-bg: radial-gradient(at 85% 15%, rgba(16, 185, 129, 0.22) 0px, transparent 60%),
+                       radial-gradient(at 15% 85%, rgba(245, 158, 11, 0.18) 0px, transparent 60%),
+                       #03140f;
+            --scrollbar-track: #03140f;
+            --scrollbar-thumb: #f59e0b;
+            --banner-overlay: linear-gradient(to right, rgba(3, 20, 15, 0.92) 0%, rgba(3, 20, 15, 0.55) 60%, rgba(3, 20, 15, 0.2) 100%);
+        }
+
+        /* --- Global Scrollbar & Theme Bindings --- */
         ::-webkit-scrollbar { width: 6px; height: 6px; }
-        ::-webkit-scrollbar-track { background: #070E18; }
-        ::-webkit-scrollbar-thumb { background: #C5A880; border-radius: 4px; }
-        .gold-border {
-            border: 1px solid rgba(197, 168, 128, 0.35);
+        ::-webkit-scrollbar-track { background: var(--scrollbar-track); }
+        ::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); border-radius: 4px; }
+
+        body {
+            background-color: var(--bg-page) !important;
+            color: var(--text-body) !important;
+            transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s ease;
         }
-        .gold-glow {
-            box-shadow: 0 0 40px -8px rgba(197, 168, 128, 0.18);
+
+        header {
+            background-color: var(--bg-header) !important;
+            border-color: var(--border-subtle) !important;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
         }
+
         .academic-mesh {
-            background: radial-gradient(at 80% 10%, rgba(30, 53, 84, 0.7) 0px, transparent 60%),
-                        radial-gradient(at 10% 80%, rgba(13, 27, 42, 0.95) 0px, transparent 60%),
-                        #070E18;
+            background: var(--mesh-bg) !important;
+            transition: background 0.3s ease;
+        }
+
+        .banner-overlay-grad {
+            background: var(--banner-overlay) !important;
+        }
+
+        .gold-border {
+            border-color: var(--border-color) !important;
+            transition: border-color 0.3s ease;
+        }
+
+        .gold-glow {
+            box-shadow: var(--glow) !important;
+            transition: box-shadow 0.3s ease;
+        }
+
+        /* Background class mappings */
+        .bg-navy-950 { background-color: var(--bg-page) !important; }
+        .bg-navy-900 { background-color: var(--bg-header) !important; }
+        .bg-navy-800 { background-color: var(--bg-card) !important; }
+        .bg-navy-700 { background-color: var(--bg-elevated) !important; }
+
+        /* Text mappings */
+        .text-gold { color: var(--accent) !important; }
+        .text-parchment-50, .text-parchment-100 { color: var(--text-heading) !important; }
+        .text-slate-100 { color: var(--text-heading) !important; }
+        .text-slate-200, .text-slate-300 { color: var(--text-body) !important; }
+        .text-slate-400 { color: var(--text-muted) !important; }
+
+        .border-gold, .border-gold\/20, .border-gold\/30, .border-gold\/40 {
+            border-color: var(--border-color) !important;
+        }
+
+        /* Font mappings */
+        .font-serif { font-family: var(--font-heading) !important; }
+        .font-display { font-family: var(--font-display) !important; }
+
+        /* Primary CTA button gradient */
+        .bg-gradient-to-r.from-gold.to-gold-dark,
+        .bg-gold {
+            background: var(--accent-btn) !important;
+            color: var(--accent-btn-text) !important;
+            border: none !important;
+        }
+
+        .bg-gold:hover,
+        .bg-gradient-to-r.from-gold.to-gold-dark:hover {
+            filter: brightness(1.1);
+        }
+
+        /* Form inputs & controls */
+        input, select {
+            background-color: var(--bg-input) !important;
+            color: var(--text-heading) !important;
+            border-color: var(--border-color) !important;
+        }
+
+        input::placeholder {
+            color: var(--text-muted) !important;
+            opacity: 0.7;
+        }
+
+        #topAnnouncement {
+            background: var(--bg-header) !important;
+            border-color: var(--border-subtle) !important;
+            color: var(--text-heading) !important;
+        }
+
+        /* Theme switcher buttons styling */
+        .theme-switch-btn {
+            color: var(--text-muted);
+            border: 1px solid transparent;
+        }
+        .theme-switch-btn:hover {
+            color: var(--text-heading);
+            background: rgba(255, 255, 255, 0.06);
+        }
+        .theme-switch-btn.active {
+            background: var(--accent-btn) !important;
+            color: var(--accent-btn-text) !important;
+            box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.35);
+        }
+
+        /* Specialized Theme Elevations & Refinements */
+        [data-theme="light"] .bg-navy-800,
+        [data-theme="light"] .bg-navy-900 {
+            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(180, 83, 9, 0.16) !important;
+        }
+
+        [data-theme="light"] #pinModal > div,
+        [data-theme="light"] #manualAddModal > div,
+        [data-theme="light"] #confirmModal > div {
+            background-color: #ffffff !important;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
+        }
+
+        [data-theme="light"] #pinModal,
+        [data-theme="light"] #manualAddModal,
+        [data-theme="light"] #confirmModal {
+            background-color: rgba(15, 23, 42, 0.65) !important;
+        }
+
+        [data-theme="minimal"] .bg-navy-800 {
+            box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.16), 0 8px 24px -4px rgba(0, 0, 0, 0.4) !important;
+        }
+
+        [data-theme="emerald"] .bg-navy-800 {
+            box-shadow: 0 0 0 1px rgba(245, 158, 11, 0.2), 0 8px 24px -4px rgba(0, 0, 0, 0.4) !important;
         }
     </style>
 </head>
@@ -87,7 +324,7 @@
 
     <!-- Top Announcement Bar -->
     <div id="topAnnouncement" class="bg-gradient-to-r from-navy-900 via-gold-dark to-navy-900 border-b border-gold/30 text-parchment-100 py-2 px-4 text-xs font-semibold text-center tracking-wide flex items-center justify-center gap-2 shadow-sm">
-        <span>🏛 Академическая математика высшей категории • Набор учеников 2026/2027 на профильный ЕГЭ (80+ / 90+)</span>
+        <span id="announcementText">🏛 Академическая математика высшей категории • Набор учеников 2026/2027 на профильный ЕГЭ (80+ / 90+)</span>
         <a href="#booking" class="text-gold font-bold underline hover:text-white ml-1">Записаться на аудит &rarr;</a>
     </div>
 
@@ -112,8 +349,21 @@
                     </div>
                 </div>
 
-                <!-- Quick Messengers & Header CTA -->
+                <!-- Quick Messengers, Theme Selector & Header CTA -->
                 <div class="flex items-center gap-2.5 sm:gap-3">
+                    
+                    <!-- Quick Theme Switcher Pill in Header (Desktop) -->
+                    <div class="hidden lg:flex items-center gap-1 px-2.5 py-1.5 rounded-xl gold-border bg-navy-800 text-xs font-semibold shadow-sm">
+                        <span class="text-gold font-bold flex items-center gap-1 mr-1">
+                            <i data-lucide="palette" class="w-3.5 h-3.5"></i>
+                            <span>Стиль:</span>
+                        </span>
+                        <button onclick="setThemeVariant('academic')" class="px-2 py-0.5 rounded-lg hover:text-gold transition-colors font-bold" title="Академический Оксфорд">🏛</button>
+                        <button onclick="setThemeVariant('minimal')" class="px-2 py-0.5 rounded-lg hover:text-gold transition-colors font-bold" title="Швейцарский Минимализм">📐</button>
+                        <button onclick="setThemeVariant('light')" class="px-2 py-0.5 rounded-lg hover:text-gold transition-colors font-bold" title="Светлый Кабинет">📜</button>
+                        <button onclick="setThemeVariant('emerald')" class="px-2 py-0.5 rounded-lg hover:text-gold transition-colors font-bold" title="Золотое Сечение">✨</button>
+                    </div>
+
                     <!-- MAX Messenger Button -->
                     <a href="https://max.ru/" target="_blank" title="Написать в МАКС" class="px-3.5 py-2 rounded-xl bg-blue-900/40 hover:bg-blue-900/60 text-[#4CA5FF] border border-[#0077FF]/40 font-bold text-xs flex items-center gap-1.5 transition-all">
                         <span class="w-2 h-2 rounded-full bg-[#0077FF] animate-pulse"></span>
@@ -142,13 +392,13 @@
                 
                 <div class="relative w-full h-48 sm:h-64 rounded-2xl overflow-hidden mb-8 gold-border shadow-2xl">
                     <img src="assets/hero_banner.jpg" alt="Академический кабинет математики и старинные инструменты" class="w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-r from-navy-950/90 via-navy-950/50 to-transparent flex items-center p-6 sm:p-10">
+                    <div class="absolute inset-0 banner-overlay-grad flex items-center p-6 sm:p-10">
                         <div class="max-w-lg text-white space-y-2">
                             <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-gold/20 gold-border text-gold text-xs font-semibold tracking-wider">
                                 <i data-lucide="award" class="w-3.5 h-3.5"></i>
                                 <span>15+ лет практики • Высшая категория</span>
                             </div>
-                            <h2 class="font-serif text-2xl sm:text-3xl font-bold leading-tight text-parchment-50">
+                            <h2 id="heroSubtitle" class="font-serif text-2xl sm:text-3xl font-bold leading-tight text-parchment-50">
                                 Академический подход к подготовке в МГУ, ВШЭ, МФТИ и СПбГУ
                             </h2>
                         </div>
@@ -210,7 +460,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="mt-3 text-center text-xs text-slate-400 italic">
+                        <div id="heroMotto" class="mt-3 text-center text-xs text-slate-400 italic">
                             «Математика — строгая наука, где каждый шаг вытекает из аксиом, а не из случайности»
                         </div>
                     </div>
@@ -597,8 +847,90 @@
         </div>
     </div>
 
+    <!-- FLOATING THEME SWITCHER DOCK (4 VARIANTS) -->
+    <aside id="themeSwitcherDock" aria-label="Переключатель стиля оформления" class="fixed bottom-5 right-4 sm:right-6 z-50 flex items-center gap-1.5 p-1.5 rounded-2xl backdrop-blur-xl border shadow-2xl transition-all duration-300" style="background: var(--bg-header); border-color: var(--border-color); box-shadow: var(--glow);">
+        <div class="flex items-center gap-1.5 px-2 py-1 text-xs font-bold" style="color: var(--accent);">
+            <i data-lucide="palette" class="w-4 h-4"></i>
+            <span class="hidden sm:inline">Стиль:</span>
+        </div>
+        <div class="flex items-center gap-1">
+            <button onclick="setThemeVariant('academic')" id="themeBtn_academic" class="theme-switch-btn px-2.5 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5" title="Академический Оксфорд (Тёмно-синий, античное золото)">
+                <span>🏛</span>
+                <span class="hidden md:inline">Оксфорд</span>
+            </button>
+            <button onclick="setThemeVariant('minimal')" id="themeBtn_minimal" class="theme-switch-btn px-2.5 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5" title="Швейцарский Минимализм (Обсидиан, сапфир, неон)">
+                <span>📐</span>
+                <span class="hidden md:inline">Минимал</span>
+            </button>
+            <button onclick="setThemeVariant('light')" id="themeBtn_light" class="theme-switch-btn px-2.5 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5" title="Светлый Кабинет (Слоновая кость, чернила, тёплая бронза)">
+                <span>📜</span>
+                <span class="hidden md:inline">Светлый</span>
+            </button>
+            <button onclick="setThemeVariant('emerald')" id="themeBtn_emerald" class="theme-switch-btn px-2.5 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5" title="Золотое Сечение (Малахит, стереометрия, янтарь)">
+                <span>✨</span>
+                <span class="hidden md:inline">Изумруд</span>
+            </button>
+        </div>
+    </aside>
+
     <!-- SCRIPTING ENGINE -->
     <script>
+        // ================= THEME SWITCHER ENGINE =================
+        const THEME_DATA = {
+            academic: {
+                subtitle: 'Академический подход к подготовке в МГУ, ВШЭ, МФТИ и СПбГУ',
+                motto: '«Математика — строгая наука, где каждый шаг вытекает из аксиом, а не из случайности»',
+                announcement: '🏛 Академическая математика высшей категории • Набор учеников 2026/2027 на профильный ЕГЭ (80+ / 90+)'
+            },
+            minimal: {
+                subtitle: 'Инженерная строгость математики и подготовка к профилю 85+',
+                motto: '«Сложная задача перестаёт быть сложной, если разложить её на систему элементарных утверждений»',
+                announcement: '📐 Школа математической логики • Системная подготовка к профильному ЕГЭ и ОГЭ 2026/2027'
+            },
+            light: {
+                subtitle: 'Классическая университетская школа и индивидуальная траектория',
+                motto: '«Глубокое понимание рождается из доказательства, а не механического заучивания»',
+                announcement: '📜 Университетский кабинет Натальи Дружининой • Индивидуальный аудит и подготовка к ОГЭ/ЕГЭ'
+            },
+            emerald: {
+                subtitle: 'Золотое сечение мышления • Стереометрия, планиметрия и высший балл',
+                motto: '«Геометрия открывает внутреннюю гармонию мира и дисциплинирует ум»',
+                announcement: '✨ Золотое сечение высшей математики • Экспертный разбор сложнейшей 2-й части ЕГЭ'
+            }
+        };
+
+        function setThemeVariant(themeId) {
+            if (!THEME_DATA[themeId]) themeId = 'academic';
+            document.documentElement.setAttribute('data-theme', themeId);
+            try {
+                localStorage.setItem('natalia_theme_variant', themeId);
+            } catch(e) {}
+
+            document.querySelectorAll('.theme-switch-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            const activeBtn = document.getElementById('themeBtn_' + themeId);
+            if (activeBtn) activeBtn.classList.add('active');
+
+            const meta = THEME_DATA[themeId];
+            const subEl = document.getElementById('heroSubtitle');
+            if (subEl) subEl.innerText = meta.subtitle;
+            const mottoEl = document.getElementById('heroMotto');
+            if (mottoEl) mottoEl.innerText = meta.motto;
+            const annEl = document.getElementById('announcementText');
+            if (annEl) annEl.innerText = meta.announcement;
+
+            if (window.lucide) lucide.createIcons();
+        }
+
+        function initTheme() {
+            let saved = 'academic';
+            try {
+                saved = localStorage.getItem('natalia_theme_variant') || 'academic';
+            } catch(e) {}
+            setThemeVariant(saved);
+        }
+
         // 1. CONFIG & DATA
         const TUTOR_PROGRAMS = [
             {
@@ -720,6 +1052,7 @@
 
         // --- INIT ---
         document.addEventListener('DOMContentLoaded', () => {
+            initTheme();
             selectedDateIso = getIso(0);
             teacherSelectedDateIso = getIso(0);
 
