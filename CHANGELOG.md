@@ -1,5 +1,17 @@
 # Changelog — Natalia Math (`natalia-math`)
 
+## 2026-11-24 — Clean Telegram Alerts & Bot Username Input Removal
+- **Очистка карточки Telegram**:
+  - Полностью удалён сырой блок ввода «Username бота / https:t.me» с кнопкой «Сохранить», сбивавший преподавателя.
+  - Убраны громоздкие технические списки шагов и VPN-ссылки.
+  - Бот намертво преднастроен на платформенного `@GojoNotifyBot` с санитаризацией (любые испорченные значения с `:` или `/` сбрасываются на `GojoNotifyBot`).
+  - Аккуратная карточка с 1 кнопкой «Подключить бота» и статусом перенесена в раздел «Контакты и мессенджеры».
+  - В онбординг-туре удалены лишние технические шаги про бота и VPN.
+- **Проверки**:
+  - `sitecheck`: 100% Clean.
+  - `node --check`: 100% Valid JavaScript.
+  - Playwright: 0px overflow на 360px и 1440px, 0 ошибок.
+
 ## 2026-11-24 — Bright Photo Mode, Patronymic Support & MAX Messenger Connect Guide
 - **Фото без затемнения**:
   - Убран принудительный затемняющий CSS-фильтр `brightness-95 contrast-105` с портрета.
