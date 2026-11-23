@@ -14,7 +14,7 @@
   <!-- Standard & High-DPI Favicons -->
   <!-- Standard & High-DPI Favicons -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Наталья Дружинина — Мини-группы 9 класс и подготовка к ОГЭ | Преподаватель высшей категории</title>
+    <title>Наталья Игоревна Дружинина — Мини-группы 9 класс и подготовка к ОГЭ | Преподаватель высшей категории</title>
     
     <!-- Instant Flash-Free Theme Hydration -->
     <script>
@@ -552,8 +552,8 @@
                         НД
                     </div>
                     <div class="min-w-0">
-                        <span class="font-serif font-bold text-sm sm:text-xl md:text-2xl tracking-wide text-parchment-50 block leading-tight whitespace-nowrap">
-                            Наталья Дружинина
+                        <span id="headerBrandName" class="font-serif font-bold text-xs sm:text-base md:text-xl lg:text-2xl tracking-wide text-parchment-50 block leading-tight truncate max-w-[155px] xs:max-w-[210px] sm:max-w-none">
+                            Наталья Игоревна Дружинина
                         </span>
                         <span class="text-[10px] sm:text-[11px] uppercase tracking-wider sm:tracking-widest text-gold font-medium hidden xl:block whitespace-nowrap">
                             Высшая категория • Мини-группы ОГЭ (9 класс)
@@ -658,7 +658,7 @@
                 <!-- Inspiring Modern Loft Workspace Banner -->
                 <div class="relative w-full h-44 sm:h-64 rounded-2xl overflow-hidden mb-6 sm:mb-8 gold-border shadow-2xl">
                     <img src="assets/hero_banner.jpg" alt="Современное вдохновляющее рабочее пространство и чертежи" class="w-full h-full object-cover">
-                    <div class="photo-overlay-light absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/30 flex items-center p-4 sm:p-10">
+                    <div class="photo-overlay-light absolute inset-0 bg-gradient-to-r from-black/80 via-black/55 to-black/20 flex items-center p-4 sm:p-10">
                         <div class="max-w-lg text-white space-y-1.5 sm:space-y-2">
                             <div class="inline-flex items-center gap-1.5 px-2.5 sm:px-3.5 py-0.5 sm:py-1 rounded-full bg-black/55 border border-white/25 text-white text-[11px] sm:text-xs font-semibold tracking-wider">
                                 <i data-lucide="award" class="w-3.5 h-3.5 text-amber-300"></i>
@@ -727,10 +727,10 @@
                                 <span class="tracking-wide">Примерка фото</span>
                             </button>
 
-                            <img id="nataliaMainPortrait" src="assets/natalia_portrait.jpg" alt="Наталья Дружинина — преподаватель математики" class="w-full h-96 object-cover object-top filter brightness-95 contrast-105 transition-all duration-300">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent flex items-end p-5">
+                            <img id="nataliaMainPortrait" src="assets/natalia_portrait.jpg" alt="Наталья Игоревна Дружинина — преподаватель математики" class="w-full h-96 object-cover object-top transition-all duration-300 brightness-100">
+                            <div id="nataliaPortraitOverlay" class="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-black/75 via-black/30 to-transparent flex items-end p-4 sm:p-5 pointer-events-none transition-all duration-300">
                                 <div>
-                                    <div class="font-serif font-bold text-xl photo-title" id="nataliaPortraitName">Наталья Дружинина</div>
+                                    <div class="font-serif font-bold text-xl photo-title" id="nataliaPortraitName">Наталья Игоревна Дружинина</div>
                                     <div class="text-xs photo-subtitle" id="nataliaPortraitSub">Преподаватель высшей квалификации</div>
                                 </div>
                             </div>
@@ -1210,7 +1210,7 @@
             <!-- FOOTER -->
             <footer class="pt-8 pb-12 border-t border-gold/20 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
                 <div class="flex items-center gap-3">
-                    <span class="font-serif font-bold text-base text-parchment-100">Наталья Дружинина</span>
+                    <span id="footerBrandName" class="font-serif font-bold text-base text-parchment-100">Наталья Игоревна Дружинина</span>
                     <span>•</span>
                     <span>Репетитор высшей категории</span>
                 </div>
@@ -1420,6 +1420,40 @@
                 <!-- Hero Texts -->
                 <div class="space-y-3 text-xs">
                     <div class="font-bold uppercase tracking-wider text-gold text-[11px]">Главный экран и шапка</div>
+
+                    <!-- Teacher Name & Patronymic (Full Name) -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 p-3.5 rounded-2xl bg-navy-800 gold-border">
+                        <div>
+                            <label for="cfgTeacherName" class="font-bold text-slate-300 block mb-1">ФИО преподавателя (с отчеством)</label>
+                            <input type="text" id="cfgTeacherName" placeholder="Наталья Игоревна Дружинина" class="w-full px-3 py-2.5 rounded-xl gold-border text-xs font-bold text-parchment-50">
+                            <p class="text-[10px] text-slate-400 mt-1">Отображается в шапке сайта, на главном портрете и в подвале</p>
+                        </div>
+                        <div>
+                            <label for="cfgTeacherSub" class="font-bold text-slate-300 block mb-1">Статус / квалификация под именем</label>
+                            <input type="text" id="cfgTeacherSub" placeholder="Преподаватель высшей квалификации" class="w-full px-3 py-2.5 rounded-xl gold-border text-xs">
+                            <p class="text-[10px] text-slate-400 mt-1">Подпись под вашим именем на главном фото</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo Brightness & Dimming Mode -->
+                    <div class="p-3.5 rounded-2xl bg-navy-800 gold-border space-y-2">
+                        <div class="flex flex-wrap items-center justify-between gap-2">
+                            <label for="cfgPhotoNoDim" class="font-bold text-slate-300">🖼 Затемнение фото (портрета)</label>
+                            <span class="text-[10px] text-emerald-400 font-bold">✓ Светлое естественное фото</span>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 items-center">
+                            <div>
+                                <select id="cfgPhotoNoDim" onchange="setPhotoDimMode(this.value === 'bright')" class="w-full px-3 py-2.5 rounded-xl gold-border text-xs font-bold">
+                                    <option value="bright">✨ Без затемнения (Светлое, чистое фото — Рекомендуется)</option>
+                                    <option value="classic">🌑 Классическое мягкое затемнение снизу</option>
+                                </select>
+                            </div>
+                            <p class="text-[11px] text-slate-300 leading-relaxed">
+                                В светлом режиме всё фото остаётся на 100% чистым, ярким и естественным, а лёгкая тень остаётся только под надписью в самом низу.
+                            </p>
+                        </div>
+                    </div>
+
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         <div>
                             <label class="font-bold text-slate-300 block mb-1">Верхняя полоса объявления</label>
@@ -1498,8 +1532,17 @@
                             <input type="text" inputmode="url" id="cfgTgUrl" onblur="normalizeTelegramInputOnBlur()" placeholder="https://t.me/+79195740214 или @username" class="w-full px-3 py-2.5 rounded-xl gold-border text-xs">
                         </div>
                         <div>
-                            <label class="font-bold text-slate-300 block mb-1">Ссылка МАКС</label>
-                            <input type="text" inputmode="url" id="cfgMaxUrl" placeholder="https://max.ru/u/+79195740214" class="w-full px-3 py-2.5 rounded-xl gold-border text-xs">
+                            <div class="flex items-center justify-between mb-1">
+                                <label class="font-bold text-slate-300">Ссылка МАКС</label>
+                                <span class="text-[10px] text-amber-300 font-bold">💬 Подвязать личный чат</span>
+                            </div>
+                            <input type="text" inputmode="url" id="cfgMaxUrl" placeholder="https://max.ru/u/... или номер телефона" class="w-full px-3 py-2.5 rounded-xl gold-border text-xs">
+                            <div class="mt-1.5 p-2 rounded-xl bg-navy-800/90 border border-gold/30 text-[10px] text-slate-300 leading-snug space-y-0.5">
+                                <div class="font-bold text-gold">Как скопировать ссылку в МАКС за 10 сек:</div>
+                                <div>1. В приложении <strong>МАКС</strong> на телефоне нажмите на свой профиль (аватар) внизу справа</div>
+                                <div>2. Нажмите на значок <strong>QR-кода</strong> (или кнопку «Поделиться») рядом с именем</div>
+                                <div>3. Нажмите <strong>«Скопировать ссылку»</strong> и вставьте её в это поле</div>
+                            </div>
                         </div>
                         <div>
                             <label class="font-bold text-slate-300 block mb-1">Ссылка на профиль / объявление Авито</label>
@@ -1781,14 +1824,14 @@
                 </label>
                 <div class="grid grid-cols-3 gap-2.5">
                     <!-- Preset 1 -->
-                    <div onclick="selectPresetPhoto('assets/natalia_portrait.jpg', 'Наталья Дружинина', 'Преподаватель высшей квалификации')" class="group p-2 rounded-2xl border gold-border hover:border-gold cursor-pointer transition-all bg-navy-800 text-center">
+                    <div onclick="selectPresetPhoto('assets/natalia_portrait.jpg', 'Наталья Игоревна Дружинина', 'Преподаватель высшей квалификации')" class="group p-2 rounded-2xl border gold-border hover:border-gold cursor-pointer transition-all bg-navy-800 text-center">
                         <img src="assets/natalia_portrait.jpg" alt="Основной портрет" class="w-full h-24 object-cover object-top rounded-xl shadow-sm group-hover:scale-105 transition-transform">
                         <div class="text-[11px] font-bold text-parchment-50 mt-1.5 leading-tight">👩‍🏫 Основной</div>
                         <div class="text-[9px] text-gold font-semibold">Академический</div>
                     </div>
 
                     <!-- Preset 2 -->
-                    <div onclick="selectPresetPhoto('assets/natalia_closeup.jpg', 'Наталья Дружинина', 'Спокойно и по полочкам ✨')" class="group p-2 rounded-2xl border gold-border hover:border-gold cursor-pointer transition-all bg-navy-800 text-center">
+                    <div onclick="selectPresetPhoto('assets/natalia_closeup.jpg', 'Наталья Игоревна Дружинина', 'Спокойно и по полочкам ✨')" class="group p-2 rounded-2xl border gold-border hover:border-gold cursor-pointer transition-all bg-navy-800 text-center">
                         <img src="assets/natalia_closeup.jpg" alt="Крупный план" class="w-full h-24 object-cover object-top rounded-xl shadow-sm group-hover:scale-105 transition-transform">
                         <div class="text-[11px] font-bold text-parchment-50 mt-1.5 leading-tight">👓 Крупный план</div>
                         <div class="text-[9px] text-gold font-semibold">Тёплая улыбка</div>
@@ -1800,6 +1843,25 @@
                         <div class="text-[11px] font-bold text-parchment-50 mt-1.5 leading-tight">📐 Кабинет</div>
                         <div class="text-[9px] text-gold font-semibold">Лофт чертежей</div>
                     </div>
+                </div>
+            </div>
+
+            <!-- Photo Brightness / Dimming Control in Modal -->
+            <div class="p-3.5 rounded-2xl bg-navy-800 gold-border flex flex-wrap items-center justify-between gap-3">
+                <div>
+                    <div class="text-xs font-bold text-parchment-50 flex items-center gap-1.5">
+                        <span>✨ Яркость фото</span>
+                        <span class="text-[10px] text-emerald-400 font-bold">Без затемнения</span>
+                    </div>
+                    <div class="text-[10px] text-slate-400">Естественное светлое фото без тёмных теней на лице</div>
+                </div>
+                <div class="flex items-center gap-2">
+                    <button type="button" onclick="setPhotoDimMode(true)" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-gold text-navy-900 shadow-sm transition-all" id="modalBtnPhotoBright">
+                        ✨ Светлое
+                    </button>
+                    <button type="button" onclick="setPhotoDimMode(false)" class="px-3 py-1.5 rounded-xl text-xs font-bold btn-secondary transition-all" id="modalBtnPhotoClassic">
+                        🌑 С тенью
+                    </button>
                 </div>
             </div>
 
@@ -1872,16 +1934,64 @@
     <script>
         // ================= PHOTO STUDIO ENGINE FOR NATALIA =================
         const DEFAULT_PORTRAIT = 'assets/natalia_portrait.jpg';
-        const DEFAULT_NAME = 'Наталья Дружинина';
+        const DEFAULT_NAME = 'Наталья Игоревна Дружинина';
         const DEFAULT_SUB = 'Преподаватель высшей квалификации';
+
+        function setPhotoDimMode(isBright) {
+            const img = document.getElementById('nataliaMainPortrait');
+            const overlay = document.getElementById('nataliaPortraitOverlay');
+            if (isBright) {
+                if (img) {
+                    img.classList.remove('brightness-95', 'contrast-105');
+                    img.classList.add('brightness-100');
+                }
+                if (overlay) {
+                    overlay.className = 'absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-black/75 via-black/30 to-transparent flex items-end p-4 sm:p-5 pointer-events-none transition-all duration-300';
+                }
+                try { localStorage.setItem('natalia_photo_bright', '1'); } catch (_) {}
+            } else {
+                if (img) {
+                    img.classList.remove('brightness-100');
+                }
+                if (overlay) {
+                    overlay.className = 'absolute bottom-0 inset-x-0 h-28 bg-gradient-to-t from-black/85 via-black/45 to-transparent flex items-end p-4 sm:p-5 pointer-events-none transition-all duration-300';
+                }
+                try { localStorage.setItem('natalia_photo_bright', '0'); } catch (_) {}
+            }
+            const cfgSel = document.getElementById('cfgPhotoNoDim');
+            if (cfgSel) cfgSel.value = isBright ? 'bright' : 'classic';
+            const bBtn = document.getElementById('modalBtnPhotoBright');
+            const cBtn = document.getElementById('modalBtnPhotoClassic');
+            if (bBtn && cBtn) {
+                if (isBright) {
+                    bBtn.className = 'px-3 py-1.5 rounded-xl text-xs font-bold bg-gold text-navy-900 shadow-sm transition-all';
+                    cBtn.className = 'px-3 py-1.5 rounded-xl text-xs font-bold btn-secondary transition-all';
+                } else {
+                    bBtn.className = 'px-3 py-1.5 rounded-xl text-xs font-bold btn-secondary transition-all';
+                    cBtn.className = 'px-3 py-1.5 rounded-xl text-xs font-bold bg-gold text-navy-900 shadow-sm transition-all';
+                }
+            }
+        }
 
         function loadSavedPortrait() {
             const saved = localStorage.getItem('natalia_custom_portrait');
-            const savedName = localStorage.getItem('natalia_portrait_name');
+            let savedName = localStorage.getItem('natalia_portrait_name');
             const savedSub = localStorage.getItem('natalia_portrait_sub');
+            const savedBright = localStorage.getItem('natalia_photo_bright');
+
+            if (savedBright === '0') {
+                setPhotoDimMode(false);
+            } else {
+                setPhotoDimMode(true);
+            }
+
             if (saved) {
                 const img = document.getElementById('nataliaMainPortrait');
                 if (img) img.src = saved;
+            }
+            if (savedName === 'Наталья Дружинина') {
+                savedName = DEFAULT_NAME;
+                localStorage.setItem('natalia_portrait_name', DEFAULT_NAME);
             }
             if (savedName) {
                 const nameEl = document.getElementById('nataliaPortraitName');
@@ -1909,12 +2019,15 @@
             const nameEl = document.getElementById('nataliaPortraitName');
             const subEl = document.getElementById('nataliaPortraitSub');
             if (img) img.src = src;
-            if (nameEl) nameEl.innerText = name;
-            if (subEl) subEl.innerText = sub;
+
+            const effectiveName = (name && name !== 'Наталья Дружинина') ? name : (siteConfig.teacher_name || DEFAULT_NAME);
+            const effectiveSub = sub || siteConfig.teacher_sub || DEFAULT_SUB;
+            if (nameEl) nameEl.innerText = effectiveName;
+            if (subEl) subEl.innerText = effectiveSub;
 
             localStorage.setItem('natalia_custom_portrait', src);
-            localStorage.setItem('natalia_portrait_name', name);
-            localStorage.setItem('natalia_portrait_sub', sub);
+            localStorage.setItem('natalia_portrait_name', effectiveName);
+            localStorage.setItem('natalia_portrait_sub', effectiveSub);
             closePhotoModal();
         }
 
@@ -1928,21 +2041,25 @@
                 const img = document.getElementById('nataliaMainPortrait');
                 const nameEl = document.getElementById('nataliaPortraitName');
                 const subEl = document.getElementById('nataliaPortraitSub');
+                const effectiveName = siteConfig.teacher_name || DEFAULT_NAME;
+                const effectiveSub = siteConfig.teacher_sub || 'Преподаватель высшей квалификации';
                 if (img) img.src = dataUrl;
-                if (nameEl) nameEl.innerText = 'Наталья Дружинина';
-                if (subEl) subEl.innerText = 'Индивидуальный образ ✨';
+                if (nameEl) nameEl.innerText = effectiveName;
+                if (subEl) subEl.innerText = effectiveSub;
 
                 localStorage.setItem('natalia_custom_portrait', dataUrl);
-                localStorage.setItem('natalia_portrait_name', 'Наталья Дружинина');
-                localStorage.setItem('natalia_portrait_sub', 'Индивидуальный образ ✨');
+                localStorage.setItem('natalia_portrait_name', effectiveName);
+                localStorage.setItem('natalia_portrait_sub', effectiveSub);
+                setPhotoDimMode(true);
                 closePhotoModal();
-                alert('✨ Новое фото успешно загружено, отображено на сайте и сохранено в браузере!');
+                alert('✨ Новое фото успешно загружено, отображено на сайте без затемнения и сохранено в браузере!');
             };
             reader.readAsDataURL(file);
         }
 
         function resetToOriginalPhoto() {
             selectPresetPhoto(DEFAULT_PORTRAIT, DEFAULT_NAME, DEFAULT_SUB);
+            setPhotoDimMode(true);
         }
 
         // ================= THEME SWITCHER ENGINE =================
@@ -2230,6 +2347,9 @@
         const LESSON_DURATION = 60;
 
         const DEFAULT_SITE_CONFIG = {
+            teacher_name: 'Наталья Игоревна Дружинина',
+            teacher_sub: 'Преподаватель высшей квалификации',
+            photo_no_dim: true,
             telegram: { bot_username: 'GojoNotifyBot', chat_id: null, enabled: false },
             default_theme: 'academic',
             announcement: '🏛 Мини-группы 9 класс • Экспертная подготовка к ОГЭ',
@@ -2443,6 +2563,9 @@
             const base = JSON.parse(JSON.stringify(DEFAULT_SITE_CONFIG));
             if (!remoteCfg || typeof remoteCfg !== 'object') return base;
             const merged = { ...base, ...remoteCfg };
+            merged.teacher_name = remoteCfg.teacher_name || base.teacher_name;
+            merged.teacher_sub = remoteCfg.teacher_sub || base.teacher_sub;
+            merged.photo_no_dim = remoteCfg.photo_no_dim !== undefined ? Boolean(remoteCfg.photo_no_dim) : true;
             merged.default_theme = VALID_THEMES.includes(remoteCfg.default_theme) ? remoteCfg.default_theme : base.default_theme;
 
             const rawContacts = { ...base.contacts, ...(remoteCfg.contacts || {}) };
@@ -2485,6 +2608,15 @@
                 const el = document.getElementById(id);
                 if (el && val !== undefined && val !== null) el.innerText = val;
             };
+            const teacherName = c.teacher_name || 'Наталья Игоревна Дружинина';
+            const teacherSub = c.teacher_sub || 'Преподаватель высшей квалификации';
+            setTxt('headerBrandName', teacherName);
+            setTxt('nataliaPortraitName', teacherName);
+            setTxt('nataliaPortraitSub', teacherSub);
+            setTxt('footerBrandName', teacherName);
+            if (c.photo_no_dim !== undefined) {
+                setPhotoDimMode(c.photo_no_dim);
+            }
             setTxt('announcementText', c.announcement);
             setTxt('heroBadgeText', c.hero_badge);
             setTxt('heroSubtitle', c.hero_subtitle);
@@ -4199,6 +4331,10 @@
                 const el = document.getElementById(id);
                 if (el) el.value = val || '';
             };
+            setVal('cfgTeacherName', c.teacher_name || 'Наталья Игоревна Дружинина');
+            setVal('cfgTeacherSub', c.teacher_sub || 'Преподаватель высшей квалификации');
+            const dimSel = document.getElementById('cfgPhotoNoDim');
+            if (dimSel) dimSel.value = c.photo_no_dim !== false ? 'bright' : 'classic';
             setVal('cfgDefaultTheme', VALID_THEMES.includes(c.default_theme) ? c.default_theme : 'academic');
             setVal('cfgAnnouncement', c.announcement);
             setVal('cfgHeroBadge', c.hero_badge);
@@ -4234,6 +4370,10 @@
 
             const nextConfig = JSON.parse(JSON.stringify(siteConfig));
             const chosenTheme = getVal('cfgDefaultTheme');
+            nextConfig.teacher_name = getVal('cfgTeacherName') || nextConfig.teacher_name || 'Наталья Игоревна Дружинина';
+            nextConfig.teacher_sub = getVal('cfgTeacherSub') || nextConfig.teacher_sub || 'Преподаватель высшей квалификации';
+            const chosenPhotoDim = getVal('cfgPhotoNoDim');
+            nextConfig.photo_no_dim = chosenPhotoDim !== 'classic';
             nextConfig.default_theme = VALID_THEMES.includes(chosenTheme) ? chosenTheme : 'academic';
             nextConfig.announcement = getVal('cfgAnnouncement') || nextConfig.announcement;
             nextConfig.hero_badge = getVal('cfgHeroBadge') || nextConfig.hero_badge;
